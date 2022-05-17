@@ -1,0 +1,50 @@
+{
+  "name": "wxyc-flowsheet-client",
+  "version": "0.0.1",
+  "author": "Ali Alrabeah",
+  "license": "MIT",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "serve-vue": "VUE_CLI_SERVICE_CONFIG_PATH=$PWD/vue.config.js vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "css-build": "node-sass --omit-source-map-url src/styles/main.scss src/styles/main.css",
+    "css-watch": "npm run css-build -- --watch",
+    "client": "npm run serve-vue & npm css-watch"
+  },
+  "dependencies": {
+    "@directus/sdk": "^9.10.0",
+    "axios": "^0.25.0",
+    "bcrypt": "^5.0.1",
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "disconnect": "^1.2.2",
+    "dotenv": "^16.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "node-fetch": "^3.2.0",
+    "nodemon": "^2.0.15",
+    "primeicons": "^5.0.0",
+    "primevue": "^3.11.1",
+    "request": "^2.88.2",
+    "uuid": "^8.3.2",
+    "vue": "^3.0.0",
+    "vue-draggable-next": "^2.1.1",
+    "vue-router": "^4.0.13",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "bulma": "^0.9.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.0.0",
+    "node-sass": "^7.0.1",
+    "prettier": "^2.2.1"
+  }
+}

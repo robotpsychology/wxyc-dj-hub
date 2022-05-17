@@ -1,0 +1,2292 @@
+[
+  {
+    "id": 2145604,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "The Sturgeon",
+      "labelName": "Merge Records",
+      "artistName": "Bricks",
+      "releaseTitle": "The Girl With the Carrot Skin"
+    },
+    "hour": 1644544800000,
+    "chronOrderID": 157945018
+  },
+  {
+    "id": 2145603,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "The Mountain Goes to Mohammed",
+      "labelName": "Merge Records",
+      "artistName": "Bricks",
+      "releaseTitle": "The Girl With the Carrot Skin"
+    },
+    "hour": 1644544800000,
+    "chronOrderID": 157945017
+  },
+  {
+    "id": 2145602,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "true",
+      "songTitle": "Tinseltown Swimming in Blood",
+      "labelName": "Merge Records",
+      "artistName": "Destroyer",
+      "releaseTitle": "ken"
+    },
+    "hour": 1644544800000,
+    "chronOrderID": 157945016
+  },
+  {
+    "id": 2145601,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "King of Carrot Flowers Parts 1, 2 & 3",
+      "labelName": "Merge Records",
+      "artistName": "Neutral Milk Hotel",
+      "releaseTitle": "In the Aeroplane Over the Sea"
+    },
+    "hour": 1644544800000,
+    "chronOrderID": 157945015
+  },
+  {
+    "id": 2145600,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Smallpox Champion",
+      "labelName": "Dischord",
+      "artistName": "Fugazi",
+      "releaseTitle": "Im On the Kill taker"
+    },
+    "hour": 1644544800000,
+    "chronOrderID": 157945014
+  },
+  {
+    "id": 2145599,
+    "entryType": "talkset",
+    "hour": 1644544800000,
+    "chronOrderID": 157945013
+  },
+  {
+    "id": 2145598,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Beatnik",
+      "labelName": "Merge Records",
+      "artistName": "The Clean",
+      "releaseTitle": "Anthology"
+    },
+    "hour": 1644544800000,
+    "chronOrderID": 157945012
+  },
+  {
+    "id": 2145597,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Smoke and Mirrors",
+      "labelName": "Merge Records",
+      "artistName": "The Magnetic Fields",
+      "releaseTitle": "Get Lost"
+    },
+    "hour": 1644544800000,
+    "chronOrderID": 157945011
+  },
+  {
+    "id": 2145596,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "The Desperate Things You Made Me Do",
+      "labelName": "Merge Records",
+      "artistName": "The Magnetic Fields",
+      "releaseTitle": "Get Lost"
+    },
+    "hour": 1644544800000,
+    "chronOrderID": 157945010
+  },
+  {
+    "id": 2145595,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "title track",
+      "labelName": "Merge Records",
+      "artistName": "Polvo",
+      "releaseTitle": "this eclipse"
+    },
+    "hour": 1644544800000,
+    "chronOrderID": 157945009
+  },
+  {
+    "id": 2145594,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Down With People",
+      "labelName": "Merge Records",
+      "artistName": "the*Rock*A*Teens",
+      "releaseTitle": "the*Rock*A*Teens"
+    },
+    "hour": 1644544800000,
+    "chronOrderID": 157945008
+  },
+  {
+    "id": 2145592,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "true",
+      "songTitle": "Rainbow Sign",
+      "labelName": "Sub Pop",
+      "artistName": "Fruit Bats",
+      "releaseTitle": "Mouthfuls"
+    },
+    "hour": 1644544800000,
+    "chronOrderID": 157945007
+  },
+  {
+    "id": 2145593,
+    "entryType": "talkset",
+    "hour": 1644544800000,
+    "chronOrderID": 157945006
+  },
+  {
+    "id": 2145591,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Easily Aroused",
+      "labelName": "Merge Records",
+      "artistName": "Portastatic",
+      "releaseTitle": "Oh, Merge"
+    },
+    "hour": 1644544800000,
+    "chronOrderID": 157945005
+  },
+  {
+    "id": 2145590,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Sheer Heart Attack",
+      "labelName": "Merge Records",
+      "artistName": "Pipe",
+      "releaseTitle": "Oh, Merge"
+    },
+    "hour": 1644544800000,
+    "chronOrderID": 157945004
+  },
+  {
+    "id": 2145589,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Engine",
+      "labelName": "Merge Records",
+      "artistName": "Neutral Milk Hotel",
+      "releaseTitle": "Oh, Merge"
+    },
+    "hour": 1644544800000,
+    "chronOrderID": 157945003
+  },
+  {
+    "id": 2145588,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Take Ecstacy With Me",
+      "labelName": "Merge Records",
+      "artistName": "The Magnetic Fields",
+      "releaseTitle": "Oh, Merge"
+    },
+    "hour": 1644544800000,
+    "chronOrderID": 157945002
+  },
+  {
+    "id": 2145586,
+    "entryType": "breakpoint",
+    "hour": 1644544800000,
+    "chronOrderID": 157944002
+  },
+  {
+    "id": 2145583,
+    "entryType": "talkset",
+    "hour": 1644541200000,
+    "chronOrderID": 157943035
+  },
+  {
+    "id": 2145582,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Orphans of the Song",
+      "labelName": "Dais Records",
+      "artistName": "Death of Lovers",
+      "releaseTitle": "The Acrobat"
+    },
+    "hour": 1644541200000,
+    "chronOrderID": 157943034
+  },
+  {
+    "id": 2145581,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Saturday Nite Live",
+      "labelName": "",
+      "artistName": "Masta Ace incorporated",
+      "releaseTitle": "Jeep Ass Niguh"
+    },
+    "hour": 1644541200000,
+    "chronOrderID": 157943033
+  },
+  {
+    "id": 2145580,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Riot in Capetown",
+      "labelName": "RAS Records",
+      "artistName": "Mad Professor",
+      "releaseTitle": "Black Liberation Dub"
+    },
+    "hour": 1644541200000,
+    "chronOrderID": 157943032
+  },
+  {
+    "id": 2145579,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "The World is Yours",
+      "labelName": "Sony Music Entertainment",
+      "artistName": "Nas",
+      "releaseTitle": "The World is Yours"
+    },
+    "hour": 1644541200000,
+    "chronOrderID": 157943031
+  },
+  {
+    "id": 2145578,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Taste of Honey",
+      "labelName": "AM Records",
+      "artistName": "Herb Alpert & the Tijuana Brass",
+      "releaseTitle": "Greatest Hits"
+    },
+    "hour": 1644541200000,
+    "chronOrderID": 157943030
+  },
+  {
+    "id": 2145577,
+    "entryType": "talkset",
+    "hour": 1644541200000,
+    "chronOrderID": 157943029
+  },
+  {
+    "id": 2145576,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Out Of Mind",
+      "labelName": "Boxout.fm",
+      "artistName": "Monophonik x Trafficc",
+      "releaseTitle": "Suchi Selects"
+    },
+    "hour": 1644541200000,
+    "chronOrderID": 157943028
+  },
+  {
+    "id": 2145575,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Choice in the Matter",
+      "labelName": "Geffen Records",
+      "artistName": "Almee Mann",
+      "releaseTitle": "I'm With Stupid"
+    },
+    "hour": 1644541200000,
+    "chronOrderID": 157943027
+  },
+  {
+    "id": 2145574,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Lying Towers",
+      "labelName": "Hot Releases",
+      "artistName": "Chucha",
+      "releaseTitle": "What Remains"
+    },
+    "hour": 1644541200000,
+    "chronOrderID": 157943026
+  },
+  {
+    "id": 2145573,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Cellophane",
+      "labelName": "Young Turks",
+      "artistName": "FKA Twigs",
+      "releaseTitle": "MAGDALENE"
+    },
+    "hour": 1644541200000,
+    "chronOrderID": 157943025
+  },
+  {
+    "id": 2145572,
+    "entryType": "talkset",
+    "hour": 1644541200000,
+    "chronOrderID": 157943024
+  },
+  {
+    "id": 2145571,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "No Contact",
+      "labelName": "Poison Moon",
+      "artistName": "Heart Shaped",
+      "releaseTitle": "No Contact"
+    },
+    "hour": 1644541200000,
+    "chronOrderID": 157943023
+  },
+  {
+    "id": 2145570,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Lite",
+      "labelName": "Circle Star Records",
+      "artistName": "Diva",
+      "releaseTitle": "Divinity in Thee"
+    },
+    "hour": 1644541200000,
+    "chronOrderID": 157943022
+  },
+  {
+    "id": 2145569,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Custodian",
+      "labelName": "Birs Recordings",
+      "artistName": "Piel",
+      "releaseTitle": "A.K.A. MA"
+    },
+    "hour": 1644541200000,
+    "chronOrderID": 157943021
+  },
+  {
+    "id": 2145568,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Night Song",
+      "labelName": "authentic records",
+      "artistName": "Ravyn Lenae",
+      "releaseTitle": "LUSH"
+    },
+    "hour": 1644541200000,
+    "chronOrderID": 157943020
+  },
+  {
+    "id": 2145567,
+    "entryType": "talkset",
+    "hour": 1644541200000,
+    "chronOrderID": 157943019
+  },
+  {
+    "id": 2145566,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "En Plein Air",
+      "labelName": "Piano Piano",
+      "artistName": "Sven Wunder",
+      "releaseTitle": "Natura Morta"
+    },
+    "hour": 1644541200000,
+    "chronOrderID": 157943018
+  },
+  {
+    "id": 2145565,
+    "entryType": "breakpoint",
+    "hour": 1644541200000,
+    "chronOrderID": 157943017
+  },
+  {
+    "id": 2145564,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Expectations",
+      "labelName": "CBS",
+      "artistName": "Keith Jarrett",
+      "releaseTitle": "Expectations"
+    },
+    "hour": 1644537600000,
+    "chronOrderID": 157943016
+  },
+  {
+    "id": 2145563,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "true",
+      "songTitle": "When You're Smiling",
+      "labelName": "Capitol Records",
+      "artistName": "Frank Sinatra",
+      "releaseTitle": "Sinatra's Swingin Session"
+    },
+    "hour": 1644537600000,
+    "chronOrderID": 157943015
+  },
+  {
+    "id": 2145562,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Untethering",
+      "labelName": "Cascine",
+      "artistName": "Sea Oleena (S ROTATION)",
+      "releaseTitle": "Untethering (Single)"
+    },
+    "hour": 1644537600000,
+    "chronOrderID": 157943014
+  },
+  {
+    "id": 2145561,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Steady As She Goes",
+      "labelName": "Third Man Records",
+      "artistName": "Raconteurs",
+      "releaseTitle": "Broken Boy Soldiers"
+    },
+    "hour": 1644537600000,
+    "chronOrderID": 157943013
+  },
+  {
+    "id": 2145560,
+    "entryType": "talkset",
+    "hour": 1644537600000,
+    "chronOrderID": 157943012
+  },
+  {
+    "id": 2145559,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "I Had A Dream Joe",
+      "labelName": "Domino",
+      "artistName": "Cat Power",
+      "releaseTitle": "Covers"
+    },
+    "hour": 1644537600000,
+    "chronOrderID": 157943011
+  },
+  {
+    "id": 2145558,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Plastic",
+      "labelName": "JAGJAGUWAR",
+      "artistName": "Moses Sumney",
+      "releaseTitle": "Aromanticism"
+    },
+    "hour": 1644537600000,
+    "chronOrderID": 157943010
+  },
+  {
+    "id": 2145557,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Tell It Like It Is",
+      "labelName": "Dead Oceans",
+      "artistName": "Bill Fay",
+      "releaseTitle": "Still Some Light pt. 1"
+    },
+    "hour": 1644537600000,
+    "chronOrderID": 157943009
+  },
+  {
+    "id": 2145556,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Necu Da Znam",
+      "labelName": "PMG",
+      "artistName": "Zdenka Kovacicek",
+      "releaseTitle": "S/T"
+    },
+    "hour": 1644537600000,
+    "chronOrderID": 157943008
+  },
+  {
+    "id": 2145555,
+    "entryType": "talkset",
+    "hour": 1644537600000,
+    "chronOrderID": 157943007
+  },
+  {
+    "id": 2145554,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Falling Back",
+      "labelName": "Phosphonic",
+      "artistName": "The Soundcarriers",
+      "releaseTitle": "Wilds"
+    },
+    "hour": 1644537600000,
+    "chronOrderID": 157943006
+  },
+  {
+    "id": 2145553,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Filihas Do Fogo",
+      "labelName": "Iron Lung",
+      "artistName": "RAKTA",
+      "releaseTitle": "III"
+    },
+    "hour": 1644537600000,
+    "chronOrderID": 157943005
+  },
+  {
+    "id": 2145552,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Opening Night",
+      "labelName": "Hot Releases",
+      "artistName": "Nail Club",
+      "releaseTitle": "Mis En Abyme"
+    },
+    "hour": 1644537600000,
+    "chronOrderID": 157943004
+  },
+  {
+    "id": 2145551,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Groovy Tony/Eddie Kane (ft. Jadakiss)",
+      "labelName": "Top Dawg Entertainment",
+      "artistName": "Schoolboy Q",
+      "releaseTitle": "Blank Face"
+    },
+    "hour": 1644537600000,
+    "chronOrderID": 157943003
+  },
+  {
+    "id": 2145550,
+    "entryType": "breakpoint",
+    "hour": 1644537600000,
+    "chronOrderID": 157943002
+  },
+  {
+    "id": 2145547,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "The Letters We Sent",
+      "labelName": "You've Changed Records",
+      "artistName": "Julie Doiron",
+      "releaseTitle": "I Thought Of You"
+    },
+    "hour": 1644534000000,
+    "chronOrderID": 157942036
+  },
+  {
+    "id": 2145545,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "The Burned Down Dairy Queen",
+      "labelName": "Ordinal Records",
+      "artistName": "Wednesday",
+      "releaseTitle": "Twin Plagues"
+    },
+    "hour": 1644534000000,
+    "chronOrderID": 157942035
+  },
+  {
+    "id": 2145546,
+    "entryType": "talkset",
+    "hour": 1644534000000,
+    "chronOrderID": 157942034
+  },
+  {
+    "id": 2145544,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Just Shadows",
+      "labelName": "Rough Trade",
+      "artistName": "Parquet Courts",
+      "releaseTitle": "Sympathy For Life"
+    },
+    "hour": 1644534000000,
+    "chronOrderID": 157942033
+  },
+  {
+    "id": 2145543,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Hey Julie",
+      "labelName": "S-curve records",
+      "artistName": "Fountains of Wayne",
+      "releaseTitle": "welcome interstate managers"
+    },
+    "hour": 1644534000000,
+    "chronOrderID": 157942032
+  },
+  {
+    "id": 2145542,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "I Hear You Calling",
+      "labelName": "Dead Oceans",
+      "artistName": "Bill Fay",
+      "releaseTitle": "Still Some Light pt. 1"
+    },
+    "hour": 1644534000000,
+    "chronOrderID": 157942031
+  },
+  {
+    "id": 2145541,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "true",
+      "songTitle": "Fascination Street",
+      "labelName": "Elektra",
+      "artistName": "The Cure",
+      "releaseTitle": "Disintegration"
+    },
+    "hour": 1644534000000,
+    "chronOrderID": 157942030
+  },
+  {
+    "id": 2145540,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Sugah Daddy",
+      "labelName": "RCA Records",
+      "artistName": "D'Angelo and the Vanguard",
+      "releaseTitle": "Black Messiah"
+    },
+    "hour": 1644534000000,
+    "chronOrderID": 157942029
+  },
+  {
+    "id": 2145539,
+    "entryType": "talkset",
+    "hour": 1644534000000,
+    "chronOrderID": 157942028
+  },
+  {
+    "id": 2145538,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Excess Success",
+      "labelName": "International Anthem",
+      "artistName": "Jeff Parker",
+      "releaseTitle": "Forfolks"
+    },
+    "hour": 1644534000000,
+    "chronOrderID": 157942027
+  },
+  {
+    "id": 2145536,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Hearts A Mess",
+      "labelName": "Lunatic Entertainment",
+      "artistName": "Gotye",
+      "releaseTitle": "Mixed Blood"
+    },
+    "hour": 1644534000000,
+    "chronOrderID": 157942026
+  },
+  {
+    "id": 2145537,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Sunblind",
+      "labelName": "Anti-Records",
+      "artistName": "Fleet Foxes",
+      "releaseTitle": "Shore"
+    },
+    "hour": 1644534000000,
+    "chronOrderID": 157942025
+  },
+  {
+    "id": 2145535,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "pseudo love feat. yuki-m",
+      "labelName": "Running Back",
+      "artistName": "Panoram",
+      "releaseTitle": "Acrobatic Thoughts"
+    },
+    "hour": 1644534000000,
+    "chronOrderID": 157942024
+  },
+  {
+    "id": 2145534,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Song of Solomon",
+      "labelName": "Sunday Service",
+      "artistName": "White Magic",
+      "releaseTitle": "Dat Rosa Mel Apibus"
+    },
+    "hour": 1644534000000,
+    "chronOrderID": 157942023
+  },
+  {
+    "id": 2145533,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Kokomo, IN",
+      "labelName": "Dead Oceans",
+      "artistName": "Japanese Breakfast",
+      "releaseTitle": "Jubilee"
+    },
+    "hour": 1644534000000,
+    "chronOrderID": 157942022
+  },
+  {
+    "id": 2145532,
+    "entryType": "breakpoint",
+    "hour": 1644534000000,
+    "chronOrderID": 157942021
+  },
+  {
+    "id": 2145531,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Innerspace",
+      "labelName": "spinART",
+      "artistName": "The Apples in Stereo",
+      "releaseTitle": "Fun Trick Noisemaker"
+    },
+    "hour": 1644530400000,
+    "chronOrderID": 157942020
+  },
+  {
+    "id": 2145530,
+    "entryType": "talkset",
+    "hour": 1644530400000,
+    "chronOrderID": 157942019
+  },
+  {
+    "id": 2145529,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "You Make Me Care",
+      "labelName": "Stroom.tv",
+      "artistName": "Sophie Birch & Johan Caroe",
+      "releaseTitle": "Repair Techniques"
+    },
+    "hour": 1644530400000,
+    "chronOrderID": 157942018
+  },
+  {
+    "id": 2145528,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Home Calling",
+      "labelName": "Ninja Tune",
+      "artistName": "DJ Seinfeld",
+      "releaseTitle": "Mirrors"
+    },
+    "hour": 1644530400000,
+    "chronOrderID": 157942017
+  },
+  {
+    "id": 2145527,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Wraith pinned to the mist and other games",
+      "labelName": "Polyvinyl Records",
+      "artistName": "Of Montreal",
+      "releaseTitle": "The Sunlandic Twins"
+    },
+    "hour": 1644530400000,
+    "chronOrderID": 157942016
+  },
+  {
+    "id": 2145526,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "I'd Like To Walk Around In Your Mind",
+      "labelName": "Revolver USA",
+      "artistName": "Vashti Bunyan",
+      "releaseTitle": "Just Another Diamond Day"
+    },
+    "hour": 1644530400000,
+    "chronOrderID": 157942015
+  },
+  {
+    "id": 2145525,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "true",
+      "songTitle": "Come on Feet",
+      "labelName": "Stones Throw Records",
+      "artistName": "Quasimoto",
+      "releaseTitle": "The Unseen"
+    },
+    "hour": 1644530400000,
+    "chronOrderID": 157942014
+  },
+  {
+    "id": 2145524,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Flay",
+      "labelName": "peak oil",
+      "artistName": "Hoavi",
+      "releaseTitle": "Invariant"
+    },
+    "hour": 1644530400000,
+    "chronOrderID": 157942013
+  },
+  {
+    "id": 2145523,
+    "entryType": "talkset",
+    "hour": 1644530400000,
+    "chronOrderID": 157942012
+  },
+  {
+    "id": 2145522,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Off You",
+      "labelName": "Elektra/4AD",
+      "artistName": "The Breeders",
+      "releaseTitle": "Title TK"
+    },
+    "hour": 1644530400000,
+    "chronOrderID": 157942011
+  },
+  {
+    "id": 2145521,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "true",
+      "songTitle": "Amateur Hour",
+      "labelName": "Island Records",
+      "artistName": "Sparks",
+      "releaseTitle": "Kimono My House"
+    },
+    "hour": 1644530400000,
+    "chronOrderID": 157942010
+  },
+  {
+    "id": 2145520,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "All The Words We Don't Say",
+      "labelName": "Brainfeeder",
+      "artistName": "Hiatus Kaiyote",
+      "releaseTitle": "Mood Valiant"
+    },
+    "hour": 1644530400000,
+    "chronOrderID": 157942009
+  },
+  {
+    "id": 2145519,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Everyday",
+      "labelName": "s/r",
+      "artistName": "Weyes Blood",
+      "releaseTitle": "Titanic Rising"
+    },
+    "hour": 1644530400000,
+    "chronOrderID": 157942008
+  },
+  {
+    "id": 2145518,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "QKThr",
+      "labelName": "Sire",
+      "artistName": "Aphex Twin",
+      "releaseTitle": "Drukqs"
+    },
+    "hour": 1644530400000,
+    "chronOrderID": 157942007
+  },
+  {
+    "id": 2145517,
+    "entryType": "talkset",
+    "hour": 1644530400000,
+    "chronOrderID": 157942006
+  },
+  {
+    "id": 2145516,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "true",
+      "songTitle": "The Beautiful Ones",
+      "labelName": "Warner Bros. Records",
+      "artistName": "Prince and the Revolution",
+      "releaseTitle": "Purple Rain"
+    },
+    "hour": 1644530400000,
+    "chronOrderID": 157942005
+  },
+  {
+    "id": 2145515,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Sometimes",
+      "labelName": "Sire",
+      "artistName": "My Bloody Valentine",
+      "releaseTitle": "Loveless"
+    },
+    "hour": 1644530400000,
+    "chronOrderID": 157942004
+  },
+  {
+    "id": 2145514,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Debaser",
+      "labelName": "4AD",
+      "artistName": "Pixies",
+      "releaseTitle": "Doolittle"
+    },
+    "hour": 1644530400000,
+    "chronOrderID": 157942003
+  },
+  {
+    "id": 2145513,
+    "entryType": "breakpoint",
+    "hour": 1644530400000,
+    "chronOrderID": 157942002
+  },
+  {
+    "id": 2145509,
+    "entryType": "breakpoint",
+    "hour": 1644519600000,
+    "chronOrderID": 157941036
+  },
+  {
+    "id": 2145510,
+    "entryType": "talkset",
+    "hour": 1644516000000,
+    "chronOrderID": 157941035
+  },
+  {
+    "id": 2145508,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "99 Luftballons",
+      "labelName": "CBS",
+      "artistName": "Nena",
+      "releaseTitle": "99 Luftballons"
+    },
+    "hour": 1644516000000,
+    "chronOrderID": 157941034
+  },
+  {
+    "id": 2145506,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "My Sweet Friend",
+      "labelName": "Slumberland Records",
+      "artistName": "Allo Darlin",
+      "releaseTitle": "Europe"
+    },
+    "hour": 1644516000000,
+    "chronOrderID": 157941033
+  },
+  {
+    "id": 2145505,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "This New Heaven",
+      "labelName": "Night School",
+      "artistName": "Fine Place",
+      "releaseTitle": "This New Heaven"
+    },
+    "hour": 1644516000000,
+    "chronOrderID": 157941032
+  },
+  {
+    "id": 2145507,
+    "entryType": "talkset",
+    "hour": 1644516000000,
+    "chronOrderID": 157941031
+  },
+  {
+    "id": 2145504,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Marry me, archie",
+      "labelName": "Polyvinyl",
+      "artistName": "Alvvays",
+      "releaseTitle": "Alvvays"
+    },
+    "hour": 1644516000000,
+    "chronOrderID": 157941030
+  },
+  {
+    "id": 2145502,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Keep An Eye On Dan",
+      "labelName": "Polar",
+      "artistName": "ABBA",
+      "releaseTitle": "Voyage"
+    },
+    "hour": 1644516000000,
+    "chronOrderID": 157941029
+  },
+  {
+    "id": 2145503,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "(Loose Booty) Is A Real Thing",
+      "labelName": "Numero Group",
+      "artistName": "Everyday People",
+      "releaseTitle": "Eccentric Soul: Omnibus"
+    },
+    "hour": 1644516000000,
+    "chronOrderID": 157941028
+  },
+  {
+    "id": 2145501,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Love Jones Coming Down",
+      "labelName": "Kalita Records",
+      "artistName": "Al-Dos Band",
+      "releaseTitle": "Doing Our Thing With Pride"
+    },
+    "hour": 1644516000000,
+    "chronOrderID": 157941027
+  },
+  {
+    "id": 2145499,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Indian Reservation",
+      "labelName": "Numero Group",
+      "artistName": "Willie Wright",
+      "releaseTitle": "Telling the Truth"
+    },
+    "hour": 1644516000000,
+    "chronOrderID": 157941026
+  },
+  {
+    "id": 2145498,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "You Are My Dream",
+      "labelName": "Pepite",
+      "artistName": "Nel Oliver",
+      "releaseTitle": "You Are My Dream"
+    },
+    "hour": 1644516000000,
+    "chronOrderID": 157941025
+  },
+  {
+    "id": 2145500,
+    "entryType": "talkset",
+    "hour": 1644516000000,
+    "chronOrderID": 157941024
+  },
+  {
+    "id": 2145497,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "RenÃ©e (Who's Driving Your Car?)",
+      "labelName": "Captured Tracks",
+      "artistName": "Cleaners From Venus",
+      "releaseTitle": "In the Golden Autumn"
+    },
+    "hour": 1644516000000,
+    "chronOrderID": 157941023
+  },
+  {
+    "id": 2145496,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Breath in, Breath Out",
+      "labelName": "Fat Possum Records",
+      "artistName": "Melody's Echo Chamber",
+      "releaseTitle": "Bon Voyage"
+    },
+    "hour": 1644516000000,
+    "chronOrderID": 157941022
+  },
+  {
+    "id": 2145495,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Panorama",
+      "labelName": "Piano Piano",
+      "artistName": "Sven Wunder",
+      "releaseTitle": "Natura Morta"
+    },
+    "hour": 1644516000000,
+    "chronOrderID": 157941021
+  },
+  {
+    "id": 2145494,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Como Me Quieres",
+      "labelName": "Dead Oceans",
+      "artistName": "Khruangbin",
+      "releaseTitle": "Con Todo El Mundo"
+    },
+    "hour": 1644516000000,
+    "chronOrderID": 157941020
+  },
+  {
+    "id": 2145493,
+    "entryType": "breakpoint",
+    "hour": 1644516000000,
+    "chronOrderID": 157941019
+  },
+  {
+    "id": 2145492,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Tree Among Shrubs",
+      "labelName": "Return To Analog",
+      "artistName": "Men I Trust",
+      "releaseTitle": "Untourable Album"
+    },
+    "hour": 1644512400000,
+    "chronOrderID": 157941018
+  },
+  {
+    "id": 2145491,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Cherry Coloured Funk",
+      "labelName": "Capitol Records",
+      "artistName": "Cocteau Twins",
+      "releaseTitle": "Heaven or Las Vegas"
+    },
+    "hour": 1644512400000,
+    "chronOrderID": 157941017
+  },
+  {
+    "id": 2145490,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Souvenir",
+      "labelName": "Innovative Leisure",
+      "artistName": "Maston with L'eclair",
+      "releaseTitle": "Souvenir"
+    },
+    "hour": 1644512400000,
+    "chronOrderID": 157941016
+  },
+  {
+    "id": 2145489,
+    "entryType": "talkset",
+    "hour": 1644512400000,
+    "chronOrderID": 157941015
+  },
+  {
+    "id": 2145488,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "true",
+      "songTitle": "Glyde 2Nyte",
+      "labelName": "Stones Throw",
+      "artistName": "Dam Funk",
+      "releaseTitle": "Invite the Light"
+    },
+    "hour": 1644512400000,
+    "chronOrderID": 157941014
+  },
+  {
+    "id": 2145487,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "We Supply",
+      "labelName": "Telephone Explosion",
+      "artistName": "Frank Hatchett",
+      "releaseTitle": "Sensational!"
+    },
+    "hour": 1644512400000,
+    "chronOrderID": 157941013
+  },
+  {
+    "id": 2145486,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Drunk",
+      "labelName": "Brainfeeder",
+      "artistName": "Thundercat",
+      "releaseTitle": "Drunk"
+    },
+    "hour": 1644512400000,
+    "chronOrderID": 157941012
+  },
+  {
+    "id": 2145485,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Yeaba",
+      "labelName": "Analog Africa",
+      "artistName": "V/A",
+      "releaseTitle": "Essiebons Special 1973-1984"
+    },
+    "hour": 1644512400000,
+    "chronOrderID": 157941011
+  },
+  {
+    "id": 2145484,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "John 3:16 + By Any Means Necessary",
+      "labelName": "Nature Sounds",
+      "artistName": "Wu-Tang Clan + Malcolm X",
+      "releaseTitle": "Mathematics + Malcolm X Speaks"
+    },
+    "hour": 1644512400000,
+    "chronOrderID": 157941010
+  },
+  {
+    "id": 2145483,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Stepfather",
+      "labelName": "Basement",
+      "artistName": "people under the stairs",
+      "releaseTitle": "4 Dollar Afro"
+    },
+    "hour": 1644512400000,
+    "chronOrderID": 157941009
+  },
+  {
+    "id": 2145482,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "VRY BLK (ft Noname)",
+      "labelName": "Jagjaguwar",
+      "artistName": "Jamila Woods",
+      "releaseTitle": "HEAVN"
+    },
+    "hour": 1644512400000,
+    "chronOrderID": 157941008
+  },
+  {
+    "id": 2145481,
+    "entryType": "talkset",
+    "hour": 1644512400000,
+    "chronOrderID": 157941007
+  },
+  {
+    "id": 2145479,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Realise",
+      "labelName": "Greco-Roman",
+      "artistName": "Lone",
+      "releaseTitle": "Always Inside Your Head"
+    },
+    "hour": 1644512400000,
+    "chronOrderID": 157941005
+  },
+  {
+    "id": 2145478,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Passin' Me By",
+      "labelName": "Delicious Vinyl",
+      "artistName": "Pharcyde",
+      "releaseTitle": "The Pharcyde"
+    },
+    "hour": 1644512400000,
+    "chronOrderID": 157941004
+  },
+  {
+    "id": 2145477,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Rebel on the Roots Corner",
+      "labelName": "Real Authentic Sound",
+      "artistName": "Tippa Irie",
+      "releaseTitle": "Rebel on the Roots Corner"
+    },
+    "hour": 1644512400000,
+    "chronOrderID": 157941003
+  },
+  {
+    "id": 2145476,
+    "entryType": "breakpoint",
+    "hour": 1644512400000,
+    "chronOrderID": 157941002
+  },
+  {
+    "id": 2145473,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "come along girl/ downpressor",
+      "labelName": "studio one",
+      "artistName": "sugar minott",
+      "releaseTitle": "studio first from the vaults vol. 2"
+    },
+    "hour": 1644508800000,
+    "chronOrderID": 157940038
+  },
+  {
+    "id": 2145472,
+    "entryType": "talkset",
+    "hour": 1644508800000,
+    "chronOrderID": 157940037
+  },
+  {
+    "id": 2145471,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "sloth rising",
+      "labelName": "Stroom.tv",
+      "artistName": "Dali Muru and The Polyphonic Swarm",
+      "releaseTitle": "S/T"
+    },
+    "hour": 1644508800000,
+    "chronOrderID": 157940036
+  },
+  {
+    "id": 2145470,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "give it up",
+      "labelName": "columbia",
+      "artistName": "fishbone",
+      "releaseTitle": "in your face"
+    },
+    "hour": 1644508800000,
+    "chronOrderID": 157940035
+  },
+  {
+    "id": 2145469,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "the sun is bored (still some light)",
+      "labelName": "Dead Oceans",
+      "artistName": "Bill Fay",
+      "releaseTitle": "Still Some Light pt. 1"
+    },
+    "hour": 1644508800000,
+    "chronOrderID": 157940034
+  },
+  {
+    "id": 2145468,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "cure for the fever",
+      "labelName": "studio one",
+      "artistName": "jim brown",
+      "releaseTitle": "rebel disco"
+    },
+    "hour": 1644508800000,
+    "chronOrderID": 157940033
+  },
+  {
+    "id": 2145467,
+    "entryType": "talkset",
+    "hour": 1644508800000,
+    "chronOrderID": 157940032
+  },
+  {
+    "id": 2145466,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "what's his name",
+      "labelName": "colemine records",
+      "artistName": "thee sinseers",
+      "releaseTitle": "colemine records presents: soul slabs vol. 3"
+    },
+    "hour": 1644508800000,
+    "chronOrderID": 157940031
+  },
+  {
+    "id": 2145465,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "reminded",
+      "labelName": "Run For Cover Records",
+      "artistName": "Sun June",
+      "releaseTitle": "Somewhere (expanded)"
+    },
+    "hour": 1644508800000,
+    "chronOrderID": 157940030
+  },
+  {
+    "id": 2145464,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "rendevous girl",
+      "labelName": "atlantic",
+      "artistName": "santigold",
+      "releaseTitle": "99Â¢"
+    },
+    "hour": 1644508800000,
+    "chronOrderID": 157940029
+  },
+  {
+    "id": 2145463,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "human interests",
+      "labelName": "Hot Releases",
+      "artistName": "Chucha",
+      "releaseTitle": "What Remains"
+    },
+    "hour": 1644508800000,
+    "chronOrderID": 157940028
+  },
+  {
+    "id": 2145462,
+    "entryType": "talkset",
+    "hour": 1644508800000,
+    "chronOrderID": 157940027
+  },
+  {
+    "id": 2145461,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "venus",
+      "labelName": "4ad",
+      "artistName": "sufjan stevens, nico muhly, bryce dessner, james mcalister",
+      "releaseTitle": "planetarium"
+    },
+    "hour": 1644508800000,
+    "chronOrderID": 157940026
+  },
+  {
+    "id": 2145460,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "you're not the only one I know",
+      "labelName": "dcg",
+      "artistName": "the sundays",
+      "releaseTitle": "reading, writing and arithmetic"
+    },
+    "hour": 1644508800000,
+    "chronOrderID": 157940025
+  },
+  {
+    "id": 2145458,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "l'eau bleue",
+      "labelName": "Innovative Leisure",
+      "artistName": "Maston with L'eclair",
+      "releaseTitle": "Souvenir"
+    },
+    "hour": 1644508800000,
+    "chronOrderID": 157940024
+  },
+  {
+    "id": 2145459,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "all I think about is you",
+      "labelName": "rca",
+      "artistName": "harry nilsson",
+      "releaseTitle": "knnillssonn"
+    },
+    "hour": 1644508800000,
+    "chronOrderID": 157940023
+  },
+  {
+    "id": 2145457,
+    "entryType": "talkset",
+    "hour": 1644508800000,
+    "chronOrderID": 157940022
+  },
+  {
+    "id": 2145456,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "cleveland",
+      "labelName": "matador",
+      "artistName": "algiers",
+      "releaseTitle": "the underside of power"
+    },
+    "hour": 1644508800000,
+    "chronOrderID": 157940021
+  },
+  {
+    "id": 2145455,
+    "entryType": "breakpoint",
+    "hour": 1644508800000,
+    "chronOrderID": 157940020
+  },
+  {
+    "id": 2145454,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "look to the sky",
+      "labelName": "Kalita Records",
+      "artistName": "Al-Dos Band",
+      "releaseTitle": "Doing Our Thing With Pride"
+    },
+    "hour": 1644505200000,
+    "chronOrderID": 157940019
+  },
+  {
+    "id": 2145453,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "cira, regina e nana",
+      "labelName": "mais um discos",
+      "artistName": "lucas santtana",
+      "releaseTitle": "sem nostalgia"
+    },
+    "hour": 1644505200000,
+    "chronOrderID": 157940018
+  },
+  {
+    "id": 2145452,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "hangin' out",
+      "labelName": "light in the attic",
+      "artistName": "betty davis",
+      "releaseTitle": "the columbia years 1968-1969"
+    },
+    "hour": 1644505200000,
+    "chronOrderID": 157940017
+  },
+  {
+    "id": 2145451,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "inspiration",
+      "labelName": "Telephone Explosion",
+      "artistName": "Frank Hatchett",
+      "releaseTitle": "Sensational!"
+    },
+    "hour": 1644505200000,
+    "chronOrderID": 157940016
+  },
+  {
+    "id": 2145450,
+    "entryType": "talkset",
+    "hour": 1644505200000,
+    "chronOrderID": 157940015
+  },
+  {
+    "id": 2145449,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "no contact",
+      "labelName": "Poison Moon",
+      "artistName": "Heart Shaped",
+      "releaseTitle": "No Contact"
+    },
+    "hour": 1644505200000,
+    "chronOrderID": 157940014
+  },
+  {
+    "id": 2145448,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "step down",
+      "labelName": "colemine records",
+      "artistName": "the sure fire soul ensemble",
+      "releaseTitle": "colemine records presents: soul slabs vol. 3"
+    },
+    "hour": 1644505200000,
+    "chronOrderID": 157940013
+  },
+  {
+    "id": 2145447,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "suzanne",
+      "labelName": "rca",
+      "artistName": "nina simone",
+      "releaseTitle": "the best of nina simone"
+    },
+    "hour": 1644505200000,
+    "chronOrderID": 157940012
+  },
+  {
+    "id": 2145446,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "furry computer 2",
+      "labelName": "Trouble In Mind Records",
+      "artistName": "Smoke Bellow",
+      "releaseTitle": "Open For Business"
+    },
+    "hour": 1644505200000,
+    "chronOrderID": 157940011
+  },
+  {
+    "id": 2145445,
+    "entryType": "talkset",
+    "hour": 1644505200000,
+    "chronOrderID": 157940010
+  },
+  {
+    "id": 2145444,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "too hurt to cry",
+      "labelName": "honest jon's",
+      "artistName": "candi staton",
+      "releaseTitle": "candi staton"
+    },
+    "hour": 1644505200000,
+    "chronOrderID": 157940009
+  },
+  {
+    "id": 2145443,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "how did you get here",
+      "labelName": "Age 101",
+      "artistName": "Little Simz",
+      "releaseTitle": "Sometimes I Might Be Introvert"
+    },
+    "hour": 1644505200000,
+    "chronOrderID": 157940008
+  },
+  {
+    "id": 2145442,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "germ free adolescents",
+      "labelName": "virgin",
+      "artistName": "x-ray spex",
+      "releaseTitle": "germ free adolscents"
+    },
+    "hour": 1644505200000,
+    "chronOrderID": 157940007
+  },
+  {
+    "id": 2145441,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "mouth of God",
+      "labelName": "Greco-Roman",
+      "artistName": "Lone",
+      "releaseTitle": "Always Inside Your Head"
+    },
+    "hour": 1644505200000,
+    "chronOrderID": 157940006
+  },
+  {
+    "id": 2145440,
+    "entryType": "talkset",
+    "hour": 1644505200000,
+    "chronOrderID": 157940005
+  },
+  {
+    "id": 2145439,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "be something",
+      "labelName": "peacefrog",
+      "artistName": "parekh & singh",
+      "releaseTitle": "science city"
+    },
+    "hour": 1644505200000,
+    "chronOrderID": 157940004
+  },
+  {
+    "id": 2145438,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "I don't want to get over you",
+      "labelName": "merge",
+      "artistName": "magnetic fields",
+      "releaseTitle": "69 love songs vol 1"
+    },
+    "hour": 1644505200000,
+    "chronOrderID": 157940003
+  },
+  {
+    "id": 2145437,
+    "entryType": "breakpoint",
+    "hour": 1644505200000,
+    "chronOrderID": 157940002
+  },
+  {
+    "id": 2145434,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Sri Neroti",
+      "labelName": "Honest Jon's",
+      "artistName": "Hypnotic Brass Ensemble",
+      "releaseTitle": "Book of Sound"
+    },
+    "hour": 1644501600000,
+    "chronOrderID": 157939028
+  },
+  {
+    "id": 2145433,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "I Have a Good Job",
+      "labelName": "Pepite",
+      "artistName": "Nel Oliver",
+      "releaseTitle": "You Are My Dream"
+    },
+    "hour": 1644501600000,
+    "chronOrderID": 157939027
+  },
+  {
+    "id": 2145432,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Caracol",
+      "labelName": "Analog Africa",
+      "artistName": "Grupo Bola Roja",
+      "releaseTitle": "La Locura de Macucha 1975-1980"
+    },
+    "hour": 1644501600000,
+    "chronOrderID": 157939026
+  },
+  {
+    "id": 2145431,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Despertar",
+      "labelName": "El Palmas",
+      "artistName": "Los Darts",
+      "releaseTitle": "Color De Tropico"
+    },
+    "hour": 1644501600000,
+    "chronOrderID": 157939025
+  },
+  {
+    "id": 2145430,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Yeaba",
+      "labelName": "Analog Africa",
+      "artistName": "V/A",
+      "releaseTitle": "Essiebons Special 1973-1984"
+    },
+    "hour": 1644501600000,
+    "chronOrderID": 157939024
+  },
+  {
+    "id": 2145429,
+    "entryType": "talkset",
+    "hour": 1644501600000,
+    "chronOrderID": 157939023
+  },
+  {
+    "id": 2145428,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Salamaleikoum",
+      "labelName": "Sahel Sounds",
+      "artistName": "Wau Wau Collectif",
+      "releaseTitle": "Yaral Sa Doom"
+    },
+    "hour": 1644501600000,
+    "chronOrderID": 157939022
+  },
+  {
+    "id": 2145427,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "I Thought It Was You",
+      "labelName": "Columbia",
+      "artistName": "Herbie Hancock",
+      "releaseTitle": "The Best of Herbie Hancock"
+    },
+    "hour": 1644501600000,
+    "chronOrderID": 157939021
+  },
+  {
+    "id": 2145426,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Love is All",
+      "labelName": "Soundway Records",
+      "artistName": "Via Negromonte",
+      "releaseTitle": "Onda De Amor: Synthesized Brazilian Hits that Never Were (1984-94)"
+    },
+    "hour": 1644501600000,
+    "chronOrderID": 157939020
+  },
+  {
+    "id": 2145425,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Sintayehu",
+      "labelName": "Awesome Tapes From Africa",
+      "artistName": "Hailu Mergia & Dahlak Band",
+      "releaseTitle": "Wede Harer Guzo"
+    },
+    "hour": 1644501600000,
+    "chronOrderID": 157939019
+  },
+  {
+    "id": 2145424,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Movimento",
+      "labelName": "Far Out Recordings",
+      "artistName": "Vasconcelos Sentimento",
+      "releaseTitle": "Furto"
+    },
+    "hour": 1644501600000,
+    "chronOrderID": 157939018
+  },
+  {
+    "id": 2145423,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Cardova",
+      "labelName": "Trans Air",
+      "artistName": "Syd Jones & The Troubadours",
+      "releaseTitle": "West Indies Funk"
+    },
+    "hour": 1644501600000,
+    "chronOrderID": 157939017
+  },
+  {
+    "id": 2145422,
+    "entryType": "breakpoint",
+    "hour": 1644501600000,
+    "chronOrderID": 157939016
+  },
+  {
+    "id": 2145421,
+    "entryType": "talkset",
+    "hour": 1644498000000,
+    "chronOrderID": 157939015
+  },
+  {
+    "id": 2145420,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Loving and Caring",
+      "labelName": "Jazzman Records",
+      "artistName": "The Brief Encounter",
+      "releaseTitle": "Introducing"
+    },
+    "hour": 1644498000000,
+    "chronOrderID": 157939014
+  },
+  {
+    "id": 2145419,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Um Allah",
+      "labelName": "Jazzman",
+      "artistName": "Aquila",
+      "releaseTitle": "Spiritual Jazz 5"
+    },
+    "hour": 1644498000000,
+    "chronOrderID": 157939013
+  },
+  {
+    "id": 2145418,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Natura Morta",
+      "labelName": "Piano Piano",
+      "artistName": "Sven Wunder",
+      "releaseTitle": "Natura Morta"
+    },
+    "hour": 1644498000000,
+    "chronOrderID": 157939012
+  },
+  {
+    "id": 2145415,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Shinzo No Tobira",
+      "labelName": "Palo Flats",
+      "artistName": "Mariah",
+      "releaseTitle": "Utakata No Hibi"
+    },
+    "hour": 1644498000000,
+    "chronOrderID": 157939009
+  },
+  {
+    "id": 2145414,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Over the Horizon Radar / Dawn Chorus",
+      "labelName": "Warp Records",
+      "artistName": "Boards Of Canada",
+      "releaseTitle": "Geogaddi"
+    },
+    "hour": 1644498000000,
+    "chronOrderID": 157939008
+  },
+  {
+    "id": 2145413,
+    "entryType": "talkset",
+    "hour": 1644498000000,
+    "chronOrderID": 157939007
+  },
+  {
+    "id": 2145412,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Tokyo, TX",
+      "labelName": "enmossed",
+      "artistName": "Marv",
+      "releaseTitle": "Keyboard Suite I"
+    },
+    "hour": 1644498000000,
+    "chronOrderID": 157939006
+  },
+  {
+    "id": 2145411,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Yaikele Ya Ma",
+      "labelName": "Thrill Jockey",
+      "artistName": "Dustin Wong & Takako Minekawa",
+      "releaseTitle": "Are Euphoria"
+    },
+    "hour": 1644498000000,
+    "chronOrderID": 157939005
+  },
+  {
+    "id": 2145410,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Fourth Dune",
+      "labelName": "Backwards",
+      "artistName": "Fabio Orsi",
+      "releaseTitle": "Waltzing The Dune"
+    },
+    "hour": 1644498000000,
+    "chronOrderID": 157939004
+  },
+  {
+    "id": 2145409,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Ever New",
+      "labelName": "Transgressive",
+      "artistName": "Beverly Glenn-Copeland",
+      "releaseTitle": "Transmissions: The Music of Beverly Glenn - Copeland"
+    },
+    "hour": 1644498000000,
+    "chronOrderID": 157939003
+  },
+  {
+    "id": 2145408,
+    "entryType": "breakpoint",
+    "hour": 1644498000000,
+    "chronOrderID": 157939002
+  },
+  {
+    "id": 2145405,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "Flay",
+      "labelName": "peak oil",
+      "artistName": "Hoavi",
+      "releaseTitle": "Invariant"
+    },
+    "hour": 1644487200000,
+    "chronOrderID": 157938043
+  },
+  {
+    "id": 2145404,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "false",
+      "request": "false",
+      "songTitle": "Good Heart",
+      "labelName": "",
+      "artistName": "Indigo De Souza",
+      "releaseTitle": "I Love My Mom"
+    },
+    "hour": 1644487200000,
+    "chronOrderID": 157938042
+  },
+  {
+    "id": 2145403,
+    "entryType": "talkset",
+    "hour": 1644487200000,
+    "chronOrderID": 157938041
+  },
+  {
+    "id": 2145402,
+    "entryType": "playcut",
+    "playcut": {
+      "rotation": "true",
+      "request": "false",
+      "songTitle": "tout maintenant",
+      "labelName": "Tresor",
+      "artistName": "bergsonist",
+      "releaseTitle": "Tresor 30"
+    },
+    "hour": 1644487200000,
+    "chronOrderID": 157938040
+  }
+]
