@@ -1,40 +1,18 @@
 <template>
   <div>Profiles</div>
-
   <div id="wrapper" v-for="user in userSample">
-    <Card style="width: 20rem; margin-bottom: 2em">
-      <template #header>
-        <img
-          class="userAvatar"
-          :src="require('../assets/' + user.avatar)"
-          alt=""
-        />
-      </template>
-
-      <template #title> {{ user.dj_name }} </template>
-      <template #subtitle> {{ user.name }} </template>
-
-      <template #content>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p>
-      </template>
-    </Card>
+    <ProfileCard :user="user"></ProfileCard>
   </div>
 </template>
 
 <script>
-import Card from "primevue/card";
+import ProfileCard from "../components/ProfileCard.vue";
+
 export default {
   name: "Profiles",
-  components: { Card },
+  components: { ProfileCard },
   data() {
     return {
-      // avatar: require("../assets/logo.png"),
-
       userSample: [
         {
           name: "John Doe",

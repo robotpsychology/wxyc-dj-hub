@@ -70,7 +70,7 @@ export default {
             {
               label: "Account",
               icon: "pi",
-              to: "/",
+              to: "/account",
             },
             {
               label: "Help",

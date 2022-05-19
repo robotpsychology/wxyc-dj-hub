@@ -1,13 +1,15 @@
 // import { Router, createWebHistory } from "vue-router";
 import * as VueRouter from 'vue-router';
-// import LoginWorld from "../components/LoginWorld.vue"
+
+import Login from "../components/Login.vue"
+import Register from "../components/Register.vue"
+import Account from "../views/Account.vue"
+
 import Home from "../views/Home.vue";
 import About from "../views/About.vue"
-import Register from "../components/Register.vue"
 import Reports from "../views/Reports.vue"
 import Requests from "../views/Requests.vue"
 import Love_Wall from "../views/Love_Wall.vue"
-import Login from "../components/Login.vue"
 import Profiles from "../views/Profiles"
 
 const routes = [
@@ -30,6 +32,12 @@ const routes = [
     path: "/login",
     name: "Login",
     component: Login,
+  },
+  {
+    path: "/account",
+    name: "Account",
+    component: Account,
+    // meta: { requiresAuth: true }
   },
   {
     path: "/reports",

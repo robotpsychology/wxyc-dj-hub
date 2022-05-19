@@ -18,6 +18,7 @@
 <script>
 import { register } from "../services/AuthenticationService";
 export default {
+  name: "Register",
   data() {
     return {
       email: "abc",
