@@ -1,11 +1,9 @@
 import { createApp } from "vue"
 import Vue from "vue"
-// import Vuex from "vuex"
+import { createPinia } from 'pinia'
 import App from "./App.vue"
-import { store } from './store';
 import { router } from "./router"
 // import axios from "axios"
-// import request from "request"
 import "./styles/main.css"
 
 // Vue.config.productionTip = false
@@ -27,7 +25,8 @@ import "primeicons/primeicons.css" //icons
 
 
 const app = createApp(App)
-app.use(PrimeVue).use(router).use(store)
+app.use(PrimeVue).use(router).use(createPinia())
+// .use(store)
 
 app.component("AutoComplete", AutoComplete)
 app.component("InputText", InputText)

@@ -1,12 +1,14 @@
 // import { Router, createWebHistory } from "vue-router";
 import * as VueRouter from 'vue-router';
-import store from "vuex"
 // import LoginWorld from "../components/LoginWorld.vue"
 import Home from "../views/Home.vue";
 import About from "../views/About.vue"
 import Register from "../components/Register.vue"
 import Reports from "../views/Reports.vue"
+import Requests from "../views/Requests.vue"
 import Love_Wall from "../views/Love_Wall.vue"
+import Login from "../components/Login.vue"
+import Profiles from "../views/Profiles"
 
 const routes = [
   // {
@@ -15,7 +17,7 @@ const routes = [
   //   component: LoginWorld,
   // },
   {
-    path: "/home",
+    path: "/",
     name: "Home",
     component: Home,
   },
@@ -25,22 +27,41 @@ const routes = [
     component: Register,
   },
   {
+    path: "/login",
+    name: "Login",
+    component: Login,
+  },
+  {
     path: "/reports",
     name: "Reports",
     component: Reports,
+    meta: { requiresAuth: true }
+  },
+  {
+    path: "/requests",
+    name: "Requests",
+    component: Requests,
+    meta: { requiresAuth: true }
+  },
+  {
+    path: "/profiles",
+    name: "Profiles",
+    component: Profiles,
+    meta: { requiresAuth: true }
   },
   {
     path: "/love_wall",
     name: "Love Wall",
     component: Love_Wall,
-    beforeEnter: (to, from, next) => {
-      if (store.state.authenticated == false) {
-        next(false);
-      } else {
-        next();
-        console.log('not allowed')
-      }
-    }
+    meta: { requiresAuth: true },
+    // beforeEnter: (to, from, next) => {
+    //   if (store.state.authenticated == false) {
+    //     next(false);
+    //   } else {
+    //     next();
+    //     console.log('not allowed')
+    //   }
+    // }
 
   },
   {
@@ -60,5 +81,20 @@ export const router = VueRouter.createRouter({
   history: VueRouter.createWebHistory(),
   routes,
 });
+
+// router.beforeEach((to, from, next) => {
+//   const publicPages = ['/love_wall', '/reports'];
+//   const authRequired = !publicPages.includes(to.path);
+//   const loggedIn = localStorage.getItem('token');
+
+//   // trying to access a restricted page + not logged in
+//   // redirect to login page
+
+//   if (authRequired && !loggedIn) {
+//     next('/login');
+//   } else {
+//     next();
+//   }
+// });
 
 // export default router;

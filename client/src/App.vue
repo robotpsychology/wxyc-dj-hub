@@ -43,6 +43,16 @@ export default {
           to: "/Reports",
         },
         {
+          label: "Requests",
+          icon: "pi pi-check-circle",
+          to: "/requests",
+        },
+        {
+          label: "Profiles",
+          icon: "pi pi-user",
+          to: "/profiles",
+        },
+        {
           label: "Love Wall",
           icon: "pi pi-heart",
           to: "/love_wall",

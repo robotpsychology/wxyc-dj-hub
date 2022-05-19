@@ -1,13 +1,16 @@
-// import Api from '@/services/Api'
+import { directus } from "../services/directus";
+import { useLoggedInUserStore } from "@/store/loggedInUser";
 
-// export default {
-//     register(credentials) {
-//         return Api().post('register', credentials)
-//     },
-//     login(credentials) {
-//         return Api().post('login', credentials)
-//     }
-// }
+
+
+export async function login(loginInfo) {
+    const response = await directus.auth.login(loginInfo);
+    // this.user.loginUser(loginInfo);
+    console.log(response);
+
+
+
+}
 
 
 export async function register(credentials) {
