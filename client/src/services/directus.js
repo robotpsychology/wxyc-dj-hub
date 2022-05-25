@@ -17,8 +17,8 @@ async function start() {
 
     // Let's login in case we don't have token or it is invalid / expired
     while (!authenticated) {
-        // const email = window.prompt('Email:');
-        // const password = window.prompt('Password:');
+        const email = window.prompt('Email:');
+        const password = window.prompt('Password:');
 
         await directus.auth
             .login({ email, password })

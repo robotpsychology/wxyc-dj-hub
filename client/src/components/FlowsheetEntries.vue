@@ -1,4 +1,4 @@
-<template >
+<template>
   <div id="flowsheet" role="table">
     <div class="columns is-mobile" id="flowsheetHeader" role="rowgroup">
       <div class="column is-1" role="columnheader">Info</div>
@@ -33,7 +33,7 @@
         >
           <!-- If playcut -->
           <div
-            v-if="playcut.entryType === 'playcut'"
+            v-if="playcut.entry_type === 'playcut'"
             class="playcut columns is-mobile"
           >
             <Button
@@ -42,6 +42,7 @@
               icon="pi pi-external-link"
               @click="[openModal(), getInfo($event)]"
             />
+            <i class="fa fa-align-justify handle"></i>
 
             <div class="column is-1" role="cell">
               {{ playcut.id }}
@@ -57,16 +58,16 @@
               <p v-else>𐄂</p>
             </div>
             <div class="song column" role="cell">
-              {{ playcut.songTitle }}
+              {{ playcut.song_title }}
             </div>
             <div class="artist column" role="cell">
-              {{ playcut.artistName }}
+              {{ playcut.artist_name }}
             </div>
             <div class="release column" role="cell">
-              {{ playcut.releaseTitle }}
+              {{ playcut.release_title }}
             </div>
             <div class="label column" role="cell">
-              {{ playcut.labelName }}
+              {{ playcut.label_name }}
             </div>
 
             <!-- should be EditModal with button inside that file -->
@@ -244,7 +245,7 @@ export default {
   background: #f4f4f4;
   border-radius: 10px;
 
-  dding: 1px;
+  /* padding: 1px; */
   cursor: pointer;
   color: #444;
   text-align: center;

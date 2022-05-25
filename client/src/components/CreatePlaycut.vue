@@ -7,7 +7,7 @@
 
   <!-- Searches WXYC Library -->
 
-  <div v-if="playcutType == 'WXYC Library'" class="playcutForm">
+  <div v-if="playcutType !== 'Rotation'" class="playcutForm">
     <AutoComplete
       class="inputSearch"
       id="release"
@@ -62,15 +62,15 @@
     >
     </AutoComplete>
 
-    <Checkbox name="request" v-model="requestSelected" :binary="true" />
-    <label for="request"></label>
+    <label for="request">Request</label>
+    <Checkbox name="request" value="request" v-model="requestSelected" />
+
+    <label for="rotation">Rotation</label>
+    <Checkbox name="rotation" value="rotation" v-model="rotationSelected" />
   </div>
 
   <!-- Searches Rotation DB -->
-  <div
-    v-if="(playcutType == 'Rotation') & (rotationSelected == true)"
-    class="playcutForm"
-  >
+  <div v-if="playcutType == 'Rotation'" class="playcutForm">
     <SelectButton
       id="rotationType"
       v-model="rotationType"
@@ -100,7 +100,7 @@
   </div>
 
   <!-- Searches outside server such as Discogs -->
-  <div v-if="playcutType == 'Other'" class="playcutForm">
+  <!-- <div v-if="playcutType == 'Other'" class="playcutForm">
     <AutoComplete
       class="inputSearch"
       id="artist"
@@ -146,7 +146,7 @@
       field="labelName"
     >
     </AutoComplete>
-  </div>
+  </div> -->
 
   <Button type="submit" label="Submit" @click="playcutCreate()"></Button>
 </template>
@@ -256,6 +256,10 @@ export default {
         }
       );
     },
+    /**
+     *
+     * @param {*} event - example event doc
+     */
     rotationDropdown(event) {
       this.demoRotationDB();
 

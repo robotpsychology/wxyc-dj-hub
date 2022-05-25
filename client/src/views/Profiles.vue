@@ -26,7 +26,7 @@ export default {
           dj_name: "tincan",
           show_completed: 10,
           position: "Station Manager",
-          avatar: "logo.png",
+          avatar: "cropped-icon-192x192.png",
         },
         {
           name: "Tommy Dang",

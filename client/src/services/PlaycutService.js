@@ -4,7 +4,7 @@ export async function getAllPlaycuts() {
     // This works because the vue.config.js file path was specified in the package.json file
     // const response = await fetch('/api/playcuts');
     // const response = await fetch('http://localhost:8055/items/flowsheet');
-    const response = await directus.items("flowsheet").readByQuery({ limit: -1, sort: "-sort" })
+    const response = await directus.items("flowsheet_entries").readByQuery({ limit: -1, sort: "-id" })
     return response.data;
 }
 

@@ -3,6 +3,9 @@
 # IGNORE SERVER FOR NOW
 /server
 
+# Ignore JSDOC Config
+jsdoc_config.json
+
 # dependencies
 node_modules
 /.pnp
