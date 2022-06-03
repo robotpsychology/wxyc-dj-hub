@@ -67,7 +67,6 @@ export default {
   playcutInfoService: null,
   created() {
     this.playcutInfoService = new playcutInfoService();
-
     this.columns = [
       { field: "id", header: "id" },
       { field: "rotation", header: "Rotation" },
@@ -154,30 +153,21 @@ export default {
       });
     },
     onRowReorder(event) {
-      console.log(event);
-      console.log(event.value[event.dragIndex].id);
-      console.log(event.value[event.dropIndex].id);
+      let currentID, newID, difference;
+      currentID = event.value[event.dropIndex].id;
 
-      // let currentID, newID, difference;
-      // currentID = parseInt(event.clone.dataset.id);
-      // console.log("original", currentID);
+      // if dragging an item from top down
+      if (event.dragIndex < event.dropIndex) {
+        newID = event.value[event.dropIndex - 1].id;
+      }
+      // If dragging an item from bottom up
+      else if (event.dragIndex > event.dropIndex) {
+        newID = event.value[event.dropIndex + 1].id;
+      }
 
-      // if (event.newIndex < event.oldIndex) {
-      //   difference = parseInt(event.oldIndex - event.newIndex);
-      //   console.log(difference, "difference");
-      //   newID = currentID + difference;
-      //   console.log(newID, "new");
-      // } else {
-      //   difference = parseInt(event.oldIndex - event.newIndex);
-      //   console.log(difference, "difference");
-      //   newID = currentID - Math.abs(difference);
-      //   console.log(newID, "new");
-      // }
-      // const payload = { currentID: currentID, newID: newID };
-      // this.$emit("swapChronOrderID", payload);
-      // this.swapChronOrderID(event);
+      const payload = { currentID: currentID, newID: newID };
+      this.$emit("swapChronOrderID", payload);
 
-      this.playcuts = event.value;
       // this.$toast.add({
       //   severity: "success",
       //   summary: "Rows Reordered",

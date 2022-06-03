@@ -4,7 +4,7 @@ export async function getAllPlaycuts() {
     // This works because the vue.config.js file path was specified in the package.json file
     // const response = await fetch('/api/playcuts');
     // const response = await fetch('http://localhost:8055/items/flowsheet');
-    const response = await directus.items("flowsheet_entries").readByQuery({ limit: -1, sort: "-id" })
+    const response = await directus.items("flowsheet_entries").readByQuery({ limit: -1, sort: "-sort" })
     return response.data;
 }
 
@@ -44,7 +44,7 @@ export async function swapChronOrderID(data) {
     //     body: JSON.stringify({ payload: data })
     // })
     // return await response.json();
-    const response = await directus.utils.sort('flowsheet', data.currentID, data.newID)
+    const response = await directus.utils.sort('flowsheet_entries', data.currentID, data.newID)
     // const response = await directus.items('flowsheet').updateOne(data.currentID, { id: data.newID })
     // const response_two = await directus.items('flowsheet').updateOne(data.newID, { id: data.currentID })
 
