@@ -1,141 +1,42 @@
+
+
 <template>
-  <div id="flowsheet" role="table">
-    <div class="columns is-mobile" id="flowsheetHeader" role="rowgroup">
-      <div class="column is-1" role="columnheader">Info</div>
-      <div class="column is-1" role="columnheader">ID</div>
-      <div class="column is-2" role="columnheader">Rotation</div>
-      <div class="column is-2" role="columnheader">Request</div>
-      <div class="column" role="columnheader">Song</div>
-      <div class="column" role="columnheader">Artist</div>
-      <div class="column" role="columnheader">Release</div>
-      <div class="column" role="columnheader">Label</div>
-    </div>
+  <div>
+    <Toast />
 
-    <div v-if="!playcuts.length" class="m-5">
-      <progress class="progress is-small is-primary" max="100">15%</progress>
-    </div>
-    <draggable
-      id="flowsheetBody"
-      role="rowgroup"
-      v-model="playcuts"
-      ghost-class="ghost"
-      @change=""
-      @end="swapChronOrderID"
+    <DataTable
+      :value="playcuts"
+      :reorderableColumns="true"
+      @columnReorder="onColReorder"
+      @row-reorder="onRowReorder"
+      responsiveLayout="scroll"
     >
-      <transition-group type="transition" name="flip-list">
-        <div
-          class="playcut column is-mobile mt-2 mb-2"
-          role="row"
-          v-for="playcut in playcuts"
-          :data-id="playcut.id"
-          :key="playcut.chronOrderID"
-          @dblclick="editEntry"
-        >
-          <!-- If playcut -->
-          <div
-            v-if="playcut.entry_type === 'playcut'"
-            class="playcut columns is-mobile"
-          >
-            <Button
-              label="Info"
-              class="info-button"
-              icon="pi pi-external-link"
-              @click="[openModal(), getInfo($event)]"
-            />
-            <i class="fa fa-align-justify handle"></i>
-
-            <div class="column is-1" role="cell">
-              {{ playcut.id }}
-            </div>
-            <div class="rotation column is-2" role="cell">
-              <!-- {{ playcut.playcut.rotation }} -->
-              <p v-if="playcut.rotation == 'true'">✓</p>
-              <p v-else>𐄂</p>
-            </div>
-            <div class="request column is-2" role="cell">
-              <!-- {{ playcut.playcut.request }} -->
-              <p v-if="playcut.request == 'true'">✓</p>
-              <p v-else>𐄂</p>
-            </div>
-            <div class="song column" role="cell">
-              {{ playcut.song_title }}
-            </div>
-            <div class="artist column" role="cell">
-              {{ playcut.artist_name }}
-            </div>
-            <div class="release column" role="cell">
-              {{ playcut.release_title }}
-            </div>
-            <div class="label column" role="cell">
-              {{ playcut.label_name }}
-            </div>
-
-            <!-- should be EditModal with button inside that file -->
-            <Button
-              label="Edit"
-              class=""
-              icon="pi"
-              @click="editPlaycut($event)"
-            />
-
-            <Button
-              label="Delete"
-              class=""
-              icon="pi"
-              @click="deletePlaycut(playcut._id)"
-            />
-          </div>
-
-          <!-- If talkset -->
-          <div
-            v-if="playcut.entryType === 'talkset'"
-            class="playcut column is-mobile has-text-centered"
-          >
-            <div class="talkset" role="cell">TALKSET</div>
-          </div>
-
-          <!-- If breapoint -->
-          <div
-            v-if="playcut.entryType === 'breakpoint'"
-            class="playcut column is-mobile"
-          >
-            <div class="breakpoint" role="cell">
-              BREAKPOINT -- Hour: {{ playcut.hour }}
-            </div>
-          </div>
-        </div>
-      </transition-group>
-    </draggable>
-    <!-- Maybe need to move modals into its own component but I don't think so. -->
-
-    <Dialog
-      :header="currentPlaycutArtist"
-      :visible="displayModal"
-      :style="{ width: '50vw' }"
-      :modal="true"
-      :dismissableMask="true"
-    >
-      <p class="m-0">
-        {{ playcutInfo.profile }}
-      </p>
-      <template #footer>
-        <!-- <Button
-        label="No"
-        icon="pi pi-times"
-        @click="closeModal"
-        class="p-button-text"
+      <Column
+        :rowReorder="true"
+        headerStyle="width: 3rem"
+        :reorderableColumn="false"
       />
-      <Button label="Yes" icon="pi pi-check" @click="closeModal" autofocus /> -->
-      </template>
-    </Dialog>
+      <Column
+        v-for="col of columns"
+        :field="col.field"
+        :header="col.header"
+        :key="col.field"
+      ></Column>
+    </DataTable>
   </div>
 </template>
+ 
+
+
  
 <script>
 import { VueDraggableNext } from "vue-draggable-next";
 
 import Dialog from "primevue/dialog";
 import Button from "primevue/button";
+import DataTable from "primevue/datatable";
+import Column from "primevue/column";
+import Toast from "primevue/toast";
 
 import playcutInfoService from "../services/playcutInfoService";
 
@@ -145,12 +46,16 @@ export default {
     draggable: VueDraggableNext,
     Dialog,
     Button,
+    DataTable,
+    Column,
+    Toast,
   },
   props: ["playcuts"],
   data() {
     return {
       enabled: true,
       // playcuts: [],
+      columns: null,
       dragging: false,
       oldIndex: null,
       newIndex: null,
@@ -162,6 +67,16 @@ export default {
   playcutInfoService: null,
   created() {
     this.playcutInfoService = new playcutInfoService();
+
+    this.columns = [
+      { field: "id", header: "id" },
+      { field: "rotation", header: "Rotation" },
+      { field: "request", header: "Request" },
+      { field: "artist_name", header: "Artist" },
+      { field: "song_title", header: "Song" },
+      { field: "release_title", header: "Release" },
+      { field: "label_name", header: "Label" },
+    ];
   },
   mounted() {
     // this.getAllPlaycuts();
@@ -230,6 +145,44 @@ export default {
     },
     editPlaycut(data) {
       this.$emit("editPlaycut", data);
+    },
+    onColReorder() {
+      this.$toast.add({
+        severity: "success",
+        summary: "Column Reordered",
+        life: 3000,
+      });
+    },
+    onRowReorder(event) {
+      console.log(event);
+      console.log(event.value[event.dragIndex].id);
+      console.log(event.value[event.dropIndex].id);
+
+      // let currentID, newID, difference;
+      // currentID = parseInt(event.clone.dataset.id);
+      // console.log("original", currentID);
+
+      // if (event.newIndex < event.oldIndex) {
+      //   difference = parseInt(event.oldIndex - event.newIndex);
+      //   console.log(difference, "difference");
+      //   newID = currentID + difference;
+      //   console.log(newID, "new");
+      // } else {
+      //   difference = parseInt(event.oldIndex - event.newIndex);
+      //   console.log(difference, "difference");
+      //   newID = currentID - Math.abs(difference);
+      //   console.log(newID, "new");
+      // }
+      // const payload = { currentID: currentID, newID: newID };
+      // this.$emit("swapChronOrderID", payload);
+      // this.swapChronOrderID(event);
+
+      this.playcuts = event.value;
+      // this.$toast.add({
+      //   severity: "success",
+      //   summary: "Rows Reordered",
+      //   life: 3000,
+      // });
     },
   },
 };
