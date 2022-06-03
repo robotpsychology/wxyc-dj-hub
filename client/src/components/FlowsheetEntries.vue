@@ -241,14 +241,21 @@ export default {
   text-align: center;
 }
 
+#flowsheetHeader,
+.playcut {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .playcut {
   background: #f4f4f4;
   border-radius: 10px;
 
   /* padding: 1px; */
-  cursor: pointer;
-  color: #444;
-  text-align: center;
+  /* cursor: pointer; */
+  /* color: #444; */
+  /* text-align: center; */
 }
 
 info-button {
