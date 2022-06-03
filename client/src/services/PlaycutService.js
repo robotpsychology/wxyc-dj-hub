@@ -47,12 +47,4 @@ export async function swapChronOrderID(data) {
     const response = await directus.utils.sort('flowsheet_entries', data.currentID, data.newID)
     // const response = await directus.items('flowsheet').updateOne(data.currentID, { id: data.newID })
     // const response_two = await directus.items('flowsheet').updateOne(data.newID, { id: data.currentID })
-
-    console.log(response)
-    // console.log(response_two)
-    // return response
-
-    // console.log(data, 'gigih')
-
-
 }

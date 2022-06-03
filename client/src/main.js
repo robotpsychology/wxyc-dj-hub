@@ -16,6 +16,7 @@ import SelectButton from "primevue/selectbutton"
 import Dialog from "primevue/dialog"
 import Button from "primevue/button"
 import Menubar from "primevue/menubar"
+import ToastService from "primevue/toastservice"
 
 
 import "primevue/resources/themes/saga-blue/theme.css" //theme
@@ -25,7 +26,10 @@ import "primeicons/primeicons.css" //icons
 
 
 const app = createApp(App)
-app.use(PrimeVue).use(router).use(createPinia())
+app.use(PrimeVue)
+app.use(router)
+app.use(createPinia())
+app.use(ToastService)
 // .use(store)
 
 app.component("AutoComplete", AutoComplete)

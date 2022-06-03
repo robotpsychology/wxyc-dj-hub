@@ -168,11 +168,11 @@ export default {
       const payload = { currentID: currentID, newID: newID };
       this.$emit("swapChronOrderID", payload);
 
-      // this.$toast.add({
-      //   severity: "success",
-      //   summary: "Rows Reordered",
-      //   life: 3000,
-      // });
+      this.$toast.add({
+        severity: "success",
+        summary: "Rows Reordered",
+        life: 3000,
+      });
     },
   },
 };
