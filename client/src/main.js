@@ -15,6 +15,8 @@ import SelectButton from "primevue/selectbutton"
 import Dialog from "primevue/dialog"
 import Button from "primevue/button"
 import Menubar from "primevue/menubar"
+import Dropdown from "primevue/dropdown"
+import Textarea from "primevue/textarea"
 
 
 import "primevue/resources/themes/saga-blue/theme.css" //theme
@@ -34,6 +36,7 @@ app.component("SelectButton", SelectButton)
 app.component("Dialog", Dialog)
 app.component("Button", Button)
 app.component("Menubar", Menubar)
+app.component("Dropdown", Dropdown)
 
 
 app.mount("#app")
