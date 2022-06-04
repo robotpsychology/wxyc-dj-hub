@@ -1,5 +1,3 @@
-
-
 <template>
   <div>
     <Toast />
@@ -27,8 +25,6 @@
 </template>
  
 
-
- 
 <script>
 import { VueDraggableNext } from "vue-draggable-next";
 
@@ -38,7 +34,14 @@ import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import Toast from "primevue/toast";
 
-import playcutInfoService from "../services/playcutInfoService";
+import songInfoService from "../services/songInfo.service";
+
+import {
+  getAllPlaycuts,
+  deletePlaycut,
+  editPlaycut,
+  swapSortID,
+} from "../services/flowsheet.service";
 
 export default {
   name: "FlowsheetEntries",
@@ -64,9 +67,9 @@ export default {
       currentPlaycutArtist: null,
     };
   },
-  playcutInfoService: null,
+  songInfoService: null,
   created() {
-    this.playcutInfoService = new playcutInfoService();
+    this.songInfoService = new songInfoService();
     this.columns = [
       { field: "id", header: "id" },
       { field: "rotation", header: "Rotation" },
@@ -78,45 +81,15 @@ export default {
     ];
   },
   mounted() {
-    // this.getAllPlaycuts();
+    this.$emit("getAllPlaycuts");
   },
   methods: {
-    swapChronOrderID(event) {
-      // This sets the oldChronOrderID in a temp variable.
-      // Then it grabs the newChronOrderID from the index it's being moved to.
-      // The item being affected is asigned the old ID and
-      // The dragged item at its new index is assigned the new ID
-
-      if (event.newIndex !== event.oldIndex) {
-        // if newIndex is less than the oldIndex, the ID increases
-        // if newIndex is greater than the oldIndex, the ID decreases
-
-        let currentID, newID, difference;
-        currentID = parseInt(event.clone.dataset.id);
-        console.log("original", currentID);
-
-        if (event.newIndex < event.oldIndex) {
-          difference = parseInt(event.oldIndex - event.newIndex);
-          console.log(difference, "difference");
-          newID = currentID + difference;
-          console.log(newID, "new");
-        } else {
-          difference = parseInt(event.oldIndex - event.newIndex);
-          console.log(difference, "difference");
-          newID = currentID - Math.abs(difference);
-          console.log(newID, "new");
-        }
-        const payload = { currentID: currentID, newID: newID };
-        this.$emit("swapChronOrderID", payload);
-      }
+    getAllPlaycuts() {
+      getAllPlaycuts().then((response) => {
+        // console.log(response);
+        this.playcuts = response;
+      });
     },
-    // swapChronOrderID(event) {
-    //   console.log(event);
-    //   let id = parseInt(event.clone.dataset.id);
-    //   console.log(id)
-    //   console.log(event.from.childNodes)
-    //   this.$emit("swapChronOrderID", id);
-    // },
     editEntry(event) {
       console.log(event.target);
       if (event.target.tagName != "BUTTON") {
@@ -133,17 +106,21 @@ export default {
       console.log(event.target);
 
       this.currentPlaycutArtist = artistName;
-      this.playcutInfo = await this.playcutInfoService.getArtistData(
-        artistName
-      );
+      this.playcutInfo = await this.songInfoService.getArtistData(artistName);
       console.log(this.playcutInfo);
     },
     // new stuff
     deletePlaycut(playcutId) {
-      this.$emit("deletePlaycut", playcutId);
+      deletePlaycut(playcutId).then((response) => {
+        // console.log(response);
+        this.$emit("getAllPlaycuts");
+      });
     },
     editPlaycut(data) {
-      this.$emit("editPlaycut", data);
+      editPlaycut(playcut).then((res) => {
+        // console.log(res);
+        this.$emit("getAllPlaycuts");
+      });
     },
     onColReorder() {
       this.$toast.add({
@@ -152,7 +129,7 @@ export default {
         life: 3000,
       });
     },
-    onRowReorder(event) {
+    async onRowReorder(event) {
       let currentID, newID, difference;
       currentID = event.value[event.dropIndex].id;
 
@@ -166,13 +143,15 @@ export default {
       }
 
       const payload = { currentID: currentID, newID: newID };
-      this.$emit("swapChronOrderID", payload);
+      await swapSortID(payload).then((res) => {
+        this.$emit("getAllPlaycuts");
+      });
 
-      // this.$toast.add({
-      //   severity: "success",
-      //   summary: "Rows Reordered",
-      //   life: 3000,
-      // });
+      this.$toast.add({
+        severity: "success",
+        summary: "Rows Reordered",
+        life: 3000,
+      });
     },
   },
 };
