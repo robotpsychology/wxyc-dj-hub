@@ -370,14 +370,13 @@ export default {
       });
 
       const payload = {
-        chronOrderID: chronOrderID,
         rotation: this.rotationSelected,
         request: this.requestSelected,
-        song: this.songSelected,
-        label: this.labelSelected,
-        artist: this.artistSelected,
-        release: this.releaseSelected,
-        entryType: "playcut",
+        song_title: this.songSelected,
+        label_name: this.labelSelected,
+        artist_name: this.artistSelected,
+        release_title: this.releaseSelected,
+        entry_type: "playcut",
       };
 
       this.$emit("createPlaycut", payload);
