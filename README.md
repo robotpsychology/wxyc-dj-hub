@@ -27,32 +27,31 @@
 
 
 <!-- PROJECT LOGO -->
-<br />
-<div align="center">
+<!-- <br /> -->
+<!-- <div align="center">
   <a href="https://github.com/robotpsychology/wxyc-dj-hub">
-    <img src="readme_images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+    <img src="readme/logo.png" alt="Logo" width="80" height="80">
+  </a> -->
 
 <h3 align="center">WXYC DJ Hub</h3>
 
   <p align="center">
     A new flowsheet for WXYC, built on Vue.js.
     <br />
-    <a href="https://github.com/robotpsychology/wxyc-dj-hub"><strong>Explore the docs »</strong></a>
+<!--     <a href="https://github.com/robotpsychology/wxyc-dj-hub"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/robotpsychology/wxyc-dj-hub">View Demo</a>
-    ·
-    <a href="https://github.com/robotpsychology/wxyc-dj-hub/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/robotpsychology/wxyc-dj-hub/issues">Request Feature</a>
+    · -->
+    <a href="https://github.com/robotpsychology/wxyc-dj-hub/issues">Report Bug / Request Feature</a>
+
   </p>
 </div>
 
 
 
 <!-- TABLE OF CONTENTS -->
-<details>
+<!-- <details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -75,18 +74,29 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
-</details>
+</details> -->
 
 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<p>This project is under construction.</p>
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<p>The purpose of this project is to revamp the current playlist logging infrastructure at WXYC-Chapel Hill 89.3FM. The project will also serve as an educational resource for other WXYC members to contribute to and improve the systems they work with on a regular basis. The frontend portion of the project will remain open-source, with a private database. Using Directus, one can easily mirror many DB systems.
+</p>
 
+### Features
+
+* New flowsheet (playlist logger) that ensures a clean data pipeline to our external API with drag and drop, entry search and autofill, quicker load times, and single-page editing.
+* Allow users to report station equipment issues and request new music for rotation.
+* Provide user profiles to easily reference shows to DJs and provide user stats.
+* Provide a localized area for station resources such as PDF manuals and station tutorial videos.
+
+<h3 align="left">Progress Screenshot as of 06/04/2022</h3>
+
+![WXYC DJ Hub Progress Screen Shot][product-screenshot]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 ### Built With
@@ -105,7 +115,8 @@
 ### Prerequisites
 
 You'll need node and npm installed.
-[Node](https://nodejs.dev/learn/how-to-install-nodejs)
+
+* [Node Install](https://nodejs.dev/learn/how-to-install-nodejs)
 * npm
   ```sh
   npm install npm@latest -g
@@ -117,10 +128,16 @@ You'll need node and npm installed.
    ```sh
    git clone https://github.com/robotpsychology/wxyc-dj-hub.git
    ```
-2. Install NPM packages
+2. Open two terminals, install NPM packages, and run each npm script
    ```sh
    cd client
    npm install
+   npm run client
+   ```
+   ```sh
+   cd server
+   npm install
+   npm run server
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -128,7 +145,7 @@ You'll need node and npm installed.
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+<!-- ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
@@ -136,10 +153,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
+ -->
 
 <!-- ROADMAP -->
-## Roadmap
+<!-- ## Roadmap
 
 - [ ] Feature 1
 - [ ] Feature 2
@@ -149,7 +166,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
+ -->
 
 
 <!-- CONTRIBUTING -->
@@ -180,18 +197,18 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 <!-- CONTACT -->
-## Contact
+<!-- ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Ali Alrabeah - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
 
 Project Link: [https://github.com/robotpsychology/wxyc-dj-hub](https://github.com/robotpsychology/wxyc-dj-hub)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">back to top</a>)</p> -->
 
 
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+<!-- ## Acknowledgments
 
 * []()
 * []()
@@ -200,7 +217,7 @@ Project Link: [https://github.com/robotpsychology/wxyc-dj-hub](https://github.co
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
+ -->
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/robotpsychology/wxyc-dj-hub.svg?style=for-the-badge
@@ -215,4 +232,4 @@ Project Link: [https://github.com/robotpsychology/wxyc-dj-hub](https://github.co
 [license-url]: https://github.com/robotpsychology/wxyc-dj-hub/blob/master/LICENSE.txt
 <!-- [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username -->
-[product-screenshot]: readme_images/screenshot.png
+[product-screenshot]: readme/screenshot.png
