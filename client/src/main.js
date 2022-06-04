@@ -1,3 +1,11 @@
+/**
+ * @file main.js is the root file for the Vue.js setup
+ * @author robotpsychology (Ali Alrabeah)
+ * @see <a href="https://github.com/robotpsychology/wxyc-dj-hub">WXYC DJ Hub Repo</a>
+ * @license MIT
+ * @description Import the necessary modules from Vue, Primevue, etc. Create an app instance in Vue. Instantiate app components.
+ */
+
 import { createApp } from "vue"
 import Vue from "vue"
 import { createPinia } from 'pinia'
