@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div id="flowsheet">
     <!-- <AutoComplete
       v-model="selectedArtist"
       :suggestions="filteredArtists"
@@ -9,9 +9,9 @@
     <FlowsheetEntries
       v-if="playcuts.length > 0"
       :playcuts="playcuts"
-      @deletePlaycut="playcutDelete($event)"
+      @getAllPlaycuts="getAllPlaycuts"
       @editPlaycut="playcutEdit($event)"
-      @swapChronOrderID="swapChronOrderID($event)"
+      @swapSortID="swapSortID($event)"
     ></FlowsheetEntries>
   </div>
 </template>
@@ -26,11 +26,11 @@ import {
   createPlaycut,
   deletePlaycut,
   editPlaycut,
-  swapChronOrderID,
-} from "../services/PlaycutService";
+  swapSortID,
+} from "../services/flowsheet.service";
 
 export default {
-  name: "Home",
+  name: "Flowsheet",
   components: {
     FlowsheetEntries,
     CreatePlaycut,
@@ -54,34 +54,6 @@ export default {
         this.getAllPlaycuts();
       });
     },
-    playcutDelete(playcutId) {
-      deletePlaycut(playcutId).then((response) => {
-        // console.log(response);
-        this.getAllPlaycuts();
-      });
-    },
-    playcutEdit(playcut) {
-      editPlaycut(playcut).then((res) => {
-        // console.log(res);
-        this.getAllPlaycuts();
-      });
-    },
-    playcutEditMultiple(playcutArr) {
-      for (let i = 0; i < playcutArr.length; i++) {
-        let playcut = playcutArr[i];
-        console.log(playcut);
-        editPlaycut(playcut).then((res) => {
-          console.log(res, "hi");
-        });
-      }
-      this.getAllPlaycuts();
-    },
-    swapChronOrderID(data) {
-      console.log(data);
-      swapChronOrderID(data).then((res) => {
-        this.getAllPlaycuts();
-      });
-    },
   },
   mounted() {
     this.getAllPlaycuts();
@@ -91,11 +63,6 @@ export default {
 
 <style>
 #flowsheet {
-  word-break: break-word !important;
-}
-
-.column {
-  word-break: break-word !important;
 }
 
 #flowsheet div {

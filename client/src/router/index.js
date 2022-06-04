@@ -5,7 +5,7 @@ import Login from "../components/Login.vue"
 import Register from "../components/Register.vue"
 import Account from "../views/Account.vue"
 
-import Home from "../views/Home.vue";
+import Flowsheet from "../views/Flowsheet.vue";
 import About from "../views/About.vue"
 import Reports from "../views/Reports.vue"
 import Requests from "../views/Requests.vue"
@@ -20,8 +20,8 @@ const routes = [
   // },
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "Flowsheet",
+    component: Flowsheet,
   },
   {
     path: "/register",

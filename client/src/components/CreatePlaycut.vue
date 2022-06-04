@@ -63,10 +63,15 @@
     </AutoComplete>
 
     <label for="request">Request</label>
-    <Checkbox name="request" value="request" v-model="requestSelected" />
+    <Checkbox name="request" value="request" v-model="requestSelected" binary />
 
     <label for="rotation">Rotation</label>
-    <Checkbox name="rotation" value="rotation" v-model="rotationSelected" />
+    <Checkbox
+      name="rotation"
+      value="rotation"
+      v-model="rotationSelected"
+      binary
+    />
   </div>
 
   <!-- Searches Rotation DB -->
@@ -160,7 +165,10 @@ import Checkbox from "primevue/checkbox";
 
 import LibraryService from "../services/LibraryService";
 
-import { createPlaycut, getLastChronOrderID } from "../services/PlaycutService";
+import {
+  createPlaycut,
+  getLastChronOrderID,
+} from "../services/flowsheet.service";
 
 export default {
   name: "AddPlaycutForms",
@@ -365,19 +373,14 @@ export default {
     },
     // new stuff
     async playcutCreate() {
-      const chronOrderID = await getLastChronOrderID().then((response) => {
-        return response[0].chronOrderID + 1;
-      });
-
       const payload = {
-        chronOrderID: chronOrderID,
         rotation: this.rotationSelected,
         request: this.requestSelected,
-        song: this.songSelected,
-        label: this.labelSelected,
-        artist: this.artistSelected,
-        release: this.releaseSelected,
-        entryType: "playcut",
+        song_title: this.songSelected,
+        label_name: this.labelSelected,
+        artist_name: this.artistSelected,
+        release_title: this.releaseSelected,
+        entry_type: "playcut",
       };
 
       this.$emit("createPlaycut", payload);
@@ -386,6 +389,7 @@ export default {
     },
     clearForm() {
       this.requestSelected = false;
+      this.rotationSelected = false;
       this.songSelected = "";
       this.labelSelected = "";
       this.artistSelected = "";
