@@ -1,8 +1,9 @@
 <template>
   <Menubar :model="items">
     <template #start>
-      <router-link to="/">
-        <img alt="WXYC Logo" src="../assets/cropped-icon-32x32.png" />
+      <router-link to="/" id="WXYCLogo">
+        <WXYCLogoVue></WXYCLogoVue>
+        <!-- <img alt="WXYC Logo" src="../assets/cropped-icon-32x32.png" /> -->
       </router-link>
     </template>
 
@@ -25,10 +26,10 @@
 
 <script>
 import Menubar from "primevue/menubar";
-
+import WXYCLogoVue from "../components/WXYCLogo.vue";
 export default {
   name: "Header",
-  components: { Menubar },
+  components: { Menubar, WXYCLogoVue },
   data() {
     return {
       items: [
@@ -108,3 +109,10 @@ export default {
   },
 };
 </script>
+
+<style>
+#WXYCLogo {
+  text-decoration: none;
+  color: inherit;
+}
+</style>

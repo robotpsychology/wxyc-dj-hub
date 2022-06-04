@@ -26,7 +26,7 @@
 import Card from "primevue/card";
 
 export default {
-  name: "Register",
+  name: "ProfileCard",
   components: { Card },
   props: ["user"],
   data() {

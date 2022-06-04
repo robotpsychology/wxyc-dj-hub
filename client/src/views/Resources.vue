@@ -12,12 +12,6 @@
         alt=""
         async="on"
       />
-      <!-- <div
-        class="image-div"
-        :style="{
-          backgroundImage: `url(localhost:8055/assets/${file.filename_disk}/?fit=cover&width=200&height=200&quality=80)`,
-        }"
-      ></div> -->
     </div>
   </div>
 </template>
@@ -41,9 +35,5 @@ export default {
 
 <style>
 img {
-}
-
-.image-div {
-  background-image: url();
 }
 </style>
