@@ -48,6 +48,16 @@ export default {
           to: "/requests",
         },
         {
+          label: "Resources",
+          icon: "pi pi-folder",
+          to: "/Resources",
+        },
+        {
+          label: "Requests",
+          icon: "pi pi-check-circle",
+          to: "/requests",
+        },
+        {
           label: "Profiles",
           icon: "pi pi-user",
           to: "/profiles",
