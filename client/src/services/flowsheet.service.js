@@ -1,7 +1,15 @@
+/**
+ * @file flowsheet.service.js is the service file for the Directus API calls relevant View/Flowsheet.vue and Component/FlowsheetEntries.vue.
+ * @author robotpsychology (Ali Alrabeah)
+ */
 import { directus } from "./directus";
 
 const table_name = "flowsheet_entries"
 
+/**
+ * 
+ * @returns 
+ */
 export async function getAllPlaycuts() {
     // This works because the vue.config.js file path was specified in the package.json file
     // const response = await fetch('/api/playcuts');
