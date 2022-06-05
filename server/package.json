@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "npx directus start"
+    "server": "npx directus start",
+    "start": "npx directus start"
   },
   "keywords": [],
   "author": "",
