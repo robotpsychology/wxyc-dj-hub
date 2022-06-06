@@ -14,12 +14,30 @@
         headerStyle="width: 3rem"
         :reorderableColumn="false"
       />
-      <Column
+
+      <!-- <Column
         v-for="col of columns"
         :field="col.field"
         :header="col.header"
         :key="col.field"
-      ></Column>
+      ></Column> -->
+      <Column field="id" header="id"></Column>
+      <Column field="rotation" header="Rotation">
+        <template #body="slotProps">
+          <span v-if="slotProps.data.rotation === true">&#10003;</span>
+          <span v-else-if="slotProps.data.rotation === false">&#65794;</span>
+        </template></Column
+      >
+      <Column field="request" header="Request">
+        <template #body="slotProps">
+          <span v-if="slotProps.data.request === true">&#10003;</span>
+          <span v-else-if="slotProps.data.request === false">&#65794;</span>
+        </template>
+      </Column>
+      <Column field="artist_name" header="Artist"></Column>
+      <Column field="song_title" header="Song"></Column>
+      <Column field="release_title" header="Release"></Column>
+      <Column field="label_name" header="Label"></Column>
     </DataTable>
   </div>
 </template>
