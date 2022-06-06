@@ -6,7 +6,7 @@
         <div>file id: {{ file.id }}</div>
         <img
           :src="
-            '//localhost:8055/assets/' +
+            DIRECTUS_URI +
             file.filename_disk +
             '?fit=outside&width=100&height=100&quality=80'
           "
@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { DIRECTUS_URI } from "../config/dev.env";
 import { getAllResources } from "../services/resources.service";
 export default {
   name: "Resources",
