@@ -1,7 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # IGNORE SERVER FOR NOW
-/server
+./server
+
+**/.env
+
 
 # Ignore JSDOC Config
 jsdoc_config.json
