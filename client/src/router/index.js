@@ -63,12 +63,6 @@ const routes = [
     name: "Profiles",
     component: Profiles,
     meta: { requiresAuth: true }
-  },
-  {
-    path: "/love_wall",
-    name: "Love Wall",
-    component: Love_Wall,
-    meta: { requiresAuth: true },
     // beforeEnter: (to, from, next) => {
     //   if (store.state.authenticated == false) {
     //     next(false);
@@ -77,7 +71,6 @@ const routes = [
     //     console.log('not allowed')
     //   }
     // }
-
   },
   {
     path: "/about",
