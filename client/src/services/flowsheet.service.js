@@ -25,9 +25,9 @@ export async function createPlaycut(data) {
     return response, update
 }
 
-export async function deletePlaycut(playcutId) {
-    // const response = await fetch(`/api/playcut/${playcutId}`, { method: 'DELETE' })
-    // return await response.json();
+export async function deletePlaycut(playcutID) {
+    const response = await directus.items(table_name).deleteOne(playcutID)
+    return response
 }
 
 export async function editPlaycut(data) {

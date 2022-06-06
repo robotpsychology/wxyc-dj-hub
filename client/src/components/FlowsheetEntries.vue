@@ -34,11 +34,11 @@
           <span v-else-if="slotProps.data.request === false">&#65794;</span>
         </template>
       </Column>
+
       <Column field="artist_name" header="Artist"></Column>
       <Column field="song_title" header="Song"></Column>
       <Column field="release_title" header="Release"></Column>
       <Column field="label_name" header="Label"></Column>
-      ></Column>
 
       <Column :exportable="false" header="Functions" style="min-width: 4rem">
         <template #body="slotProps">
@@ -52,24 +52,54 @@
             id="editButton"
             icon="pi pi-pencil"
             class="p-button-rounded p-button-success mr-2"
-            @click="editEntry(slotProps.data)"
+            @click="editPlaycut(slotProps.data)"
           />
           <Button
             id="deleteButton"
             icon="pi pi-trash"
             class="p-button-rounded p-button-warning"
-            @click="deleteEntry(slotProps.data)"
+            @click="confirmDeleteProduct(slotProps.data)"
           />
         </template>
       </Column>
     </DataTable>
+
+    <!-- Delete button dialog -->
+    <Dialog
+      :visible="deletePlaycutDialog"
+      :style="{ width: '450px' }"
+      header="Confirm"
+      :modal="true"
+      @update:visible="deletePlaycutDialog = false"
+    >
+      <div class="confirmation-content">
+        <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem" />
+        <span v-if="playcutToDelete">
+          Are you sure you want to delete <b>{{ playcutToDelete.id }}</b
+          >?</span
+        >
+      </div>
+      <template #footer>
+        <Button
+          label="No"
+          icon="pi pi-times"
+          class="p-button-text"
+          @click="deletePlaycutDialog = false"
+        />
+        <Button
+          label="Yes"
+          icon="pi pi-check"
+          class="p-button-text"
+          @click="deleteEntry"
+          autofocus
+        />
+      </template>
+    </Dialog>
   </div>
 </template>
  
 
 <script>
-import { VueDraggableNext } from "vue-draggable-next";
-
 import Dialog from "primevue/dialog";
 import Button from "primevue/button";
 import DataTable from "primevue/datatable";
@@ -87,7 +117,6 @@ import {
 export default {
   name: "FlowsheetEntries",
   components: {
-    draggable: VueDraggableNext,
     Dialog,
     Button,
     DataTable,
@@ -97,29 +126,14 @@ export default {
   props: ["playcuts"],
   data() {
     return {
-      enabled: true,
       // playcuts: [],
-      columns: null,
-      dragging: false,
-      oldIndex: null,
-      newIndex: null,
-      displayModal: false,
-      playcutInfo: "hello",
-      currentPlaycutArtist: null,
+      deletePlaycutDialog: false,
+      playcutToDelete: {},
     };
   },
   songInfoService: null,
   created() {
     this.songInfoService = new songInfoService();
-    this.columns = [
-      { field: "id", header: "id" },
-      { field: "rotation", header: "Rotation" },
-      { field: "request", header: "Request" },
-      { field: "artist_name", header: "Artist" },
-      { field: "song_title", header: "Song" },
-      { field: "release_title", header: "Release" },
-      { field: "label_name", header: "Label" },
-    ];
   },
   mounted() {
     this.$emit("getAllPlaycuts");
@@ -128,11 +142,25 @@ export default {
     getEntryInfo(data) {
       console.log(data);
     },
-    editEntry(data) {
-      console.log(data);
+
+    confirmDeleteProduct(playcut) {
+      this.deletePlaycutDialog = true;
+      this.playcutToDelete = playcut;
     },
-    deleteEntry(data) {
-      console.log(data);
+    async deleteEntry() {
+      this.deletePlaycutDialog = false;
+      await deletePlaycut(this.playcutToDelete.id).then((response) => {
+        // console.log(response);
+        this.$emit("getAllPlaycuts");
+      });
+      this.$toast.add({
+        severity: "success",
+        summary: "Successful",
+        detail: "Playcut Deleted",
+        life: 3000,
+      });
+
+      this.playcutToDelete = {};
     },
 
     editEntry(event) {
@@ -141,13 +169,7 @@ export default {
         console.log(event);
       }
     },
-    deletePlaycut(playcutId) {
-      deletePlaycut(playcutId).then((response) => {
-        // console.log(response);
-        this.$emit("getAllPlaycuts");
-      });
-    },
-    editPlaycut(data) {
+    editPlaycut(playcut) {
       editPlaycut(playcut).then((res) => {
         // console.log(res);
         this.$emit("getAllPlaycuts");
