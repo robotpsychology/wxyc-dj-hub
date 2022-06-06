@@ -3,7 +3,7 @@
     <div>Resources</div>
     <div id="server_content">
       <div v-for="file in files">
-        <div>file id: {{ file.id }}</div>
+        <div>file title: {{ file.title }}</div>
         <img
           :src="
             '//localhost:8055/assets/' +
@@ -16,6 +16,7 @@
       </div>
     </div>
 
+    <h3>Look, PSAs</h3>
     <iframe
       src="https://docs.google.com/presentation/d/e/2PACX-1vSKBCAdW2n3DKri-b9bVZVsfGcnQzaWiBz3vNX4pCaa0cPxL-bchoA1GEz4xqvbCeDFfjV5nGt6H6PD/embed?start=false&loop=false&delayms=60000"
       frameborder="0"

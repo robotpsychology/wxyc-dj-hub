@@ -7,7 +7,7 @@
 
   <!-- Searches WXYC Library -->
 
-  <div v-if="playcutType !== 'Rotation'" class="playcutForm">
+  <div v-if="playcutType !== 'Rotation'" id="playcutForm">
     <AutoComplete
       class="inputSearch"
       id="release"
@@ -62,20 +62,29 @@
     >
     </AutoComplete>
 
-    <label for="request">Request</label>
-    <Checkbox name="request" value="request" v-model="requestSelected" binary />
+    <span id="requestCheck">
+      <label for="request">Request</label>
+      <Checkbox
+        name="request"
+        value="Request"
+        v-model="requestSelected"
+        binary
+      />
+    </span>
 
-    <label for="rotation">Rotation</label>
-    <Checkbox
-      name="rotation"
-      value="rotation"
-      v-model="rotationSelected"
-      binary
-    />
+    <span id="rotationCheck">
+      <label for="rotation">Rotation</label>
+      <Checkbox
+        name="rotation"
+        value="rotation"
+        v-model="rotationSelected"
+        binary
+      />
+    </span>
   </div>
 
   <!-- Searches Rotation DB -->
-  <div v-if="playcutType == 'Rotation'" class="playcutForm">
+  <div v-if="playcutType == 'Rotation'" id="playcutForm">
     <SelectButton
       id="rotationType"
       v-model="rotationType"
@@ -104,55 +113,7 @@
     </AutoComplete>
   </div>
 
-  <!-- Searches outside server such as Discogs -->
-  <!-- <div v-if="playcutType == 'Other'" class="playcutForm">
-    <AutoComplete
-      class="inputSearch"
-      id="artist"
-      v-model="artistSelected"
-      :suggestions="filteredArtists"
-      @complete="search($event)"
-      placeholder="Artist"
-      field="artistName"
-    >
-    </AutoComplete>
-
-    <AutoComplete
-      class="inputSearch"
-      id="song"
-      v-model="songSelected"
-      :suggestions="filteredSongs"
-      @complete="search($event)"
-      @item-select="songSelect($event)"
-      placeholder="Song"
-      field="songTitle"
-    >
-    </AutoComplete>
-
-    <AutoComplete
-      class="inputSearch"
-      id="release"
-      v-model="releaseSelected"
-      :suggestions="filteredReleases"
-      @complete="searchRelease($event)"
-      placeholder="Release"
-      field="releaseTitle"
-    >
-    </AutoComplete>
-
-    <AutoComplete
-      class="inputSearch"
-      id="label"
-      v-model="labelSelected"
-      :suggestions="filteredLabels"
-      @complete="searchLabel($event)"
-      @item-select="labelSelect($event)"
-      placeholder="Label"
-      field="labelName"
-    >
-    </AutoComplete>
-  </div> -->
-
+  <br />
   <Button type="submit" label="Submit" @click="playcutCreate()"></Button>
 </template>
 
@@ -400,6 +361,9 @@ export default {
 </script>
 
 <style>
+#playcutForm {
+}
+
 #entryType {
   margin: 15px;
 }
