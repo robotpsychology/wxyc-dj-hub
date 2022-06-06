@@ -38,6 +38,30 @@
       <Column field="song_title" header="Song"></Column>
       <Column field="release_title" header="Release"></Column>
       <Column field="label_name" header="Label"></Column>
+      ></Column>
+
+      <Column :exportable="false" header="Functions" style="min-width: 4rem">
+        <template #body="slotProps">
+          <Button
+            id="infoButton"
+            icon="pi pi-info"
+            class="p-button-rounded p-button-info mr-2"
+            @click="getEntryInfo(slotProps.data)"
+          />
+          <Button
+            id="editButton"
+            icon="pi pi-pencil"
+            class="p-button-rounded p-button-success mr-2"
+            @click="editEntry(slotProps.data)"
+          />
+          <Button
+            id="deleteButton"
+            icon="pi pi-trash"
+            class="p-button-rounded p-button-warning"
+            @click="deleteEntry(slotProps.data)"
+          />
+        </template>
+      </Column>
     </DataTable>
   </div>
 </template>
@@ -55,7 +79,6 @@ import Toast from "primevue/toast";
 import songInfoService from "../services/songInfo.service";
 
 import {
-  getAllPlaycuts,
   deletePlaycut,
   editPlaycut,
   swapSortID,
@@ -102,32 +125,22 @@ export default {
     this.$emit("getAllPlaycuts");
   },
   methods: {
-    getAllPlaycuts() {
-      getAllPlaycuts().then((response) => {
-        // console.log(response);
-        this.playcuts = response;
-      });
+    getEntryInfo(data) {
+      console.log(data);
     },
+    editEntry(data) {
+      console.log(data);
+    },
+    deleteEntry(data) {
+      console.log(data);
+    },
+
     editEntry(event) {
       console.log(event.target);
       if (event.target.tagName != "BUTTON") {
         console.log(event);
       }
     },
-    async openModal() {
-      this.displayModal = true;
-    },
-    async getInfo(event) {
-      // TODO: Need to clean this up later to dynamically find artist name if class name is artist. This will be done with a data-id attribute or something similar that uses the ID to lookup the artist through the server
-      let artistName = event.target.parentElement.childNodes[5].innerText;
-      // let artistName = event.target.parentElement.parentElement
-      console.log(event.target);
-
-      this.currentPlaycutArtist = artistName;
-      this.playcutInfo = await this.songInfoService.getArtistData(artistName);
-      console.log(this.playcutInfo);
-    },
-    // new stuff
     deletePlaycut(playcutId) {
       deletePlaycut(playcutId).then((response) => {
         // console.log(response);
@@ -198,6 +211,11 @@ export default {
   /* text-align: center; */
 }
 
-info-button {
+i.p-datatable-reorderablerow-handle:hover {
+  cursor: grab;
+}
+
+i.p-datatable-reorderablerow-handle:active {
+  cursor: grabbing;
 }
 </style>
