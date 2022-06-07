@@ -18,6 +18,7 @@
         @item-select="releaseSelect($event)"
         placeholder="Release"
         field="releaseTitle"
+        required
       >
       </AutoComplete>
 
@@ -30,6 +31,7 @@
         @item-select="artistSelect($event)"
         placeholder="Artist"
         field="artistName"
+        required
       >
       </AutoComplete>
 
@@ -39,6 +41,7 @@
         v-model="songSelected"
         placeholder="Song"
         field="songTitle"
+        required
       >
       </AutoComplete>
       <!-- for songs
@@ -57,6 +60,7 @@
         @item-select="labelSelect($event)"
         placeholder="Label"
         field="labelName"
+        required
       >
       </AutoComplete>
 
@@ -100,6 +104,7 @@
         :dropdown="true"
         placeholder="Search Rotation"
         forceSelection
+        required
       >
         <template #item="slotProps">
           <div class="country-item">
@@ -123,12 +128,12 @@ import Button from "primevue/button";
 import AutoComplete from "primevue/autocomplete";
 import Checkbox from "primevue/checkbox";
 
-import LibraryService from "../services/LibraryService";
+import LibraryService from "../../services/LibraryService";
 
 import {
   createPlaycut,
   getLastChronOrderID,
-} from "../services/flowsheet.service";
+} from "../../services/flowsheet.service";
 
 export default {
   name: "AddPlaycutForms",
@@ -368,7 +373,7 @@ export default {
 }
 
 .inputSearch input {
-  background-image: url("../../node_modules/primeicons/raw-svg/search.svg");
+  background-image: url("../../../node_modules/primeicons/raw-svg/search.svg");
   background-size: 0.8em;
   background-position: left;
   background-repeat: no-repeat;
@@ -376,18 +381,18 @@ export default {
 }
 
 #artist {
-  background-image: url("../../node_modules/primeicons/raw-svg/user.svg");
+  background-image: url("../../../node_modules/primeicons/raw-svg/user.svg");
 }
 
 #song {
-  background-image: url("../../node_modules/primeicons/raw-svg/sun.svg");
+  background-image: url("../../../node_modules/primeicons/raw-svg/sun.svg");
 }
 
 #release {
-  background-image: url("../../node_modules/primeicons/raw-svg/moon.svg");
+  background-image: url("../../../node_modules/primeicons/raw-svg/moon.svg");
 }
 
 #label {
-  background-image: url("../../node_modules/primeicons/raw-svg/box.svg");
+  background-image: url("../../../node_modules/primeicons/raw-svg/box.svg");
 }
 </style>

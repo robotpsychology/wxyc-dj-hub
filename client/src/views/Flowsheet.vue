@@ -18,8 +18,8 @@
 
 <script>
 // @ is an alias to /src
-import FlowsheetEntries from "../components/FlowsheetEntries.vue";
-import CreatePlaycut from "../components/CreatePlaycut.vue";
+import FlowsheetEntries from "../components/flowsheet/FlowsheetEntries.vue";
+import CreatePlaycut from "../components/flowsheet/CreatePlaycut.vue";
 
 import {
   getAllPlaycuts,

@@ -106,13 +106,13 @@ import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import Toast from "primevue/toast";
 
-import songInfoService from "../services/songInfo.service";
+import songInfoService from "../../services/songInfo.service";
 
 import {
   deletePlaycut,
   editPlaycut,
   swapSortID,
-} from "../services/flowsheet.service";
+} from "../../services/flowsheet.service";
 
 export default {
   name: "FlowsheetEntries",
