@@ -9,6 +9,8 @@
 # Ignore JSDOC Config
 jsdoc_config.json
 
+**./package-lock.json
+
 # dependencies
 node_modules
 /.pnp
