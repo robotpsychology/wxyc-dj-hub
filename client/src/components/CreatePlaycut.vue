@@ -1,120 +1,119 @@
 <template>
-  <SelectButton
-    id="entryType"
-    v-model="playcutType"
-    :options="playcutOptions"
-  />
+  <form action="" @submit.prevent="playcutCreate" method="post">
+    <SelectButton
+      id="entryType"
+      v-model="playcutType"
+      :options="playcutOptions"
+    />
 
-  <!-- Searches WXYC Library -->
+    <!-- Searches WXYC Library -->
 
-  <div v-if="playcutType !== 'Rotation'" id="playcutForm">
-    <AutoComplete
-      class="inputSearch"
-      id="release"
-      v-model="releaseSelected"
-      :suggestions="filteredReleases"
-      @complete="[search($event)]"
-      @item-select="releaseSelect($event)"
-      placeholder="Release"
-      field="releaseTitle"
-      forceSelection
-    >
-    </AutoComplete>
+    <div v-if="playcutType !== 'Rotation'" id="playcutForm">
+      <AutoComplete
+        class="inputSearch"
+        id="release"
+        v-model="releaseSelected"
+        :suggestions="filteredReleases"
+        @complete="[search($event)]"
+        @item-select="releaseSelect($event)"
+        placeholder="Release"
+        field="releaseTitle"
+      >
+      </AutoComplete>
 
-    <AutoComplete
-      class="inputSearch"
-      id="artist"
-      v-model="artistSelected"
-      :suggestions="filteredArtists"
-      @complete="search($event)"
-      @item-select="artistSelect($event)"
-      placeholder="Artist"
-      field="artistName"
-      forceSelection
-    >
-    </AutoComplete>
+      <AutoComplete
+        class="inputSearch"
+        id="artist"
+        v-model="artistSelected"
+        :suggestions="filteredArtists"
+        @complete="search($event)"
+        @item-select="artistSelect($event)"
+        placeholder="Artist"
+        field="artistName"
+      >
+      </AutoComplete>
 
-    <AutoComplete
-      class="inputSearch"
-      id="song"
-      v-model="songSelected"
-      placeholder="Song"
-      field="songTitle"
-    >
-    </AutoComplete>
-    <!-- for songs
+      <AutoComplete
+        class="inputSearch"
+        id="song"
+        v-model="songSelected"
+        placeholder="Song"
+        field="songTitle"
+      >
+      </AutoComplete>
+      <!-- for songs
     :suggestions="filteredSongs"
     @complete="[search($event)]" 
     @item-select="songSelect($event)" 
       forceSelection
     -->
 
-    <AutoComplete
-      class="inputSearch"
-      id="label"
-      v-model="labelSelected"
-      :suggestions="filteredLabels"
-      @complete="searchLabel($event)"
-      @item-select="labelSelect($event)"
-      placeholder="Label"
-      field="labelName"
-      forceSelection
-    >
-    </AutoComplete>
+      <AutoComplete
+        class="inputSearch"
+        id="label"
+        v-model="labelSelected"
+        :suggestions="filteredLabels"
+        @complete="searchLabel($event)"
+        @item-select="labelSelect($event)"
+        placeholder="Label"
+        field="labelName"
+      >
+      </AutoComplete>
 
-    <span id="requestCheck">
-      <label for="request">Request</label>
-      <Checkbox
-        name="request"
-        value="Request"
-        v-model="requestSelected"
-        binary
+      <span id="requestCheck">
+        <label for="request">Request</label>
+        <Checkbox
+          name="request"
+          value="Request"
+          v-model="requestSelected"
+          binary
+        />
+      </span>
+
+      <span id="rotationCheck">
+        <label for="rotation">Rotation</label>
+        <Checkbox
+          name="rotation"
+          value="rotation"
+          v-model="rotationSelected"
+          binary
+        />
+      </span>
+    </div>
+
+    <!-- Searches Rotation DB -->
+    <div v-if="playcutType == 'Rotation'" id="playcutForm">
+      <SelectButton
+        id="rotationType"
+        v-model="rotationType"
+        :options="rotationOptions"
+        @change="rotationSelected = false"
       />
-    </span>
 
-    <span id="rotationCheck">
-      <label for="rotation">Rotation</label>
-      <Checkbox
-        name="rotation"
-        value="rotation"
+      <AutoComplete
+        id="rotation"
+        class="inputSearch"
         v-model="rotationSelected"
-        binary
-      />
-    </span>
-  </div>
-
-  <!-- Searches Rotation DB -->
-  <div v-if="playcutType == 'Rotation'" id="playcutForm">
-    <SelectButton
-      id="rotationType"
-      v-model="rotationType"
-      :options="rotationOptions"
-      @change="rotationSelected = false"
-    />
-
-    <AutoComplete
-      id="rotation"
-      class="inputSearch"
-      v-model="rotationSelected"
-      :suggestions="filteredRotation"
-      @complete="search($event)"
-      @dropdown-click="rotationDropdown($event)"
-      :dropdown="true"
-      placeholder="Search Rotation"
-      forceSelection
-    >
-      <template #item="slotProps">
-        <div class="country-item">
-          <div class="ml-2">
-            <i class="pi pi-palette"></i> {{ slotProps.item }}
+        :suggestions="filteredRotation"
+        @complete="search($event)"
+        @dropdown-click="rotationDropdown($event)"
+        :dropdown="true"
+        placeholder="Search Rotation"
+        forceSelection
+      >
+        <template #item="slotProps">
+          <div class="country-item">
+            <div class="ml-2">
+              <i class="pi pi-palette"></i> {{ slotProps.item }}
+            </div>
           </div>
-        </div>
-      </template>
-    </AutoComplete>
-  </div>
+        </template>
+      </AutoComplete>
+    </div>
 
-  <br />
-  <Button type="submit" label="Submit" @click="playcutCreate()"></Button>
+    <br />
+    <Button type="submit" value="submit" label="Submit"></Button>
+  </form>
 </template>
 
 <script>
