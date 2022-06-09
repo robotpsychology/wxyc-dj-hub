@@ -112,7 +112,7 @@ import songInfoService from "../../services/songInfo.service";
 import * as directusService from "../../services/directus.service";
 
 export default {
-  name: "FlowsheetEntries",
+  name: "FlowsheetTable",
   components: {
     Dialog,
     Button,
@@ -201,7 +201,7 @@ export default {
       }
 
       const payload = { currentID: currentID, newID: newID };
-      await directusService.swapItemSortID(payload).then((res) => {
+      await directusService.swapItemSortID(this.table, payload).then((res) => {
         this.$emit("getAllPlaycuts");
       });
 

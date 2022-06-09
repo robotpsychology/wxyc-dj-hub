@@ -49,6 +49,7 @@ app.component("Dialog", Dialog)
 app.component("Button", Button)
 app.component("Menubar", Menubar)
 app.component("Dropdown", Dropdown)
+app.component("Textarea", Textarea)
 
 
 app.mount("#app")

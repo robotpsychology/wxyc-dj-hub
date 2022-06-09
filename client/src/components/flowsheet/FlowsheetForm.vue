@@ -131,7 +131,7 @@ import Checkbox from "primevue/checkbox";
 import LibraryService from "../../services/LibraryService";
 
 export default {
-  name: "AddPlaycutForms",
+  name: "FlowsheetForm",
   components: {
     InputText,
     SelectButton,
