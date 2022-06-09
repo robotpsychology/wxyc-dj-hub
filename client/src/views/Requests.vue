@@ -1,51 +1,65 @@
 <template>
-  <form
-    id="requestsForm"
-    action=""
-    @submit.prevent="requestSubmit"
-    method="post"
-  >
-    <div>Requests</div>
-    <SelectButton
-      id="entryType"
-      v-model="requestType"
-      :options="requestOptions"
-    />
+  <div>
+    <form
+      id="requestsForm"
+      action=""
+      @submit.prevent="requestSubmit"
+      method="post"
+    >
+      <div>Requests</div>
+      <SelectButton
+        id="entryType"
+        v-model="requestType"
+        :options="requestOptions"
+      />
 
-    <h3>Artist</h3>
-    <InputText
-      type="text"
-      v-model="artistName"
-      placeholder="Antônio Carlos Jobim"
-      required
-    />
-
-    <h3>Release</h3>
-    <InputText type="text" v-model="releaseTitle" placeholder="Wave" required />
-
-    <div v-if="requestType == 'Rotation'">
-      <h3>Review</h3>
-      <Textarea
-        v-model="review"
-        :autoResize="true"
-        rows="5"
-        cols="30"
-        placeholder="A small paragraph that can fit on one of our CD sleeves"
+      <h3>Artist</h3>
+      <InputText
+        type="text"
+        v-model="artistName"
+        placeholder="Antônio Carlos Jobim"
         required
       />
-    </div>
 
-    <br />
-    <Button type="submit" value="submit" label="Submit"></Button>
-  </form>
+      <h3>Release</h3>
+      <InputText
+        type="text"
+        v-model="releaseTitle"
+        placeholder="Wave"
+        required
+      />
+
+      <div v-if="requestType == 'Rotation'">
+        <h3>Review</h3>
+        <Textarea
+          type="text"
+          v-model="review"
+          :autoResize="true"
+          rows="5"
+          cols="30"
+          placeholder="A small paragraph that can fit on one of our CD sleeves"
+          required
+        />
+      </div>
+
+      <br />
+      <Button type="submit" value="submit" label="Submit"></Button>
+    </form>
+
+    <RequestsTable
+      v-if="requests.length > 0"
+      :requests="requests"
+    ></RequestsTable>
+  </div>
 </template>
 
 <script>
-import { createRequest, getAllRequests } from "../services/requests.service";
+import { getAllRequests, createRequest } from "../services/requests.service";
+import RequestsTable from "../components/requests/RequestsTable.vue";
 
 export default {
   name: "Requests",
-  components: {},
+  components: { RequestsTable },
   data() {
     return {
       requests: [],
@@ -57,7 +71,13 @@ export default {
       requestOptions: ["Rotation", "WXYC Library"],
     };
   },
+
   methods: {
+    getAllRequests() {
+      getAllRequests().then((response) => {
+        this.requests = response;
+      });
+    },
     async requestSubmit() {
       const payload = {
         artist_name: this.artistName,
@@ -69,10 +89,7 @@ export default {
         console.log(response);
       });
 
-      await getAllRequests().then((response) => {
-        console.log(response);
-        this.requests = response;
-      });
+      this.getAllRequests();
       this.clearForm();
     },
     clearForm() {
@@ -80,6 +97,9 @@ export default {
       this.releaseTitle = "";
       this.review = "";
     },
+  },
+  mounted() {
+    this.getAllRequests();
   },
 };
 </script>

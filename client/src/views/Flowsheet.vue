@@ -40,6 +40,9 @@ export default {
       playcuts: [],
     };
   },
+  mounted() {
+    this.getAllPlaycuts();
+  },
   methods: {
     getAllPlaycuts() {
       getAllPlaycuts().then((response) => {
@@ -54,9 +57,6 @@ export default {
         this.getAllPlaycuts();
       });
     },
-  },
-  mounted() {
-    this.getAllPlaycuts();
   },
 };
 </script>

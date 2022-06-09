@@ -24,17 +24,12 @@ export async function createRequest(data) {
 }
 
 export async function deleteRequest(requestID) {
-    const response = await directus.items(table_name).deleteOne(playcutID)
+    const response = await directus.items(table_name).deleteOne(requestID)
     return response
 }
 
 export async function editRequest(data) {
-    // const response = await fetch(`/api/playcut`, {
-    //     method: 'PUT',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ playcut: data })
-    // })
-    // return await response.json();
+
 }
 
 export async function swapSortID(data) {
