@@ -87,7 +87,7 @@ import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import Toast from "primevue/toast";
 
-import { deleteRequest, editRequest } from "../../services/requests.service";
+import * as directusService from "../../services/directus.service";
 
 export default {
   name: "RequestsTable",
@@ -101,6 +101,7 @@ export default {
   props: ["requests"],
   data() {
     return {
+      table_name: "requests",
       deleteRequestDialog: false,
       requestToDelete: {},
     };
@@ -116,7 +117,10 @@ export default {
     async deleteEntry() {
       this.deleteRequestDialog = false;
 
-      await deleteRequest(this.requestToDelete.id);
+      await directusService.deleteItem(
+        this.table_name,
+        this.requestToDelete.id
+      );
 
       this.$emit("getAllRequests");
 
@@ -137,7 +141,7 @@ export default {
       }
     },
     editRequest(request) {
-      editRequest(request).then((res) => {
+      directusService.editItem(this.table_name, request).then((res) => {
         // console.log(res);
         this.$emit("getAllRequests");
       });
@@ -163,7 +167,7 @@ export default {
       }
 
       const payload = { currentID: currentID, newID: newID };
-      await swapSortID(payload).then((res) => {
+      await swapItemSortID(payload).then((res) => {
         this.$emit("getAllRequests");
       });
 

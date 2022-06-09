@@ -1,4 +1,4 @@
-import { directus } from "../services/directus";
+import { directus } from "./directus.init";
 import { useLoggedInUserStore } from "@/store/loggedInUser";
 
 

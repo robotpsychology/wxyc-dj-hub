@@ -10,7 +10,6 @@ import About from "../views/About.vue"
 import Reports from "../views/Reports.vue"
 import Requests from "../views/Requests.vue"
 import Resources from "../views/Resources.vue"
-import Love_Wall from "../views/Love_Wall.vue"
 import Profiles from "../views/Profiles"
 
 const routes = [

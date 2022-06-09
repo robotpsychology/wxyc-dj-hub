@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { directus } from "../services/directus";
+import { directus } from "../services/directus.init";
 import { useLoggedInUserStore } from "@/store/loggedInUser";
 import { mapState } from "pinia";
 import { login } from "../services/AuthenticationService";

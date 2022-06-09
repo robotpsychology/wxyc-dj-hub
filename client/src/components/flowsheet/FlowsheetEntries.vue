@@ -3,6 +3,7 @@
     <Toast />
 
     <DataTable
+      v-if="playcuts.length > 0"
       :value="playcuts"
       :reorderableColumns="true"
       @columnReorder="onColReorder"
@@ -108,11 +109,7 @@ import Toast from "primevue/toast";
 
 import songInfoService from "../../services/songInfo.service";
 
-import {
-  deletePlaycut,
-  editPlaycut,
-  swapSortID,
-} from "../../services/flowsheet.service";
+import * as directusService from "../../services/directus.service";
 
 export default {
   name: "FlowsheetEntries",
@@ -123,10 +120,12 @@ export default {
     Column,
     Toast,
   },
-  props: ["playcuts"],
+  props: ["playcuts", "table_name"],
+  computed: {},
   data() {
     return {
-      // playcuts: [],
+      // playcuts: [], // Not sure why this prop is being passed but not table_name. Because of getAllItems?
+      table_name: "flowsheet_entries",
       deletePlaycutDialog: false,
       playcutToDelete: {},
     };
@@ -134,6 +133,7 @@ export default {
   songInfoService: null,
   created() {
     this.songInfoService = new songInfoService();
+    this.table = this.table_name;
   },
   mounted() {
     this.$emit("getAllPlaycuts");
@@ -147,10 +147,14 @@ export default {
       this.deletePlaycutDialog = true;
       this.playcutToDelete = playcut;
     },
+
     async deleteEntry() {
       this.deletePlaycutDialog = false;
 
-      await deletePlaycut(this.playcutToDelete.id);
+      await directusService.deleteItem(
+        this.table_name,
+        this.playcutToDelete.id
+      );
 
       this.$emit("getAllPlaycuts");
 
@@ -171,7 +175,7 @@ export default {
       }
     },
     editPlaycut(playcut) {
-      editPlaycut(playcut).then((res) => {
+      directusService.editItem(playcut).then((res) => {
         // console.log(res);
         this.$emit("getAllPlaycuts");
       });
@@ -197,7 +201,7 @@ export default {
       }
 
       const payload = { currentID: currentID, newID: newID };
-      await swapSortID(payload).then((res) => {
+      await directusService.swapItemSortID(payload).then((res) => {
         this.$emit("getAllPlaycuts");
       });
 

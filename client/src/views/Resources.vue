@@ -30,18 +30,20 @@
 </template>
 
 <script>
-import { getAllResources } from "../services/resources.service";
+import * as directusService from "../services/directus.service";
+
 export default {
   name: "Resources",
   components: {},
   data() {
     return {
+      table_name: "resources",
       files: null,
     };
   },
   methods: {},
   async mounted() {
-    this.files = await getAllResources();
+    this.files = await directusService.getAllItems(this.table_name);
   },
 };
 </script>

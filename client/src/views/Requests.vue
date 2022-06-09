@@ -49,12 +49,13 @@
     <RequestsTable
       v-if="requests.length > 0"
       :requests="requests"
+      @getAllRequests="getAllRequests"
     ></RequestsTable>
   </div>
 </template>
 
 <script>
-import { getAllRequests, createRequest } from "../services/requests.service";
+import * as directusService from "../services/directus.service";
 import RequestsTable from "../components/requests/RequestsTable.vue";
 
 export default {
@@ -62,6 +63,7 @@ export default {
   components: { RequestsTable },
   data() {
     return {
+      table_name: "requests",
       requests: [],
       artistName: "",
       releaseTitle: "",
@@ -74,8 +76,8 @@ export default {
 
   methods: {
     getAllRequests() {
-      getAllRequests().then((response) => {
-        this.requests = response;
+      directusService.getAllItems(this.table_name).then((response) => {
+        this.requests = response.data;
       });
     },
     async requestSubmit() {
@@ -85,13 +87,16 @@ export default {
         request_type: this.requestType,
       };
 
-      await createRequest(payload).then((response) => {
-        console.log(response);
-      });
+      await directusService
+        .createItem(this.table_name, payload)
+        .then((response) => {
+          console.log(response);
+        });
 
       this.getAllRequests();
       this.clearForm();
     },
+
     clearForm() {
       this.artistName = "";
       this.releaseTitle = "";

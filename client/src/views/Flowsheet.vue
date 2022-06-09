@@ -5,13 +5,13 @@
       :suggestions="filteredArtists"
       @complete="searchArtist($event)"
     ></AutoComplete> -->
-    <CreatePlaycut @createPlaycut="playcutCreate($event)"></CreatePlaycut>
+    <CreatePlaycut @createPlaycut="createPlaycut($event)"></CreatePlaycut>
     <FlowsheetEntries
       v-if="playcuts.length > 0"
       :playcuts="playcuts"
       @getAllPlaycuts="getAllPlaycuts"
       @editPlaycut="playcutEdit($event)"
-      @swapSortID="swapSortID($event)"
+      @swapItemSortID="swapItemSortID($event)"
     ></FlowsheetEntries>
   </div>
 </template>
@@ -21,13 +21,7 @@
 import FlowsheetEntries from "../components/flowsheet/FlowsheetEntries.vue";
 import CreatePlaycut from "../components/flowsheet/CreatePlaycut.vue";
 
-import {
-  getAllPlaycuts,
-  createPlaycut,
-  deletePlaycut,
-  editPlaycut,
-  swapSortID,
-} from "../services/flowsheet.service";
+import * as directusService from "../services/directus.service";
 
 export default {
   name: "Flowsheet",
@@ -38,6 +32,7 @@ export default {
   data() {
     return {
       playcuts: [],
+      table_name: "flowsheet_entries",
     };
   },
   mounted() {
@@ -45,14 +40,13 @@ export default {
   },
   methods: {
     getAllPlaycuts() {
-      getAllPlaycuts().then((response) => {
+      directusService.getAllItems(this.table_name).then((response) => {
         // console.log(response);
-        this.playcuts = response;
+        this.playcuts = response.data;
       });
     },
-    playcutCreate(data) {
-      // console.log("data:::", data);
-      createPlaycut(data).then((response) => {
+    createPlaycut(payload) {
+      directusService.createItem(this.table_name, payload).then((response) => {
         console.log(response);
         this.getAllPlaycuts();
       });
