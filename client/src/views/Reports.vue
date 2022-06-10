@@ -2,7 +2,30 @@
   <div>
     <h2>Use this page to report missing CD/Vinyl or broken equipment</h2>
 
-    <ReportsForm @getAllReports="getAllReports"></ReportsForm>
+    <SelectButton
+      id="reportType"
+      v-model="reportType"
+      :options="reportOptions"
+      @change="reportType = reportType"
+    />
+
+    <ReportsForm
+      @getAllReports="getAllReports"
+      :reportType="reportType"
+      :mediaTableName="mediaTableName"
+      :equipmentTableName="equipmentTableName"
+    ></ReportsForm>
+
+    <br />
+
+    <ReportsTable
+      :missingMedia="missingMedia"
+      :brokenEquipment="brokenEquipment"
+      :mediaTableName="mediaTableName"
+      :equipmentTableName="equipmentTableName"
+      @getAllReports="getAllReports"
+      :reportType="reportType"
+    ></ReportsTable>
   </div>
 </template>
 
@@ -10,37 +33,34 @@
 import * as directusService from "../services/directus.service";
 
 import ReportsForm from "../components/reports/ReportsForm.vue";
+import ReportsTable from "../components/reports/ReportsTable.vue";
 
 export default {
   name: "Reports",
-  components: { ReportsForm },
+  components: { ReportsForm, ReportsTable },
   data() {
     return {
-      media_table_name: "missing_media",
-      equipment_table_name: "broken_equipment",
+      mediaTableName: "missing_media",
+      equipmentTableName: "broken_equipment",
 
-      table_name: "reports",
-      reports: [],
-      media: [],
-      equipment: [],
+      missingMedia: [],
+      brokenEquipment: [],
+
+      reportType: "Media",
+      reportOptions: ["Media", "Equipment"],
     };
   },
   mounted() {
     this.getAllReports();
   },
   methods: {
-    getAllReports(reportType) {
-      if (reportType == "Media") {
-        directusService.getAllItems(this.media_table_name).then((response) => {
-          this.media = response.data;
-        });
-      } else {
-        directusService
-          .getAllItems(this.equipment_table_name)
-          .then((response) => {
-            this.equipment = response.data;
-          });
-      }
+    getAllReports() {
+      directusService.getAllItems(this.mediaTableName).then((response) => {
+        this.missingMedia = response.data;
+      });
+      directusService.getAllItems(this.equipmentTableName).then((response) => {
+        this.brokenEquipment = response.data;
+      });
     },
   },
 };

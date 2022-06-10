@@ -1,10 +1,10 @@
 <template>
   <form id="reportsForm" action="" @submit.prevent="reportSubmit" method="post">
-    <SelectButton
+    <!-- <SelectButton
       id="reportType"
       v-model="reportType"
       :options="reportOptions"
-    />
+    /> -->
 
     <div v-if="reportType == 'Media'">
       <h3>Genre</h3>
@@ -92,14 +92,19 @@ import Textarea from "primevue/textarea";
 export default {
   name: "RequestsForm",
   components: { Textarea },
-  props: {},
+  props: {
+    reportType: {
+      type: String,
+    },
+    mediaTableName: {
+      type: String,
+    },
+    equipmentTableName: {
+      type: String,
+    },
+  },
   data() {
     return {
-      media_table_name: "missing_media",
-      equipment_table_name: "broken_equipment",
-
-      reportType: "Media",
-      reportOptions: ["Media", "Equipment"],
       genres: [
         "Rock",
         "Hiphop",
@@ -132,6 +137,7 @@ export default {
     };
   },
   computed: {},
+  mounted() {},
   methods: {
     async reportSubmit() {
       if (this.reportType == "Media") {
@@ -143,7 +149,7 @@ export default {
           release_title: this.releaseTitle,
         };
 
-        await directusService.createItem(this.media_table_name, payload);
+        await directusService.createItem(this.$props.mediaTableName, payload);
       } else {
         const payload = {
           location: this.location,
@@ -152,7 +158,10 @@ export default {
           description: this.description,
         };
 
-        await directusService.createItem(this.equipment_table_name, payload);
+        await directusService.createItem(
+          this.$props.equipment_table_name,
+          payload
+        );
       }
 
       this.$emit("getAllReports", this.reportType);
