@@ -28,7 +28,9 @@
         :key="col.field"
       ></Column> -->
       <Column field="id" header="id"></Column>
-      <Column field="library_code" header="Library Code"> </Column>
+      <Column field="genre" header="Genre"></Column>
+      <Column field="format" header="Format"></Column>
+      <Column field="library_code" header="Library Code"></Column>
       <Column field="artist_name" header="Artist"></Column>
       <Column field="release_title" header="Release"></Column>
 
