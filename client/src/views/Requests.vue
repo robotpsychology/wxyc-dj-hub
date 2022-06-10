@@ -1,10 +1,23 @@
 <template>
   <div>
     <h2>Use this page to request media for rotation or the WXYC library</h2>
-    <RequestsForm @getAllRequests="getAllRequests"></RequestsForm>
+    <SelectButton
+      id="entryType"
+      v-model="requestType"
+      :options="requestOptions"
+    />
+
+    <RequestsForm
+      @getAllRequests="getAllRequests"
+      :tableName="tableName"
+      :requestType="requestType"
+    ></RequestsForm>
+
     <RequestsTable
       v-if="requests.length > 0"
       :requests="requests"
+      :requestType="requestType"
+      :tableName="tableName"
       @getAllRequests="getAllRequests"
     ></RequestsTable>
   </div>
@@ -21,14 +34,16 @@ export default {
   components: { RequestsTable, RequestsForm },
   data() {
     return {
-      table_name: "requests",
+      tableName: "requests",
+      requestType: "Rotation",
+      requestOptions: ["Rotation", "WXYC Library"],
       requests: [],
     };
   },
 
   methods: {
     getAllRequests() {
-      directusService.getAllItems(this.table_name).then((response) => {
+      directusService.getAllItems(this.tableName).then((response) => {
         this.requests = response.data;
       });
     },

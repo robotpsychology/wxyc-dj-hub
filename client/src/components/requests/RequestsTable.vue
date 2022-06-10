@@ -98,10 +98,20 @@ export default {
     Column,
     Toast,
   },
-  props: ["requests"],
+  props: {
+    requests: {
+      type: Array,
+    },
+    tableName: {
+      type: String,
+    },
+    requestType: {
+      type: String,
+    },
+  },
   data() {
     return {
-      table_name: "requests",
+      // tableName: "requests",
       deleteRequestDialog: false,
       requestToDelete: {},
     };
@@ -118,7 +128,7 @@ export default {
       this.deleteRequestDialog = false;
 
       await directusService.deleteItem(
-        this.table_name,
+        this.$props.tableName,
         this.requestToDelete.id
       );
 
@@ -141,7 +151,7 @@ export default {
       }
     },
     editRequest(request) {
-      directusService.editItem(this.table_name, request).then((res) => {
+      directusService.editItem(this.$props.tableName, request).then((res) => {
         // console.log(res);
         this.$emit("getAllRequests");
       });
