@@ -28,10 +28,9 @@
         :key="col.field"
       ></Column> -->
       <Column field="id" header="id"></Column>
-      <Column field="report_type" header="Report Type"> </Column>
+      <Column field="library_code" header="Library Code"> </Column>
       <Column field="artist_name" header="Artist"></Column>
       <Column field="release_title" header="Release"></Column>
-      <Column field="review" header="Review"></Column>
 
       <Column :exportable="false" header="Functions" style="min-width: 4rem">
         <template #body="slotProps">
@@ -73,6 +72,7 @@
       ></Column> -->
       <Column field="id" header="id"></Column>
       <Column field="location" header="Location"> </Column>
+      <Column field="device_type" header="Device Type"></Column>
       <Column field="brand_name" header="Brand Name"></Column>
       <Column field="model_number" header="Model Number/SKU"></Column>
       <Column field="description" header="Description"></Column>

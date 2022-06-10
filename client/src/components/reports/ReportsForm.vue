@@ -61,8 +61,16 @@
       <h3>Device</h3>
       <InputText
         type="text"
-        v-model="equipmentName"
+        v-model="deviceType"
         placeholder="CD Player"
+        required
+      />
+
+      <h3>Brand Name</h3>
+      <InputText
+        type="text"
+        v-model="brandName"
+        placeholder="RadioShack"
         required
       />
 
@@ -129,7 +137,7 @@ export default {
       releaseTitle: "",
 
       // Equipment Data
-      equipmentName: "",
+      deviceType: "",
       location: "",
       brandName: "",
       modelNumber: "",
@@ -154,12 +162,13 @@ export default {
         const payload = {
           location: this.location,
           brand_name: this.brandName,
+          device_type: this.deviceType,
           model_number: this.modelNumber,
           description: this.description,
         };
 
         await directusService.createItem(
-          this.$props.equipment_table_name,
+          this.$props.equipmentTableName,
           payload
         );
       }
