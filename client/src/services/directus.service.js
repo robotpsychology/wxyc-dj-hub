@@ -30,7 +30,9 @@ export async function deleteItem(table_name, itemID) {
     return response
 }
 
-export async function editItem(table_name, payload) {
+export async function editItem(table_name, itemID, payload) {
+    const response = await directus.items(table_name).updateOne(itemID, payload)
+    return response
 
 }
 

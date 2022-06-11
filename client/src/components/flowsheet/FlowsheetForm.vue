@@ -122,23 +122,11 @@
 </template>
 
 <script>
-import InputText from "primevue/inputtext";
-import SelectButton from "primevue/selectbutton";
-import Button from "primevue/button";
-import AutoComplete from "primevue/autocomplete";
-import Checkbox from "primevue/checkbox";
-
 import LibraryService from "../../services/LibraryService";
 
 export default {
   name: "FlowsheetForm",
-  components: {
-    InputText,
-    SelectButton,
-    Button,
-    AutoComplete,
-    Checkbox,
-  },
+  components: {},
   data() {
     return {
       playcutType: "WXYC Library",

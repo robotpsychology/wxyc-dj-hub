@@ -53,7 +53,7 @@
             id="editButton"
             icon="pi pi-pencil"
             class="p-button-rounded p-button-success mr-2"
-            @click="editPlaycut(slotProps.data)"
+            @click="confirmEditProduct(slotProps.data)"
           />
           <Button
             id="deleteButton"
@@ -96,6 +96,98 @@
         />
       </template>
     </Dialog>
+
+    <!-- Edit Button dialog -->
+    <form action="" @submit.prevent="editEntry" method="patch">
+      <Dialog
+        :visible="editPlaycutDialog"
+        :style="{ width: '450px' }"
+        header="Playcut Details"
+        :modal="true"
+        class="p-fluid"
+        @update:visible="editPlaycutDialog = false"
+      >
+        <div class="field">
+          <label for="artistName">Artist</label>
+          <InputText
+            id="artistName"
+            :value="playcutToEdit.artist_name"
+            required="true"
+            autofocus
+            :class="{ 'p-invalid': submitted && !playcutToEdit.artist_name }"
+          />
+        </div>
+        <div class="field">
+          <label for="songTitle">Song</label>
+          <InputText
+            id="songTitle"
+            :value="playcutToEdit.song_title"
+            required="true"
+            autofocus
+            :class="{ 'p-invalid': submitted && !playcutToEdit.song_title }"
+          />
+        </div>
+        <div class="field">
+          <label for="releaseTitle">Release</label>
+          <InputText
+            id="releaseTitle"
+            :value="playcutToEdit.release_title"
+            required="true"
+            autofocus
+            :class="{ 'p-invalid': submitted && !playcutToEdit.release_title }"
+          />
+        </div>
+        <div class="field">
+          <label for="labelName">Label</label>
+          <InputText
+            id="labelName"
+            :value="playcutToEdit.label_name"
+            required="true"
+            autofocus
+            :class="{ 'p-invalid': submitted && !playcutToEdit.label_name }"
+          />
+        </div>
+
+        <div class="formgrid grid">
+          <div class="field-radiobutton col-6">
+            <Checkbox
+              id="rotation"
+              name="rotation"
+              v-model="editRotationBool"
+              binary
+            />
+            <label for="rotation">Rotation</label>
+          </div>
+
+          <div class="field-radiobutton col-6">
+            <Checkbox
+              id="request"
+              name="request"
+              v-model="editRequestBool"
+              binary
+            />
+            <label for="request">Request</label>
+          </div>
+        </div>
+
+        <template #footer>
+          <Button
+            label="Cancel"
+            icon="pi pi-times"
+            class="p-button-text"
+            @click="cancelEdit"
+          />
+          <Button
+            label="Save"
+            icon="pi pi-check"
+            type="submit"
+            value="submit"
+            class="p-button-text"
+            @submit="editEntry"
+          />
+        </template>
+      </Dialog>
+    </form>
   </div>
 </template>
  
@@ -120,20 +212,31 @@ export default {
     Column,
     Toast,
   },
-  props: ["playcuts", "table_name"],
+  props: {
+    playcuts: { type: Array },
+    tableName: { type: String },
+  },
   computed: {},
   data() {
     return {
-      // playcuts: [], // Not sure why this prop is being passed but not table_name. Because of getAllItems?
-      table_name: "flowsheet_entries",
+      // playcuts: [], // Not sure why this prop is being passed but not $props.tableName. Because of getAllItems?
+
       deletePlaycutDialog: false,
       playcutToDelete: {},
+
+      editPlaycutDialog: false,
+      playcutToEdit: {},
+
+      editRotationBool: null,
+      editRequestBool: null,
+
+      editSubmitted: false,
     };
   },
   songInfoService: null,
   created() {
     this.songInfoService = new songInfoService();
-    this.table = this.table_name;
+    this.table = this.$props.tableName;
   },
   mounted() {
     this.$emit("getAllPlaycuts");
@@ -141,6 +244,20 @@ export default {
   methods: {
     getEntryInfo(data) {
       console.log(data);
+    },
+
+    confirmEditProduct(playcut) {
+      this.editPlaycutDialog = true;
+      // this.playcutToEdit = playcut;
+      Object.assign(this.playcutToEdit, playcut);
+
+      this.editRotationBool = this.playcutToEdit.rotation;
+      this.editRequestBool = this.playcutToEdit.request;
+    },
+
+    cancelEdit() {
+      this.editPlaycutDialog = false;
+      this.editSubmitted = false;
     },
 
     confirmDeleteProduct(playcut) {
@@ -152,7 +269,7 @@ export default {
       this.deletePlaycutDialog = false;
 
       await directusService.deleteItem(
-        this.table_name,
+        this.$props.tableName,
         this.playcutToDelete.id
       );
 
@@ -168,17 +285,33 @@ export default {
       this.playcutToDelete = {};
     },
 
-    editEntry(event) {
-      console.log(event.target);
-      if (event.target.tagName != "BUTTON") {
-        console.log(event);
-      }
-    },
-    editPlaycut(playcut) {
-      directusService.editItem(playcut).then((res) => {
-        // console.log(res);
-        this.$emit("getAllPlaycuts");
+    async editEntry() {
+      const payload = {
+        rotation: this.rotationSelected,
+        request: this.requestSelected,
+        song_title: this.songSelected,
+        label_name: this.labelSelected,
+        artist_name: this.artistSelected,
+        release_title: this.releaseSelected,
+        entry_type: "playcut",
+      };
+
+      await directusService.editItem(
+        this.$props.tableName,
+        this.playcutToEdit.id,
+        this.playcutToEdit
+      );
+
+      this.$emit("getAllPlaycuts");
+
+      this.$toast.add({
+        severity: "success",
+        summary: "Successful",
+        detail: "Playcut Edited",
+        life: 3000,
       });
+
+      this.playcutToEdit = {};
     },
     onColReorder() {
       this.$toast.add({

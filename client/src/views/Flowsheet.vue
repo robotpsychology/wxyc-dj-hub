@@ -4,6 +4,7 @@
     <FlowsheetTable
       v-if="playcuts.length > 0"
       :playcuts="playcuts"
+      :tableName="tableName"
       @getAllPlaycuts="getAllPlaycuts"
       @editPlaycut="playcutEdit($event)"
       @swapItemSortID="swapItemSortID($event)"
@@ -26,7 +27,7 @@ export default {
   data() {
     return {
       playcuts: [],
-      table_name: "flowsheet_entries",
+      tableName: "flowsheet_entries",
     };
   },
   mounted() {
@@ -34,13 +35,13 @@ export default {
   },
   methods: {
     getAllPlaycuts() {
-      directusService.getAllItems(this.table_name).then((response) => {
+      directusService.getAllItems(this.tableName).then((response) => {
         // console.log(response);
         this.playcuts = response.data;
       });
     },
     createPlaycut(payload) {
-      directusService.createItem(this.table_name, payload).then((response) => {
+      directusService.createItem(this.tableName, payload).then((response) => {
         console.log(response);
         this.getAllPlaycuts();
       });

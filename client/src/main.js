@@ -20,6 +20,9 @@ import AutoComplete from "primevue/autocomplete"
 import InputText from "primevue/inputtext"
 import Password from "primevue/password"
 import SelectButton from "primevue/selectbutton"
+import RadioButton from "primevue/radiobutton"
+import Checkbox from "primevue/checkbox";
+
 import Dialog from "primevue/dialog"
 import Button from "primevue/button"
 import Menubar from "primevue/menubar"
@@ -45,6 +48,8 @@ app.component("AutoComplete", AutoComplete)
 app.component("InputText", InputText)
 app.component("Password", Password)
 app.component("SelectButton", SelectButton)
+app.component("RadioButton", RadioButton)
+app.component("Checkbox", Checkbox)
 app.component("Dialog", Dialog)
 app.component("Button", Button)
 app.component("Menubar", Menubar)
