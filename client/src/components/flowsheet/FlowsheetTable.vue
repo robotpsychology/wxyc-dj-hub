@@ -2,7 +2,10 @@
   <div>
     <Toast />
 
+    <div id="hello">hello</div>
+
     <DataTable
+      id="flowsheetTable"
       v-if="playcuts.length > 0"
       :value="playcuts"
       :reorderableColumns="true"
@@ -348,7 +351,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "@/styles/variables.scss";
+
 #flowsheet,
 #flowsheetHeader {
   text-align: center;
