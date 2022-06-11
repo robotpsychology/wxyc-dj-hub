@@ -354,7 +354,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/styles/variables.scss";
 
-#flowsheet,
+n#flowsheet,
 #flowsheetHeader {
   text-align: center;
 }
