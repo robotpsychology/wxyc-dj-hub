@@ -6,8 +6,6 @@
       id="flowsheetTable"
       v-if="playcuts.length > 0"
       :value="playcuts"
-      :reorderableColumns="true"
-      @columnReorder="onColReorder"
       @row-reorder="onRowReorder"
       responsiveLayout="scroll"
       rowReorderIcon="grab"
@@ -336,13 +334,6 @@ export default {
 
       this.playcutToEdit = {};
     },
-    onColReorder() {
-      this.$toast.add({
-        severity: "success",
-        summary: "Column Reordered",
-        life: 3000,
-      });
-    },
     async onRowReorder(event) {
       let currentID, newID, difference;
       currentID = event.value[event.dropIndex].id;
@@ -384,6 +375,11 @@ export default {
 // This is how you select child elements in lang="scss" and scoped modes. Scoped should be left on.
 // #flowsheetTable :deep(.flowsheetRow)
 
-#flowsheetTable {
+#flowsheetTable :deep(tr) {
+}
+
+#flowsheetTable :deep(.flowsheetRow) {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
 }
 </style>
