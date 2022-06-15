@@ -1,18 +1,26 @@
 <template>
-  <div>Profiles</div>
-  <div id="wrapper" v-for="user in userSample">
-    <ProfileCard :user="user"></ProfileCard>
+  <div id="profilesContainer">
+    <ProfileCard
+      :user="user"
+      v-for="user in profiles"
+      :key="user.first_name + user.last_name"
+      class="profileCard"
+    ></ProfileCard>
   </div>
 </template>
 
 <script>
-import ProfileCard from "../components/ProfileCard.vue";
+import ProfileCard from "../components/profiles/ProfileCard.vue";
+
+import * as profilesService from "../services/profiles.service";
 
 export default {
   name: "Profiles",
   components: { ProfileCard },
   data() {
     return {
+      // profilesTableName: "directus_users",
+      profiles: null,
       userSample: [
         {
           name: "John Doe",
@@ -38,22 +46,28 @@ export default {
       ],
     };
   },
-  methods: {},
+  mounted() {
+    this.getAllProfiles();
+  },
+  methods: {
+    getAllProfiles() {
+      profilesService.getAllProfiles().then((response) => {
+        this.profiles = response.data;
+      });
+    },
+  },
 };
 </script>
 
-<style scoped>
-#wrapper {
-  display: inline-block;
-  margin: 2em;
+<style>
+#profilesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
 }
 
-.userAvatar {
-  width: 10em;
-}
-
-p {
-  line-height: 1.5;
-  margin: 0;
+.profileCard {
+  margin: 2em 2em 1em 2em;
 }
 </style>

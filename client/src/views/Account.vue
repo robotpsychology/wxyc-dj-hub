@@ -1,5 +1,4 @@
 <template>
-  <div>Account</div>
   <div id="wrapper">
     <div id="profileWrapper">
       <ProfileCard :user="user"></ProfileCard>
@@ -8,8 +7,7 @@
 </template>
 
 <script>
-import ProfileCard from "../components/ProfileCard.vue";
-
+import ProfileCard from "../components/profiles/ProfileCard.vue";
 export default {
   name: "Account",
   components: { ProfileCard },
