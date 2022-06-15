@@ -19,7 +19,6 @@ export default {
   components: { ProfileCard },
   data() {
     return {
-      // profilesTableName: "directus_users",
       profiles: null,
       userSample: [
         {

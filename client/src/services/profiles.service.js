@@ -19,11 +19,9 @@ export async function getAllProfiles() {
     return response
 }
 
-export async function getAllAvatars() {
+export async function getCurrentUser() {
     await directusLogin()
-    const response = await directus.files.readByQuery({
-        "filename": { "_eq": filename }
-    })
+    const response = await directus.users.me.read({ fields: ['first_name', 'last_name', 'email', 'avatar', 'title', 'description'] })
     return response
 }
 

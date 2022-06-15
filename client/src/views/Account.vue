@@ -1,26 +1,28 @@
 <template>
   <div id="wrapper">
     <div id="profileWrapper">
-      <ProfileCard :user="user"></ProfileCard>
+      <ProfileCard
+        :user="currentUser"
+        :key="currentUser.first_name + currentUser.last_name"
+      ></ProfileCard>
     </div>
   </div>
 </template>
 
 <script>
 import ProfileCard from "../components/profiles/ProfileCard.vue";
+import * as profilesService from "../services/profiles.service";
+
 export default {
   name: "Account",
   components: { ProfileCard },
   data() {
     return {
-      user: {
-        name: "John Doe",
-        dj_name: "ShimSham",
-        show_completed: 5,
-        position: "DJ",
-        avatar: "logo.png",
-      },
+      currentUser: null,
     };
+  },
+  created() {
+    profilesService.getCurrentUser().then((res) => (this.currentUser = res));
   },
   methods: {},
 };
