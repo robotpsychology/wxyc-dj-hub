@@ -20,29 +20,6 @@ export default {
   data() {
     return {
       profiles: null,
-      userSample: [
-        {
-          name: "John Doe",
-          dj_name: "ShimSham",
-          show_completed: 5,
-          position: "DJ",
-          avatar: "logo.png",
-        },
-        {
-          name: "Jane Doe",
-          dj_name: "tincan",
-          show_completed: 10,
-          position: "Station Manager",
-          avatar: "cropped-icon-192x192.png",
-        },
-        {
-          name: "Tommy Dang",
-          dj_name: "appa",
-          show_completed: 2,
-          position: "sweeper",
-          avatar: "logo.png",
-        },
-      ],
     };
   },
   mounted() {
