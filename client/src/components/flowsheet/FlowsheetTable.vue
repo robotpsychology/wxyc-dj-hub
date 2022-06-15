@@ -2,16 +2,13 @@
   <div>
     <Toast />
 
-    <div id="hello">hello</div>
-
     <DataTable
       id="flowsheetTable"
       v-if="playcuts.length > 0"
       :value="playcuts"
-      :reorderableColumns="true"
-      @columnReorder="onColReorder"
       @row-reorder="onRowReorder"
       responsiveLayout="scroll"
+      rowReorderIcon="grab"
     >
       <Column
         :rowReorder="true"
@@ -25,26 +22,47 @@
         :header="col.header"
         :key="col.field"
       ></Column> -->
-      <Column field="id" header="id"></Column>
-      <Column field="rotation" header="Rotation">
+      <Column field="id" header="id" bodyClass="flowsheetRow"></Column>
+      <Column field="rotation" header="Rotation" bodyClass="flowsheetRow">
         <template #body="slotProps">
           <span v-if="slotProps.data.rotation === true">&#10003;</span>
           <span v-else-if="slotProps.data.rotation === false">&#65794;</span>
         </template></Column
       >
-      <Column field="request" header="Request">
+      <Column field="request" header="Request" bodyClass="flowsheetRow">
         <template #body="slotProps">
           <span v-if="slotProps.data.request === true">&#10003;</span>
           <span v-else-if="slotProps.data.request === false">&#65794;</span>
         </template>
       </Column>
 
-      <Column field="artist_name" header="Artist"></Column>
-      <Column field="song_title" header="Song"></Column>
-      <Column field="release_title" header="Release"></Column>
-      <Column field="label_name" header="Label"></Column>
+      <Column
+        field="artist_name"
+        header="Artist"
+        bodyClass="flowsheetRow"
+      ></Column>
+      <Column
+        field="song_title"
+        header="Song"
+        bodyClass="flowsheetRow"
+      ></Column>
+      <Column
+        field="release_title"
+        header="Release"
+        bodyClass="flowsheetRow"
+      ></Column>
+      <Column
+        field="label_name"
+        header="Label"
+        bodyClass="flowsheetRow"
+      ></Column>
 
-      <Column :exportable="false" header="Functions" style="min-width: 4rem">
+      <Column
+        :exportable="false"
+        header="Functions"
+        style="min-width: 4rem"
+        bodyClass="flowsheetRow"
+      >
         <template #body="slotProps">
           <Button
             id="infoButton"
@@ -316,13 +334,6 @@ export default {
 
       this.playcutToEdit = {};
     },
-    onColReorder() {
-      this.$toast.add({
-        severity: "success",
-        summary: "Column Reordered",
-        life: 3000,
-      });
-    },
     async onRowReorder(event) {
       let currentID, newID, difference;
       currentID = event.value[event.dropIndex].id;
@@ -352,35 +363,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/variables.scss";
-
-n#flowsheet,
+@import "../../styles/variables.scss";
+#flowsheet,
 #flowsheetHeader {
   text-align: center;
 }
 
-#flowsheetHeader,
-.playcut {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
+.p-datatable .p-datatable-tbody > tr {
 }
 
-.playcut {
-  background: #f4f4f4;
-  border-radius: 10px;
+// This is how you select child elements in lang="scss" and scoped modes. Scoped should be left on.
+// #flowsheetTable :deep(.flowsheetRow)
 
-  /* padding: 1px; */
-  /* cursor: pointer; */
-  /* color: #444; */
-  /* text-align: center; */
+#flowsheetTable :deep(tr) {
 }
 
-i.p-datatable-reorderablerow-handle:hover {
-  cursor: grab;
-}
-
-i.p-datatable-reorderablerow-handle:active {
-  cursor: grabbing;
+#flowsheetTable :deep(.flowsheetRow) {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
 }
 </style>
