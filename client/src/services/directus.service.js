@@ -18,13 +18,11 @@ export async function getAllItems(table_name) {
     // The /api/ path works because the vue.config.js file path was specified in the package.json file
     // const response = await fetch('/api/items');
 
-    await directusLogin()
     const response = await directus.items(table_name).readByQuery({ limit: -1, sort: "-sort" })
     return response
 }
 
 export async function createItem(table_name, payload) {
-    await directusLogin()
 
     const response = await directus.items(table_name).createOne(payload)
 
@@ -35,14 +33,12 @@ export async function createItem(table_name, payload) {
 }
 
 export async function deleteItem(table_name, itemID) {
-    await directusLogin()
 
     const response = await directus.items(table_name).deleteOne(itemID)
     return response
 }
 
 export async function editItem(table_name, itemID, payload) {
-    await directusLogin()
 
     const response = await directus.items(table_name).updateOne(itemID, payload)
     return response
@@ -50,7 +46,6 @@ export async function editItem(table_name, itemID, payload) {
 }
 
 export async function swapItemSortID(table_name, payload) {
-    await directusLogin()
 
     const response = await directus.utils.sort(table_name, payload.currentID, payload.newID)
     return response

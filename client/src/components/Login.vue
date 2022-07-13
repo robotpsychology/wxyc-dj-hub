@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>register</h1>
+    <h1>Login</h1>
 
     <input type="email" name="email" v-model="emailInput" placeholder="email" />
     <br />
@@ -11,24 +11,23 @@
       placeholder="password"
     />
     <br />
-    <button @click="loginClick">Register</button>
-    <p>hi {{ user.email }}</p>
-    <p>{{ user.nameCount }}</p>
+    <button @click="loginClick">Login</button>
+    <p>hi {{ this.emailInput }}</p>
+    <p></p>
+    <!-- <p>This is a result from Pinia loggedInUser.js: {{ user.nameCount }}</p> -->
   </div>
 </template>
 
 <script>
-import { directus } from "../services/directus.init";
-import { useLoggedInUserStore } from "@/store/loggedInUser";
-import { mapState } from "pinia";
-import { login } from "../services/AuthenticationService";
+import { useAuthStore } from "@/store/auth.store.js";
+// import { mapState } from "pinia";
 
 export default {
   data() {
     return {
       emailInput: "",
       passwordInput: "",
-      user: useLoggedInUserStore(),
+      // user: useAuthStore(),
     };
   },
   computed: {
@@ -36,28 +35,8 @@ export default {
   },
   methods: {
     async loginClick() {
-      const loginInfo = {
-        email: this.emailInput,
-        password: this.passwordInput,
-      };
-
-      const requestLogin = login(loginInfo);
-
-      if (requestLogin) {
-        this.user.loginUser(loginInfo);
-      }
-
-      //   const response = await directus.auth.login(loginInfo);
-      // .then((response) => {
-      //   if (response.access_token) {
-      //     localStorage.setItem("user", JSON.stringify(response.data));
-      //   }
-      // });
-
-      //   const response = await register({
-      //     email: this.email,
-      //     password: this.password,
-      //   });
+      const authStore = useAuthStore();
+      return authStore.login(this.emailInput, this.passwordInput);
     },
   },
 };

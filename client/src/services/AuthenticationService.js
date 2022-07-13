@@ -1,5 +1,5 @@
 import { directus } from "./directus.init";
-import { useLoggedInUserStore } from "@/store/loggedInUser";
+import { useAuthStore } from "../store/auth.store";
 
 
 

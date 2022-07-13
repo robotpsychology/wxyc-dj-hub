@@ -2,6 +2,7 @@
   <div id="wrapper">
     <div id="profileWrapper">
       <ProfileCard
+        id="profileCard"
         :user="currentUser"
         :key="currentUser.first_name + currentUser.last_name"
       ></ProfileCard>
