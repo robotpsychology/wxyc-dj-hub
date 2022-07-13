@@ -8,12 +8,15 @@
           :src="
             '//localhost:8055/assets/' +
             file.filename_disk +
+            '?access_token=' +
+            storage['access_token'] +
             '?fit=outside&width=100&height=100&quality=80'
           "
           alt=""
           async="on"
         />
       </div>
+      {{ storage["access_token"] }}
     </div>
 
     <h3>Look, PSAs</h3>
@@ -31,6 +34,7 @@
 
 <script>
 import * as directusService from "../services/directus.service";
+import * as directusFiles from "../services/files.service";
 
 export default {
   name: "Resources",
@@ -39,11 +43,14 @@ export default {
     return {
       table_name: "resources",
       files: null,
+      storage: JSON.parse(localStorage.user),
+      token: this.storage,
     };
   },
   methods: {},
   async mounted() {
-    this.files = await directusService.getAllItems(this.table_name);
+    // this.files = await directusService.getAllItems(this.table_name);
+    this.files = await directusFiles.getAllFiles();
   },
 };
 </script>

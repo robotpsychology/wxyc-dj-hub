@@ -1,5 +1,5 @@
 /**
- * @file profiles.service.js is the service file for the Directus API calls relevant to Views/Profile and Components/profiles.
+ * @file files.service.js is the service file for the Directus API calls relevant to Views/Profile and Components/profiles.
  * @author robotpsychology (Ali Alrabeah)
  */
 import { directus } from "./directus.init";
@@ -11,15 +11,12 @@ import { directus } from "./directus.init";
  */
 
 
-export async function getAllProfiles() {
-    const response = await directus.users.readByQuery({ limit: -1, fields: ['first_name', 'last_name', 'email', 'avatar', 'title', 'description'] })
-    return response
+export async function getAllFiles() {
+    const response = await directus.files.readByQuery({ fields: [] })
+    console.log(response)
+    return response.data
 }
 
-export async function getCurrentUser() {
-    const response = await directus.users.me.read({ fields: ['first_name', 'last_name', 'email', 'avatar', 'title', 'description'] })
-    return response
-}
 
 export async function createUser(table_name, payload) {
 
