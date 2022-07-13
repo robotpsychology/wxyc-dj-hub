@@ -10,11 +10,6 @@ import { useAuthStore } from "@/store/auth.store.js";
 
 
 const routes = [
-  // {
-  //   path: "/",
-  //   name: "Login",
-  //   component: LoginWorld,
-  // },
   {
     path: "/",
     name: "Flowsheet",
