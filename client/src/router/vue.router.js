@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import { Login, Register } from "@/components"
+import Login from "../components/Login.vue"
+import Register from "../components/Login.vue"
 
 import { Account, Flowsheet, About, Reports, Requests, Resources, Profiles } from "@/views"
 
