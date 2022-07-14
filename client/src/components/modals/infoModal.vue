@@ -52,10 +52,10 @@
 <script>
 import Dialog from "primevue/dialog";
 import Button from "primevue/button";
-import playcutInfoService from "../../services/songInfo.service";
+import playcutInfoService from "../../service/playcutInfoService";
 
 export default {
-  name: "infoModal",
+  name: "InfoModal",
   data() {
     return {
       //   infoModalActive: infoModalActive,
