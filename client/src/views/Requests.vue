@@ -26,8 +26,7 @@
 <script>
 import * as directusService from "../services/directus.service";
 
-import RequestsTable from "../components/requests/RequestsTable.vue";
-import RequestsForm from "../components/requests/RequestsForm.vue";
+import { RequestsTable, RequestsForm } from "@/components";
 
 export default {
   name: "Requests",

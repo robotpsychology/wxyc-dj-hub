@@ -32,8 +32,7 @@
 <script>
 import * as directusService from "../services/directus.service";
 
-import ReportsForm from "../components/reports/ReportsForm.vue";
-import ReportsTable from "../components/reports/ReportsTable.vue";
+import { ReportsForm, ReportsTable } from "@/components";
 
 export default {
   name: "Reports",
