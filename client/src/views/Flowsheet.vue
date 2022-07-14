@@ -1,5 +1,6 @@
 <template>
   <div id="flowsheet">
+    <FlowsheetShowForm></FlowsheetShowForm>
     <FlowsheetForm @createPlaycut="createPlaycut($event)"></FlowsheetForm>
     <FlowsheetTable
       v-if="playcuts.length > 0"
@@ -15,6 +16,7 @@
 <script>
 import FlowsheetTable from "../components/flowsheet/FlowsheetTable.vue";
 import FlowsheetForm from "../components/flowsheet/FlowsheetForm.vue";
+import FlowsheetShowForm from "../components/flowsheet/FlowsheetShowForm.vue";
 
 import * as directusService from "../services/directus.service";
 
@@ -23,6 +25,7 @@ export default {
   components: {
     FlowsheetTable,
     FlowsheetForm,
+    FlowsheetShowForm,
   },
   data() {
     return {
