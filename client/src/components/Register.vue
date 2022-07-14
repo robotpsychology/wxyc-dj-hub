@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { register } from "../services/AuthenticationService";
+import { register } from "@/services/AuthenticationService";
 export default {
   name: "Register",
   data() {

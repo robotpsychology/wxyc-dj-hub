@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import * as directusService from "../services/directus.service";
+import * as directusService from "@/services/directus.service";
 
 import { ReportsForm, ReportsTable } from "@/components";
 

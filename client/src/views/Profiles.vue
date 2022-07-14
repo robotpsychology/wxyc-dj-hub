@@ -12,7 +12,7 @@
 <script>
 import { ProfileCard } from "@/components";
 
-import * as profilesService from "../services/profiles.service";
+import * as profilesService from "@/services/profiles.service";
 
 export default {
   name: "Profiles",

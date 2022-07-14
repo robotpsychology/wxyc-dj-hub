@@ -15,7 +15,7 @@
 
 <script>
 import { FlowsheetForm, FlowsheetShowForm, FlowsheetTable } from "@/components";
-import * as directusService from "../services/directus.service";
+import * as directusService from "@/services/directus.service";
 
 export default {
   name: "Flowsheet",
