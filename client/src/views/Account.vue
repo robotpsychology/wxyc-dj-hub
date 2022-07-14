@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import { ProfileCard } from "@/components";
-import * as profilesService from "@/services/profiles.service";
+import ProfileCard from "../components/profiles/ProfileCard.vue";
+import * as profilesService from "../services/profiles.service";
 
 export default {
   name: "Account",
