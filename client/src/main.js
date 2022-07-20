@@ -29,6 +29,7 @@ import Menubar from "primevue/menubar"
 import Dropdown from "primevue/dropdown"
 import Textarea from "primevue/textarea"
 import ToastService from "primevue/toastservice"
+import Calendar from "primevue/calendar"
 
 
 import "primevue/resources/themes/saga-blue/theme.css" //theme
@@ -55,6 +56,7 @@ app.component("Button", Button)
 app.component("Menubar", Menubar)
 app.component("Dropdown", Dropdown)
 app.component("Textarea", Textarea)
+app.component("Calendar", Calendar)
 
 
 app.mount("#app")
