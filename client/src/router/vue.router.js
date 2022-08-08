@@ -47,6 +47,11 @@ const routes = [
     component: Resources,
   },
   {
+    path: "/rotation",
+    name: "Rotation",
+    // component: Resources,
+  },
+  {
     path: "/profiles",
     name: "Profiles",
     component: Profiles,
