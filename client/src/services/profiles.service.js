@@ -17,10 +17,23 @@ export async function getAllProfiles() {
 }
 
 export async function getCurrentUser() {
-    const response = await directus.users.me.read({ fields: ['first_name', 'last_name', 'email', 'avatar', 'title', 'description'] })
+    const response = await directus.users.me.read({ fields: ['first_name', 'last_name', 'email', 'avatar', 'title', 'description', 'id'] })
     return response
 }
 
+export async function getUserPlaycuts() {
+    const table_name = 'flowsheet_entries'
+    const response = await directus.items(table_name).readByQuery({ limit: -1, sort: "-sort", filter: { 'user_created': { "_eq": "$CURRENT_USER" } } })
+    return response
+}
+
+
+
+
+
+
+
+// templates
 export async function createUser(table_name, payload) {
 
     const response = await directus.items(table_name).createOne(payload)
