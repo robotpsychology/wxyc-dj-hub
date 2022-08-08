@@ -123,6 +123,7 @@
 
 <script>
 import LibraryService from "../../services/LibraryService";
+import demoLibrary from "../../../public/data/demoLibrary.json";
 
 export default {
   name: "FlowsheetForm",
@@ -144,7 +145,7 @@ export default {
       filteredSongs: null,
       filteredReleases: null,
       filteredLabels: null,
-      library: null,
+      library: demoLibrary.data,
       rotationDB: {
         heavy: [],
         medium: [],
@@ -154,13 +155,8 @@ export default {
       createdList: document.querySelectorAll(".p-autocomplete-item"),
     };
   },
-  libraryService: null,
-  created() {
-    this.libraryService = new LibraryService();
-  },
-  mounted() {
-    this.libraryService.getLibrary().then((data) => (this.library = data));
-  },
+  created() {},
+  mounted() {},
   computed: {},
   methods: {
     onlyUnique(value, index, self) {
