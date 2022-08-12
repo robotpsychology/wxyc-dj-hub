@@ -1,27 +1,41 @@
 import { defineStore } from 'pinia'
 import { directusLogin } from "../services/directus.auth";
+import { getCurrentUser } from '../services/profiles.service';
 import { router } from "@/router"
 
 
 export const useAuthStore = defineStore({
     // id is required so that Pinia can connect the store to the devtools
     id: 'loggedInUser',
-    state: () => ({ name: 'John Doae', email: 'fake@email.com', username: 'jd123' }),
+    state: () => ({
+        first_name: '', last_name: '', email: 'fake@email.com',
+        access_token: null, access_token_expires: null
+        // username: null,
+    }),
     getters: {
-        nameCount: function () {
-            return this.name.length
+        firstNameCount: function () {
+            return this.first_name.length
         },
     },
     actions: {
         async login(email, password) {
-            const user = await directusLogin(email, password);
+            const userLogin = await directusLogin(email, password);
+            const currentUser = await getCurrentUser();
+            console.log(currentUser)
 
+            this.userAccess = userLogin
 
             // update pinia state
-            this.user = user;
+            this.$state.email = email
+            this.$state.access_token = userLogin.access_token
+            this.$state.access_token_expires = userLogin.expires
+
+            this.$state.first_name = currentUser.first_name
+            this.$state.last_name = currentUser.last_name
+
 
             // store user details and jwt in local storage to keep user logged in between page refreshes
-            localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('user', JSON.stringify(this.userAccess));
 
             // redirect to previous url or default to home page
             router.push(this.returnUrl || '/');

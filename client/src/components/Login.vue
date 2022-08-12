@@ -22,14 +22,14 @@
       v-slot="{ errors, isSubmitting }"
     >
       <div class="form-group">
-        <label>Username</label>
+        <label>Email: </label>
         <Field
-          name="username"
+          name="email"
           type="text"
           class="form-control"
-          :class="{ 'is-invalid': errors.username }"
+          :class="{ 'is-invalid': errors.email }"
         />
-        <div class="invalid-feedback">{{ errors.username }}</div>
+        <div class="invalid-feedback">{{ errors.email }}</div>
       </div>
       <div class="form-group">
         <label>Password</label>
@@ -71,7 +71,7 @@ export default {
       passwordInput: "",
       // user: useAuthStore(),
       schema: Yup.object().shape({
-        username: Yup.string().required("Username is required"),
+        email: Yup.string().required("email is required"),
         password: Yup.string().required("Password is required"),
       }),
     };
@@ -88,9 +88,9 @@ export default {
 
     onSubmit(values, { setErrors }) {
       const authStore = useAuthStore();
-      const { username, password } = values;
+      const { email, password } = values;
       return authStore
-        .login(username, password)
+        .login(email, password)
         .catch((error) => setErrors({ apiError: error }));
     },
   },
