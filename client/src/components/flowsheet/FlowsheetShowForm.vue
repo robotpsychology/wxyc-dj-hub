@@ -9,7 +9,7 @@
       required
     />
 
-    <label for="showName">Show Name</label>
+    <label for="showName">Show Name: </label>
     <InputText
       name="showName"
       type="text"
@@ -31,7 +31,9 @@ export default {
   components: {},
   data() {
     return {
-      tableName: "flowsheet_session",
+      // tableName: "flowsheet_session",
+      showName: null,
+
       startTime: null,
     };
   },
@@ -48,15 +50,8 @@ export default {
         real_name: `${currentUser.first_name} ${currentUser.last_name}`,
         dj_handle: currentUser.title,
       };
-      console.log(this.startTime);
 
-      await directusService
-        .createItem(this.tableName, payload)
-        .then((response) => {
-          console.log(response);
-        });
-
-      // this.$emit("createShow", payload);
+      this.$emit("createShow", payload);
 
       // this.$emit("getAllRequests");
       // this.getAllRequests();

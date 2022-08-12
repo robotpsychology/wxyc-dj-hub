@@ -1,11 +1,17 @@
 <template>
   <div id="flowsheet">
-    <FlowsheetShowForm></FlowsheetShowForm>
+    <FlowsheetShowForm @createShow="createShow($event)"></FlowsheetShowForm>
+
     <FlowsheetForm @createPlaycut="createPlaycut($event)"></FlowsheetForm>
-    <FlowsheetTable
+
+    <!-- 
       v-if="playcuts.length > 0"
+
+ -->
+    <FlowsheetTable
+      v-if="playcuts.length > 0 && flowsheet_session == true"
       :playcuts="playcuts"
-      :tableName="tableName"
+      :playcut_db_table="playcut_db_table"
       @getAllPlaycuts="getAllPlaycuts"
       @editPlaycut="playcutEdit($event)"
       @swapItemSortID="swapItemSortID($event)"
@@ -30,24 +36,38 @@ export default {
   data() {
     return {
       playcuts: [],
-      tableName: "flowsheet_entries",
+      playcut_db_table: "flowsheet_entries",
+      session_db_table: "flowsheet_session",
+      flowsheet_session: null,
     };
   },
   mounted() {
     this.getAllPlaycuts();
   },
   methods: {
-    getAllPlaycuts() {
-      directusService.getAllItems(this.tableName).then((response) => {
-        // console.log(response);
-        this.playcuts = response.data;
-      });
+    async getAllPlaycuts() {
+      await directusService
+        .getAllItems(this.playcut_db_table)
+        .then((response) => {
+          this.playcuts = response.data;
+        });
     },
-    createPlaycut(payload) {
-      directusService.createItem(this.tableName, payload).then((response) => {
-        console.log(response);
-        this.getAllPlaycuts();
-      });
+    async createPlaycut(payload) {
+      await directusService
+        .createItem(this.playcut_db_table, payload)
+        .then((response) => {
+          console.log(response);
+          this.getAllPlaycuts();
+        });
+    },
+    async createShow(payload) {
+      await directusService
+        .createItem(this.session_db_table, payload)
+        .then((response) => {
+          console.log(response);
+        });
+
+      this.flowsheet_session = true;
     },
   },
 };

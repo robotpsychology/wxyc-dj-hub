@@ -235,12 +235,12 @@ export default {
   },
   props: {
     playcuts: { type: Array },
-    tableName: { type: String },
+    playcut_db_table: { type: String },
   },
   computed: {},
   data() {
     return {
-      // playcuts: [], // Not sure why this prop is being passed but not $props.tableName. Because of getAllItems?
+      // playcuts: [], // Not sure why this prop is being passed but not $props.playcut_db_table. Because of getAllItems?
 
       deletePlaycutDialog: false,
       playcutToDelete: {},
@@ -257,7 +257,7 @@ export default {
   songInfoService: null,
   created() {
     this.songInfoService = new songInfoService();
-    this.table = this.$props.tableName;
+    this.table = this.$props.playcut_db_table;
   },
   mounted() {
     this.$emit("getAllPlaycuts");
@@ -290,7 +290,7 @@ export default {
       this.deletePlaycutDialog = false;
 
       await directusService.deleteItem(
-        this.$props.tableName,
+        this.$props.playcut_db_table,
         this.playcutToDelete.id
       );
 
@@ -318,7 +318,7 @@ export default {
       };
 
       await directusService.editItem(
-        this.$props.tableName,
+        this.$props.playcut_db_table,
         this.playcutToEdit.id,
         this.playcutToEdit
       );
