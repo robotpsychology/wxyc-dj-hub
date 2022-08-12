@@ -8,7 +8,7 @@ export const useAuthStore = defineStore({
     // id is required so that Pinia can connect the store to the devtools
     id: 'loggedInUser',
     state: () => ({
-        first_name: '', last_name: '', email: 'fake@email.com',
+        first_name: '', last_name: '', email: '',
         access_token: null, access_token_expires: null
         // username: null,
     }),
@@ -23,6 +23,7 @@ export const useAuthStore = defineStore({
             const currentUser = await getCurrentUser();
             console.log(currentUser)
 
+            // user to set local storage
             this.userAccess = userLogin
 
             // update pinia state

@@ -17,7 +17,7 @@
     <p>This is a result from Pinia loggedInUser.js: {{ user.nameCount }}</p> -->
 
     <Form
-      @submit="onSubmit"
+      @submit="loginSubmit"
       :validation-schema="schema"
       v-slot="{ errors, isSubmitting }"
     >
@@ -86,7 +86,7 @@ export default {
       return authStore.login(this.emailInput, this.passwordInput);
     },
 
-    onSubmit(values, { setErrors }) {
+    loginSubmit(values, { setErrors }) {
       const authStore = useAuthStore();
       const { email, password } = values;
       return authStore
