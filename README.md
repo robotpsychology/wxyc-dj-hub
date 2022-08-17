@@ -232,4 +232,4 @@ Project Link: [https://github.com/robotpsychology/wxyc-dj-hub](https://github.co
 [license-url]: https://github.com/robotpsychology/wxyc-dj-hub/blob/master/LICENSE.txt
 <!-- [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username -->
-[product-screenshot]: readme/screenshot.png
+[product-screenshot]: readme/screenshot.jpg
