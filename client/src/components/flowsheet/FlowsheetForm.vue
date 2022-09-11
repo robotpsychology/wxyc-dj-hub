@@ -51,12 +51,15 @@
       forceSelection
     -->
 
+      <!-- 
+        @complete="searchLabel($event)"
+
+     -->
       <AutoComplete
         class="inputSearch"
         id="label"
         v-model="labelSelected"
         :suggestions="filteredLabels"
-        @complete="searchLabel($event)"
         @item-select="labelSelect($event)"
         placeholder="Label"
         field="labelName"
