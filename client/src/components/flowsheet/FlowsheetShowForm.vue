@@ -49,6 +49,7 @@ export default {
         show_name: this.showName,
         real_name: `${currentUser.first_name} ${currentUser.last_name}`,
         dj_handle: currentUser.title,
+        status: "active",
       };
 
       this.$emit("createShow", payload);

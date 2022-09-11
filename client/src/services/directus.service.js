@@ -22,6 +22,24 @@ export async function getAllItems(table_name) {
     return response
 }
 
+export async function getLastItem(table_name) {
+
+    const response = await directus.items(table_name).readByQuery({ limit: 1, sort: "-date_created" })
+    return response
+}
+
+export async function getPlaycutsByID(table_name, session_ID) {
+
+    const response = await directus.items(table_name).readByQuery({
+        limit: 1, sort: "-date_created", filter: {
+            "flowsheet_session_fr": {
+                "_eq": session_ID
+            }
+        }
+    })
+    return response
+}
+
 export async function createItem(table_name, payload) {
 
     const response = await directus.items(table_name).createOne(payload)

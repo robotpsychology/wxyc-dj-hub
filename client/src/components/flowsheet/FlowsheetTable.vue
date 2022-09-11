@@ -22,7 +22,7 @@
         :header="col.header"
         :key="col.field"
       ></Column> -->
-      <Column field="id" header="id" bodyClass="flowsheetRow"></Column>
+      <Column field="id" header="Sort ID" bodyClass="flowsheetRow"></Column>
       <Column field="rotation" header="Rotation" bodyClass="flowsheetRow">
         <template #body="slotProps">
           <span v-if="slotProps.data.rotation === true">&#10003;</span>
