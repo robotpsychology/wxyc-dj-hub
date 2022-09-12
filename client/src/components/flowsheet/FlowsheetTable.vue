@@ -21,10 +21,12 @@
           </div>
           <div v-else>
             <h5 class="m-0">Previous Flowsheet</h5>
-            <p>{{ previousShowInfo.start_time }}</p>
-            <p>{{ previousShowInfo.show_name }}</p>
-            <p>{{ previousShowInfo.dj_handle }}</p>
-            <p>{{ previousShowInfo.start_time }}</p>
+            <div v-if="previousShowInfo">
+              <p>{{ previousShowInfo.start_time }}</p>
+              <p>{{ previousShowInfo.show_name }}</p>
+              <p>{{ previousShowInfo.dj_handle }}</p>
+              <p>{{ previousShowInfo.start_time }}</p>
+            </div>
           </div>
         </div>
       </template>

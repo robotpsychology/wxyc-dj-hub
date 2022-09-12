@@ -1,9 +1,12 @@
 <template>
   <div id="flowsheet">
-    <FlowsheetShowForm @createShow="createShow($event)"></FlowsheetShowForm>
+    <FlowsheetShowForm
+      v-if="flowsheetStore && flowsheetStore.flowsheet_session_id === null"
+      @createShow="createShow($event)"
+    ></FlowsheetShowForm>
 
     <FlowsheetForm
-      v-if="flowsheet_session_id"
+      v-if="flowsheetStore && flowsheetStore.flowsheet_session_id"
       @createPlaycut="createPlaycut($event)"
     ></FlowsheetForm>
 

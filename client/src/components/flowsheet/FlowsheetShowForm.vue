@@ -6,6 +6,9 @@
       :showTime="true"
       hourFormat="12"
       :timeOnly="true"
+      :stepMinute="30"
+      placeholder="Click here to select time"
+      :showIcon="true"
       required
     />
 
