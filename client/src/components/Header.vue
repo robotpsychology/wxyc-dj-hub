@@ -9,6 +9,8 @@
 
     <template #end>
       <div id="menubar-end">
+        <NetworkStatus />
+
         <a
           v-for="link in outsideLinks"
           :key="link.href"
@@ -18,7 +20,6 @@
           target="_blank"
         >
         </a>
-        <a></a>
       </div>
     </template>
   </Menubar>
@@ -27,9 +28,10 @@
 <script>
 import Menubar from "primevue/menubar";
 import WXYCLogoVue from "../components/WXYCLogo.vue";
+import NetworkStatus from "./NetworkStatus.vue";
 export default {
   name: "Header",
-  components: { Menubar, WXYCLogoVue },
+  components: { Menubar, WXYCLogoVue, NetworkStatus },
   data() {
     return {
       items: [
