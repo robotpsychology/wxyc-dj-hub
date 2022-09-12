@@ -18,6 +18,12 @@
         <div class="flex justify-content-center align-items-center">
           <div v-if="!readOnly">
             <h5 class="m-0">Current Flowsheet</h5>
+            <div v-if="currentShowInfo">
+              <p>{{ currentShowInfo.start_time }}</p>
+              <p>{{ currentShowInfo.show_name }}</p>
+              <p>{{ currentShowInfo.dj_handle }}</p>
+              <p>{{ currentShowInfo.start_time }}</p>
+            </div>
           </div>
           <div v-else>
             <h5 class="m-0">Previous Flowsheet</h5>
@@ -36,6 +42,7 @@
         :rowReorder="true"
         headerStyle="width: 3rem"
         :reorderableColumn="false"
+        :expander="true"
       />
 
       <!-- <Column
@@ -262,6 +269,7 @@ export default {
     playcut_db_table: { type: String },
     readOnly: { type: Boolean },
     previousShowInfo: { type: Object },
+    currentShowInfo: { type: Object },
   },
   computed: {},
   data() {
@@ -288,7 +296,7 @@ export default {
   },
   methods: {
     getEntryInfo(data) {
-      console.log(data);
+      // console.log(data);
     },
 
     confirmEditProduct(playcut) {

@@ -1,17 +1,18 @@
 <template>
   <div id="flowsheet">
     <FlowsheetShowForm
-      v-if="flowsheetStore && flowsheetStore.flowsheet_session_id === null"
+      v-if="flowsheetStore && flowsheetStore.currentShowInfo === null"
       @createShow="createShow($event)"
     ></FlowsheetShowForm>
 
     <FlowsheetForm
-      v-if="flowsheetStore && flowsheetStore.flowsheet_session_id"
+      v-if="flowsheetStore && flowsheetStore.currentShowInfo"
       @createPlaycut="createPlaycut($event)"
     ></FlowsheetForm>
 
     <FlowsheetTable
-      v-if="currentPlaycuts.length > 0 && flowsheetStore.flowsheet_session_id"
+      v-if="flowsheetStore && flowsheetStore.currentShowInfo"
+      :currentShowInfo="currentShowInfo"
       :readOnly="false"
       :playcuts="currentPlaycuts"
       :playcut_db_table="playcut_db_table"
@@ -23,6 +24,7 @@
     <div>---------temp separator---------</div>
 
     <FlowsheetTable
+      v-if="flowsheetStore && flowsheetStore.currentShowInfo"
       :readOnly="true"
       :previousShowInfo="previousShowInfo"
       :playcuts="previousShowPlaycuts"
@@ -53,6 +55,7 @@ export default {
     return {
       currentPlaycuts: [],
       previousShowPlaycuts: [],
+      currentShowInfo: null,
       previousShowInfo: null,
       playcut_db_table: "flowsheet_entries",
       session_db_table: "flowsheet_session",
@@ -77,7 +80,7 @@ export default {
       await directusService
         .getPlaycutsByID(
           this.playcut_db_table,
-          this.flowsheetStore.flowsheet_session_id
+          this.flowsheetStore.currentShowInfo.id
         )
         .then((response) => {
           this.currentPlaycuts = response.data;
@@ -85,12 +88,11 @@ export default {
     },
     async getPreviousShowPlaycuts() {
       let previousSessionID = await directusService
-        .getMostRecentItem(this.session_db_table)
+        .getPreviousShow(this.session_db_table)
         .then((response) => {
-          this.flowsheetStore.$state.previousShowInfo = response.data[0];
+          this.flowsheetStore.$state.previousShowInfo = response;
+          this.previousShowInfo = this.flowsheetStore.$state.previousShowInfo;
         });
-
-      this.previousShowInfo = this.flowsheetStore.$state.previousShowInfo;
 
       await directusService
         .getPlaycutsByID(
@@ -100,7 +102,8 @@ export default {
         .then((response) => (this.previousShowPlaycuts = response.data));
     },
     async createPlaycut(payload) {
-      payload.flowsheet_session_fr = this.flowsheetStore.flowsheet_session_id;
+      payload.flowsheet_session_fr =
+        this.flowsheetStore.$state.currentShowInfo.id;
       await directusService
         .createItem(this.playcut_db_table, payload)
         .then((response) => {
@@ -113,7 +116,10 @@ export default {
       let flowsheetShowCreate = await directusService
         .createItem(this.session_db_table, payload)
         .then((response) => {
-          // console.log(response);
+          console.log(response);
+          this.flowsheetStore.$state.currentShowInfo = response;
+          this.currentShowInfo = this.flowsheetStore.$state.currentShowInfo;
+
           return response;
         });
 
@@ -121,8 +127,7 @@ export default {
         flowsheet_session_id: flowsheetShowCreate.id,
       };
 
-      this.flowsheetStore.createShow(piniaPayload);
-      this.flowsheet_session_id = this.flowsheetStore.flowsheet_session_id;
+      // this.flowsheetStore.createShow(piniaPayload);
 
       this.flowsheet_session = true;
     },

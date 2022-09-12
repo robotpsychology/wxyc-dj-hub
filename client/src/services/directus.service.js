@@ -22,17 +22,16 @@ export async function getAllItems(table_name) {
     return response
 }
 
-export async function getMostRecentItem(table_name) {
+
+export async function getCurrentShow(table_name) {
 
     const response = await directus.items(table_name).readByQuery({ limit: 1, sort: "-date_created" })
-    return response
+    return response.data[0]
 }
-
-
 export async function getPreviousShow(table_name) {
 
     const response = await directus.items(table_name).readByQuery({ limit: 2, sort: "-date_created" })
-    return response
+    return response.data[1]
 }
 
 export async function getPlaycutsByID(table_name, session_ID) {
