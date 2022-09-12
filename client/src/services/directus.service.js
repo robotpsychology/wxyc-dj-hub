@@ -38,7 +38,7 @@ export async function getPreviousShow(table_name) {
 export async function getPlaycutsByID(table_name, session_ID) {
 
     const response = await directus.items(table_name).readByQuery({
-        limit: -1, sort: "-date_created", filter: {
+        limit: -1, sort: "-sort", filter: {
             "flowsheet_session_fr": {
                 "_eq": session_ID
             }

@@ -8,7 +8,8 @@
     ></FlowsheetForm>
 
     <FlowsheetTable
-      v-if="playcuts.length > 0 && flowsheet_session == true"
+      v-if="playcuts.length > 0 && flowsheetStore.flowsheet_session_id"
+      :readOnly="false"
       :playcuts="playcuts"
       :playcut_db_table="playcut_db_table"
       @getPlaycuts="getCurrentPlaycuts"
@@ -19,6 +20,7 @@
     <h3>PREVIOUS SHOW</h3>
     <FlowsheetTable
       v-if="previousShowPlaycuts.length > 0"
+      :readOnly="true"
       :playcuts="previousShowPlaycuts"
       :playcut_db_table="playcut_db_table"
       @getPlaycuts="getPreviousShowPlaycuts"
@@ -56,16 +58,17 @@ export default {
   mounted() {
     this.flowsheetStore = useFlowsheetStore();
 
-    // this.getAllPlaycuts();
+    this.getCurrentPlaycuts();
+    this.getLastShowPlaycuts();
   },
   methods: {
-    async getAllPlaycuts() {
-      await directusService
-        .getAllItems(this.playcut_db_table)
-        .then((response) => {
-          this.playcuts = response.data;
-        });
-    },
+    // async getAllPlaycuts() {
+    //   await directusService
+    //     .getAllItems(this.playcut_db_table)
+    //     .then((response) => {
+    //       this.playcuts = response.data;
+    //     });
+    // },
     async getCurrentPlaycuts() {
       await directusService
         .getPlaycutsByID(
@@ -73,7 +76,7 @@ export default {
           this.flowsheetStore.flowsheet_session_id
         )
         .then((response) => {
-          console.log("its here", response);
+          console.log("i work!!!", response);
           this.playcuts = response.data;
         });
     },
@@ -81,8 +84,6 @@ export default {
       let previousSessionID = await directusService
         .getMostRecentItem(this.session_db_table)
         .then((response) => {
-          // this.playcuts = response.data;
-          console.log("yup", response.data);
           return response.data[0].id;
         });
 
@@ -95,8 +96,6 @@ export default {
       await directusService
         .createItem(this.playcut_db_table, payload)
         .then((response) => {
-          // console.log(response);
-          // this.getAllPlaycuts();
           this.getCurrentPlaycuts();
         });
     },

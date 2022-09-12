@@ -11,6 +11,7 @@
       rowReorderIcon="grab"
     >
       <Column
+        v-if="!readOnly"
         :rowReorder="true"
         headerStyle="width: 3rem"
         :reorderableColumn="false"
@@ -71,12 +72,14 @@
             @click="getEntryInfo(slotProps.data)"
           />
           <Button
+            v-if="!readOnly"
             id="editButton"
             icon="pi pi-pencil"
             class="p-button-rounded p-button-success mr-2"
             @click="confirmEditProduct(slotProps.data)"
           />
           <Button
+            v-if="!readOnly"
             id="deleteButton"
             icon="pi pi-trash"
             class="p-button-rounded p-button-warning"
@@ -236,6 +239,7 @@ export default {
   props: {
     playcuts: { type: Array },
     playcut_db_table: { type: String },
+    readOnly: { type: Boolean },
   },
   computed: {},
   data() {
@@ -260,7 +264,7 @@ export default {
     this.table = this.$props.playcut_db_table;
   },
   mounted() {
-    this.$emit("getAllPlaycuts");
+    this.$emit("getPlaycuts");
   },
   methods: {
     getEntryInfo(data) {
@@ -294,7 +298,7 @@ export default {
         this.playcutToDelete.id
       );
 
-      this.$emit("getAllPlaycuts");
+      this.$emit("getPlaycuts");
 
       this.$toast.add({
         severity: "success",
@@ -323,7 +327,7 @@ export default {
         this.playcutToEdit
       );
 
-      this.$emit("getAllPlaycuts");
+      this.$emit("getPlaycuts");
 
       this.$toast.add({
         severity: "success",
@@ -348,9 +352,10 @@ export default {
       }
 
       const payload = { currentID: currentID, newID: newID };
-      await directusService.swapItemSortID(this.table, payload).then((res) => {
-        this.$emit("getAllPlaycuts");
-      });
+      await directusService
+        .swapItemSortID(this.table, payload)
+        .then((res) => {});
+      this.$emit("getPlaycuts");
 
       this.$toast.add({
         severity: "success",
