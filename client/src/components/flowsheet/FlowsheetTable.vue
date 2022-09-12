@@ -4,12 +4,31 @@
 
     <DataTable
       id="flowsheetTable"
-      v-if="playcuts.length > 0"
       :value="playcuts"
       @row-reorder="onRowReorder"
       responsiveLayout="scroll"
       rowReorderIcon="grab"
     >
+      <template #empty> No flowsheet entries found. </template>
+      <template #loading :loading="loading">
+        Loading flowsheet entry data. Please wait.
+      </template>
+
+      <template #header>
+        <div class="flex justify-content-center align-items-center">
+          <div v-if="!readOnly">
+            <h5 class="m-0">Current Flowsheet</h5>
+          </div>
+          <div v-else>
+            <h5 class="m-0">Previous Flowsheet</h5>
+            <p>{{ previousShowInfo.start_time }}</p>
+            <p>{{ previousShowInfo.show_name }}</p>
+            <p>{{ previousShowInfo.dj_handle }}</p>
+            <p>{{ previousShowInfo.start_time }}</p>
+          </div>
+        </div>
+      </template>
+
       <Column
         v-if="!readOnly"
         :rowReorder="true"
@@ -240,12 +259,11 @@ export default {
     playcuts: { type: Array },
     playcut_db_table: { type: String },
     readOnly: { type: Boolean },
+    previousShowInfo: { type: Object },
   },
   computed: {},
   data() {
     return {
-      // playcuts: [], // Not sure why this prop is being passed but not $props.playcut_db_table. Because of getAllItems?
-
       deletePlaycutDialog: false,
       playcutToDelete: {},
 

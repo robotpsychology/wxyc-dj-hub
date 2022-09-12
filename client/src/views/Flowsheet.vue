@@ -8,19 +8,20 @@
     ></FlowsheetForm>
 
     <FlowsheetTable
-      v-if="playcuts.length > 0 && flowsheetStore.flowsheet_session_id"
+      v-if="currentPlaycuts.length > 0 && flowsheetStore.flowsheet_session_id"
       :readOnly="false"
-      :playcuts="playcuts"
+      :playcuts="currentPlaycuts"
       :playcut_db_table="playcut_db_table"
       @getPlaycuts="getCurrentPlaycuts"
       @editPlaycut="playcutEdit($event)"
       @swapItemSortID="swapItemSortID($event)"
     ></FlowsheetTable>
 
-    <h3>PREVIOUS SHOW</h3>
+    <div>---------temp separator---------</div>
+
     <FlowsheetTable
-      v-if="previousShowPlaycuts.length > 0"
       :readOnly="true"
+      :previousShowInfo="previousShowInfo"
       :playcuts="previousShowPlaycuts"
       :playcut_db_table="playcut_db_table"
       @getPlaycuts="getPreviousShowPlaycuts"
@@ -47,8 +48,9 @@ export default {
   },
   data() {
     return {
-      playcuts: [],
+      currentPlaycuts: [],
       previousShowPlaycuts: [],
+      previousShowInfo: null,
       playcut_db_table: "flowsheet_entries",
       session_db_table: "flowsheet_session",
       flowsheet_session_id: null,
@@ -58,8 +60,7 @@ export default {
   mounted() {
     this.flowsheetStore = useFlowsheetStore();
 
-    this.getCurrentPlaycuts();
-    this.getLastShowPlaycuts();
+    this.getPreviousShowPlaycuts();
   },
   methods: {
     // async getAllPlaycuts() {
@@ -76,19 +77,23 @@ export default {
           this.flowsheetStore.flowsheet_session_id
         )
         .then((response) => {
-          console.log("i work!!!", response);
-          this.playcuts = response.data;
+          this.currentPlaycuts = response.data;
         });
     },
-    async getLastShowPlaycuts() {
+    async getPreviousShowPlaycuts() {
       let previousSessionID = await directusService
         .getMostRecentItem(this.session_db_table)
         .then((response) => {
-          return response.data[0].id;
+          this.flowsheetStore.$state.previousShowInfo = response.data[0];
         });
 
+      this.previousShowInfo = this.flowsheetStore.$state.previousShowInfo;
+
       await directusService
-        .getPlaycutsByID(this.playcut_db_table, previousSessionID)
+        .getPlaycutsByID(
+          this.playcut_db_table,
+          this.flowsheetStore.previousShowInfo.id
+        )
         .then((response) => (this.previousShowPlaycuts = response.data));
     },
     async createPlaycut(payload) {
@@ -100,7 +105,7 @@ export default {
         });
     },
     async createShow(payload) {
-      await this.getLastShowPlaycuts();
+      await this.getPreviousShowPlaycuts();
 
       let flowsheetShowCreate = await directusService
         .createItem(this.session_db_table, payload)

@@ -8,7 +8,7 @@ export const useFlowsheetStore = defineStore({
     // id is required so that Pinia can connect the store to the devtools
     id: 'flowsheet',
     state: () => ({
-        flowsheet_session_id: null,
+        flowsheet_session_id: null, previousShowInfo: null
     }),
     getters: {
 
