@@ -150,7 +150,8 @@
     </Dialog>
 
     <!-- Edit Button dialog -->
-    <form action="" @submit.prevent="editEntry" method="patch">
+    <!-- @submit.prevent="editEntry" -->
+    <form action="" method="patch">
       <Dialog
         :visible="editPlaycutDialog"
         :style="{ width: '450px' }"
@@ -163,7 +164,7 @@
           <label for="artistName">Artist</label>
           <InputText
             id="artistName"
-            :value="playcutToEdit.artist_name"
+            v-model="playcutToEdit.artist_name"
             required="true"
             autofocus
             :class="{ 'p-invalid': submitted && !playcutToEdit.artist_name }"
@@ -173,7 +174,7 @@
           <label for="songTitle">Song</label>
           <InputText
             id="songTitle"
-            :value="playcutToEdit.song_title"
+            v-model="playcutToEdit.song_title"
             required="true"
             autofocus
             :class="{ 'p-invalid': submitted && !playcutToEdit.song_title }"
@@ -183,7 +184,7 @@
           <label for="releaseTitle">Release</label>
           <InputText
             id="releaseTitle"
-            :value="playcutToEdit.release_title"
+            v-model="playcutToEdit.release_title"
             required="true"
             autofocus
             :class="{ 'p-invalid': submitted && !playcutToEdit.release_title }"
@@ -193,7 +194,7 @@
           <label for="labelName">Label</label>
           <InputText
             id="labelName"
-            :value="playcutToEdit.label_name"
+            v-model="playcutToEdit.label_name"
             required="true"
             autofocus
             :class="{ 'p-invalid': submitted && !playcutToEdit.label_name }"
@@ -205,7 +206,7 @@
             <Checkbox
               id="rotation"
               name="rotation"
-              v-model="editRotationBool"
+              v-model="playcutToEdit.rotation"
               binary
             />
             <label for="rotation">Rotation</label>
@@ -215,7 +216,7 @@
             <Checkbox
               id="request"
               name="request"
-              v-model="editRequestBool"
+              v-model="playcutToEdit.request"
               binary
             />
             <label for="request">Request</label>
@@ -235,7 +236,7 @@
             type="submit"
             value="submit"
             class="p-button-text"
-            @submit="editEntry"
+            @click="editEntry"
           />
         </template>
       </Dialog>
@@ -280,9 +281,6 @@ export default {
       editPlaycutDialog: false,
       playcutToEdit: {},
 
-      editRotationBool: null,
-      editRequestBool: null,
-
       editSubmitted: false,
     };
   },
@@ -303,14 +301,12 @@ export default {
       this.editPlaycutDialog = true;
       // this.playcutToEdit = playcut;
       Object.assign(this.playcutToEdit, playcut);
-
-      this.editRotationBool = this.playcutToEdit.rotation;
-      this.editRequestBool = this.playcutToEdit.request;
     },
 
     cancelEdit() {
       this.editPlaycutDialog = false;
       this.editSubmitted = false;
+      this.playcutToEdit = {};
     },
 
     confirmDeleteProduct(playcut) {
@@ -339,21 +335,24 @@ export default {
     },
 
     async editEntry() {
+      this.editPlaycutDialog = false;
+
       const payload = {
-        rotation: this.rotationSelected,
-        request: this.requestSelected,
-        song_title: this.songSelected,
-        label_name: this.labelSelected,
-        artist_name: this.artistSelected,
-        release_title: this.releaseSelected,
-        entry_type: "playcut",
+        rotation: this.playcutToEdit.rotation,
+        request: this.playcutToEdit.request,
+        song_title: this.playcutToEdit.song_title,
+        label_name: this.playcutToEdit.label_name,
+        artist_name: this.playcutToEdit.artist_name,
+        release_title: this.playcutToEdit.release_title,
       };
 
       await directusService.editItem(
         this.$props.playcut_db_table,
         this.playcutToEdit.id,
-        this.playcutToEdit
+        payload
       );
+
+      this.playcutToEdit = {};
 
       this.$emit("getPlaycuts");
 
@@ -363,8 +362,6 @@ export default {
         detail: "Playcut Edited",
         life: 3000,
       });
-
-      this.playcutToEdit = {};
     },
     async onRowReorder(event) {
       let currentID, newID, difference;
