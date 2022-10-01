@@ -19,19 +19,21 @@
           <div v-if="!readOnly">
             <h5 class="m-0">Current Flowsheet</h5>
             <div v-if="currentShowInfo">
-              <p>{{ currentShowInfo.start_time }}</p>
-              <p>{{ currentShowInfo.show_name }}</p>
-              <p>{{ currentShowInfo.dj_handle }}</p>
-              <p>{{ currentShowInfo.start_time }}</p>
+              <p>Start Time: {{ currentShowInfo.start_time }}</p>
+              <p v-if="currentShowInfo.show_name">
+                Show Name: {{ currentShowInfo.show_name }}
+              </p>
+              <p>DJ: {{ currentShowInfo.dj_handle }}</p>
             </div>
           </div>
           <div v-else>
             <h5 class="m-0">Previous Flowsheet</h5>
             <div v-if="previousShowInfo">
-              <p>{{ previousShowInfo.start_time }}</p>
-              <p>{{ previousShowInfo.show_name }}</p>
-              <p>{{ previousShowInfo.dj_handle }}</p>
-              <p>{{ previousShowInfo.start_time }}</p>
+              <p>Start Time: {{ previousShowInfo.start_time }}</p>
+              <p v-if="previousShowInfo.show_name">
+                Show Name: {{ previousShowInfo.show_name }}
+              </p>
+              <p>DJ: {{ previousShowInfo.dj_handle }}</p>
             </div>
           </div>
         </div>
@@ -97,25 +99,43 @@
             id="infoButton"
             icon="pi pi-info"
             class="p-button-rounded p-button-info mr-2"
-            @click="getEntryInfo(slotProps.data)"
+            @click="confirmInfoPlaycut(slotProps.data)"
           />
           <Button
             v-if="!readOnly"
             id="editButton"
             icon="pi pi-pencil"
             class="p-button-rounded p-button-success mr-2"
-            @click="confirmEditProduct(slotProps.data)"
+            @click="confirmEditPlaycut(slotProps.data)"
           />
           <Button
             v-if="!readOnly"
             id="deleteButton"
             icon="pi pi-trash"
             class="p-button-rounded p-button-warning"
-            @click="confirmDeleteProduct(slotProps.data)"
+            @click="confirmDeletePlaycut(slotProps.data)"
           />
         </template>
       </Column>
     </DataTable>
+
+    <!-- Info button dialog -->
+    <Dialog
+      :visible="infoPlaycutDialog"
+      :style="{ width: '450px' }"
+      :modal="true"
+      header="Artist Information"
+      @update:visible="infoPlaycutDialog = false"
+    >
+      <div class="confirmation-content">
+        <!-- <i class="pi pi-info-circle mr-3" style="font-size: 2rem" />  -->
+        <h1>{{ infoPlaycut.song_title }} by {{ infoPlaycut.artist_name }}</h1>
+        <h2>Album: {{ infoPlaycut.release_title }}</h2>
+        <h2>Label: {{ infoPlaycut.label_name }}</h2>
+        <p></p>
+      </div>
+      <template #footer> </template>
+    </Dialog>
 
     <!-- Delete button dialog -->
     <Dialog
@@ -150,7 +170,6 @@
     </Dialog>
 
     <!-- Edit Button dialog -->
-    <!-- @submit.prevent="editEntry" -->
     <form action="" method="patch">
       <Dialog
         :visible="editPlaycutDialog"
@@ -280,8 +299,10 @@ export default {
 
       editPlaycutDialog: false,
       playcutToEdit: {},
-
       editSubmitted: false,
+
+      infoPlaycutDialog: false,
+      infoPlaycut: {},
     };
   },
   songInfoService: null,
@@ -293,13 +314,16 @@ export default {
     this.$emit("getPlaycuts");
   },
   methods: {
-    getEntryInfo(data) {
+    confirmInfoPlaycut(playcut) {
       // console.log(data);
+      this.infoPlaycutDialog = true;
+      Object.assign(this.infoPlaycut, playcut);
+
+      this.songInfoService.getArtistData(this.infoPlaycut.artist_name);
     },
 
-    confirmEditProduct(playcut) {
+    confirmEditPlaycut(playcut) {
       this.editPlaycutDialog = true;
-      // this.playcutToEdit = playcut;
       Object.assign(this.playcutToEdit, playcut);
     },
 
@@ -309,7 +333,7 @@ export default {
       this.playcutToEdit = {};
     },
 
-    confirmDeleteProduct(playcut) {
+    confirmDeletePlaycut(playcut) {
       this.deletePlaycutDialog = true;
       this.playcutToDelete = playcut;
     },

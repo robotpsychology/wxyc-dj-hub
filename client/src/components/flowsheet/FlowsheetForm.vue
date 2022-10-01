@@ -27,7 +27,7 @@
         id="artist"
         v-model="artistSelected"
         :suggestions="filteredArtists"
-        @complete="search($event)"
+        @complete="[search($event)]"
         @item-select="artistSelect($event)"
         placeholder="Artist"
         field="artistName"
@@ -239,6 +239,19 @@ export default {
           });
         }
       }, 250);
+
+      let filteredArtistsCopy = this.filteredArtists;
+      let globalScope = this;
+
+      document.addEventListener("mouseover", function (e) {
+        if (e.target.className == "p-autocomplete-item") {
+          for (let i = 0; i < filteredArtistsCopy.length; i++) {
+            if (e.target.innerText == filteredArtistsCopy[i].artistName) {
+              globalScope.artistSelected = filteredArtistsCopy[i].artistName;
+            }
+          }
+        }
+      });
     },
     searchSong(event) {
       setTimeout(() => {
@@ -303,9 +316,7 @@ export default {
       }, 250);
     },
     artistSelect(event) {
-      this.songSelected = null;
-      this.releaseSelected = null;
-      this.labelSelected = null;
+      this.artistSelected = event.value.artistName;
     },
     releaseSelect(event) {
       this.artistSelected = event.value.artistName;
@@ -318,7 +329,6 @@ export default {
       this.labelSelected = event.value.labelName;
       console.log(event.value.songTitle);
     },
-    // new stuff
     async playcutCreate() {
       const payload = {
         rotation: this.rotationSelected,
