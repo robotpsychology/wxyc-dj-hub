@@ -48,35 +48,43 @@
         :expander="true"
       />
 
-      <Column field="id" header="Sort ID" bodyClass="flowsheetRow"></Column>
       <Column field="rotation" header="Rotation" bodyClass="flowsheetRow">
         <template #body="slotProps">
-          <span v-if="slotProps.data.rotation === true">&#10003;</span>
-          <span v-else-if="slotProps.data.rotation === false">&#65794;</span>
+          <div v-if="slotProps.data.entry_type === 'playcut'">
+            <span v-if="slotProps.data.rotation === true">&#10003;</span>
+            <span v-else-if="slotProps.data.rotation === false">&#65794;</span>
+          </div>
         </template></Column
       >
       <Column field="request" header="Request" bodyClass="flowsheetRow">
         <template #body="slotProps">
-          <span v-if="slotProps.data.request === true">&#10003;</span>
-          <span v-else-if="slotProps.data.request === false">&#65794;</span>
+          <div v-if="slotProps.data.entry_type === 'playcut'">
+            <span v-if="slotProps.data.request === true">&#10003;</span>
+            <span v-else-if="slotProps.data.request === false">&#65794;</span>
+          </div>
         </template>
       </Column>
 
-      <Column
-        field="entry_type"
-        header="entry type"
-        bodyClass="flowsheetRow"
-      ></Column>
-      <Column
-        field="artist_name"
-        header="Artist"
-        bodyClass="flowsheetRow"
-      ></Column>
-      <Column
-        field="song_title"
-        header="Song"
-        bodyClass="flowsheetRow"
-      ></Column>
+      <Column field="artist_name" header="Artist" bodyClass="flowsheetRow">
+        <template #body="slotProps">
+          <p v-if="slotProps.data.entry_type == 'playcut'">
+            {{ slotProps.data.artist_name }}
+          </p>
+          <p v-else>
+            {{ slotProps.data.entry_type }}
+          </p>
+        </template>
+      </Column>
+      <Column field="song_title" header="Song" bodyClass="flowsheetRow">
+        <template #body="slotProps">
+          <p v-if="slotProps.data.entry_type == 'playcut'">
+            {{ slotProps.data.song_title }}
+          </p>
+          <p v-else>
+            {{ slotProps.data.date_created }}
+          </p>
+        </template></Column
+      >
       <Column
         field="release_title"
         header="Release"
@@ -96,13 +104,14 @@
       >
         <template #body="slotProps">
           <Button
+            v-if="slotProps.data.entry_type == 'playcut'"
             id="infoButton"
             icon="pi pi-info"
             class="p-button-rounded p-button-info mr-2"
             @click="confirmInfoPlaycut(slotProps.data)"
           />
           <Button
-            v-if="!readOnly"
+            v-if="!readOnly && slotProps.data.entry_type == 'playcut'"
             id="editButton"
             icon="pi pi-pencil"
             class="p-button-rounded p-button-success mr-2"
