@@ -39,6 +39,7 @@
         </div>
       </template>
 
+      <!-- This column is the drag and reorder bar -->
       <Column
         v-if="!readOnly"
         :rowReorder="true"
@@ -47,12 +48,6 @@
         :expander="true"
       />
 
-      <!-- <Column
-        v-for="col of columns"
-        :field="col.field"
-        :header="col.header"
-        :key="col.field"
-      ></Column> -->
       <Column field="id" header="Sort ID" bodyClass="flowsheetRow"></Column>
       <Column field="rotation" header="Rotation" bodyClass="flowsheetRow">
         <template #body="slotProps">
@@ -67,6 +62,11 @@
         </template>
       </Column>
 
+      <Column
+        field="entry_type"
+        header="entry type"
+        bodyClass="flowsheetRow"
+      ></Column>
       <Column
         field="artist_name"
         header="Artist"

@@ -5,10 +5,16 @@
       @createShow="createShow($event)"
     ></FlowsheetShowForm>
 
-    <FlowsheetForm
+    <FlowsheetActionButtons
+      v-if="flowsheetStore && flowsheetStore.currentShowInfo"
+      :playcut_db_table="playcut_db_table"
+      @createPlaycut="createPlaycut($event)"
+    ></FlowsheetActionButtons>
+
+    <FlowsheetPlaycutForm
       v-if="flowsheetStore && flowsheetStore.currentShowInfo"
       @createPlaycut="createPlaycut($event)"
-    ></FlowsheetForm>
+    ></FlowsheetPlaycutForm>
 
     <FlowsheetTable
       v-if="flowsheetStore && flowsheetStore.currentShowInfo"
@@ -38,18 +44,20 @@
 
 <script>
 import FlowsheetTable from "../components/flowsheet/FlowsheetTable.vue";
-import FlowsheetForm from "../components/flowsheet/FlowsheetForm.vue";
+import FlowsheetPlaycutForm from "../components/flowsheet/FlowsheetPlaycutForm.vue";
 import FlowsheetShowForm from "../components/flowsheet/FlowsheetShowForm.vue";
 
 import * as directusService from "../services/directus.service";
 import { useFlowsheetStore } from "@/store/flowsheet.store.js";
+import FlowsheetActionButtons from "../components/flowsheet/FlowsheetActionButtons.vue";
 
 export default {
   name: "Flowsheet",
   components: {
     FlowsheetTable,
-    FlowsheetForm,
+    FlowsheetPlaycutForm,
     FlowsheetShowForm,
+    FlowsheetActionButtons,
   },
   data() {
     return {

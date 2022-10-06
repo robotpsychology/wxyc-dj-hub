@@ -129,7 +129,7 @@ import LibraryService from "../../services/LibraryService";
 import demoLibrary from "../../../public/data/demoLibrary.json";
 
 export default {
-  name: "FlowsheetForm",
+  name: "FlowsheetPlaycutForm",
   components: {},
   data() {
     return {
