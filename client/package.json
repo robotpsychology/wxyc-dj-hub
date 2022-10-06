@@ -20,7 +20,6 @@
     "primevue": "^3.11.1",
     "vee-validate": "^4.6.1",
     "vue": "^3.0.0",
-    "vue-draggable-next": "^2.1.1",
     "vue-router": "^4.0.15",
     "yup": "^0.32.11"
   },
