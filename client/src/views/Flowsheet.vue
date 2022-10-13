@@ -5,6 +5,10 @@
       @createShow="createShow($event)"
     ></FlowsheetShowForm>
 
+    <FlowsheetActiveShow
+      v-if="flowsheetStore && flowsheetStore.currentShowInfo === null"
+    ></FlowsheetActiveShow>
+
     <FlowsheetActionButtons
       v-if="flowsheetStore && flowsheetStore.currentShowInfo"
       :playcut_db_table="playcut_db_table"
@@ -27,8 +31,6 @@
       @swapItemSortID="swapItemSortID($event)"
     ></FlowsheetTable>
 
-    <div>---------temp separator---------</div>
-
     <FlowsheetTable
       v-if="flowsheetStore && flowsheetStore.currentShowInfo"
       :readOnly="true"
@@ -50,6 +52,7 @@ import FlowsheetShowForm from "../components/flowsheet/FlowsheetShowForm.vue";
 import * as directusService from "../services/directus.service";
 import { useFlowsheetStore } from "@/store/flowsheet.store.js";
 import FlowsheetActionButtons from "../components/flowsheet/FlowsheetActionButtons.vue";
+import FlowsheetActiveShow from "../components/flowsheet/FlowsheetActiveShow.vue";
 
 export default {
   name: "Flowsheet",
@@ -58,6 +61,7 @@ export default {
     FlowsheetPlaycutForm,
     FlowsheetShowForm,
     FlowsheetActionButtons,
+    FlowsheetActiveShow,
   },
   data() {
     return {

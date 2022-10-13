@@ -23,11 +23,25 @@ export async function getAllItems(table_name) {
 }
 
 
+export async function getActiveShow() {
+    const table_name = 'flowsheet_session'
+
+    const response = await directus.items(table_name).readByQuery({
+        sort: "-date_created", filter: {
+            "status": {
+                "_eq": 'active'
+            }
+        }
+    })
+    return response.data
+}
+
 export async function getCurrentShow(table_name) {
 
     const response = await directus.items(table_name).readByQuery({ limit: 1, sort: "-date_created" })
     return response.data[0]
 }
+
 export async function getPreviousShow(table_name) {
 
     const response = await directus.items(table_name).readByQuery({ limit: 2, sort: "-date_created" })
