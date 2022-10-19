@@ -27,7 +27,7 @@
 
 <script>
 import * as directusService from "../../services/directus.service";
-import * as profileService from "../../services/profiles.service";
+import * as profileService from "../../services/user.service";
 
 export default {
   name: "FlowsheetShowForm",

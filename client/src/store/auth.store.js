@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { directusLogin } from "../services/directus.auth";
-import { getCurrentUser } from '../services/profiles.service';
+import { getCurrentUser } from '../services/user.service';
 import { router } from "@/router"
 
 

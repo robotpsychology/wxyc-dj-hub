@@ -1,5 +1,5 @@
 /**
- * @file profiles.service.js is the service file for the Directus API calls relevant to Views/Profile and Components/profiles.
+ * @file user.service.js is the service file for the Directus API calls relevant to Views/Profile and Components/profiles.
  * @author robotpsychology (Ali Alrabeah)
  */
 import { directus } from "./directus.init";

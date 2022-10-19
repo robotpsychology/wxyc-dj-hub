@@ -75,7 +75,7 @@
 </template>
 
 <script>
-import { createUser } from "../services/profiles.service";
+import { createUser } from "../services/user.service";
 
 import { Form, Field } from "vee-validate";
 import * as Yup from "yup";

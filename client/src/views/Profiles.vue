@@ -12,7 +12,7 @@
 <script>
 import ProfileCard from "../components/profiles/ProfileCard.vue";
 
-import * as profilesService from "@/services/profiles.service";
+import * as profilesService from "@/services/user.service";
 
 export default {
   name: "Profiles",
