@@ -70,7 +70,7 @@
       </p>
     </div>
 
-    <router-link to="/login">Already registered? Login</router-link>
+    <router-link to="/login">Already registered? Login.</router-link>
   </div>
 </template>
 

@@ -41,7 +41,7 @@
       </div>
     </Form>
 
-    <router-link to="/register">Register</router-link>
+    <router-link to="/register">Need an account? Register.</router-link>
   </div>
 </template>
 
