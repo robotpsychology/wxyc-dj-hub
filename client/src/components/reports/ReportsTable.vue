@@ -219,7 +219,6 @@ export default {
       directusService
         .editItem(this.$props.mediaTableName, report)
         .then((res) => {
-          // console.log(res);
           this.$emit("getAllReports");
         });
     },

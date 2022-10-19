@@ -1,20 +1,6 @@
 <template>
   <div>
-    <!-- <h1>Login</h1>
-
-    <input type="email" name="email" v-model="emailInput" placeholder="email" />
-    <br />
-    <input
-      type="password"
-      name="password"
-      v-model="passwordInput"
-      placeholder="password"
-    />
-    <br />
-    <button @click="loginClick">Login</button>
-    <p>hi {{ this.emailInput }}</p>
-    <p></p>
-    <p>This is a result from Pinia loggedInUser.js: {{ user.nameCount }}</p> -->
+    <h1>Login</h1>
 
     <Form
       @submit="loginSubmit"
@@ -54,6 +40,8 @@
         {{ errors.apiError }}
       </div>
     </Form>
+
+    <router-link to="/register">Register</router-link>
   </div>
 </template>
 
@@ -65,11 +53,9 @@ import { Form, Field } from "vee-validate";
 import * as Yup from "yup";
 
 export default {
+  name: "Login",
   data() {
     return {
-      emailInput: "",
-      passwordInput: "",
-      // user: useAuthStore(),
       schema: Yup.object().shape({
         email: Yup.string().required("email is required"),
         password: Yup.string().required("Password is required"),
@@ -88,10 +74,6 @@ export default {
         .login(email, password)
         .catch((error) => setErrors({ apiError: error }));
     },
-    // async loginClick() {
-    //   const authStore = useAuthStore();
-    //   return authStore.login(this.emailInput, this.passwordInput);
-    // },
   },
 };
 </script>

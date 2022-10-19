@@ -324,7 +324,6 @@ export default {
   },
   methods: {
     confirmInfoPlaycut(playcut) {
-      // console.log(data);
       this.infoPlaycutDialog = true;
       Object.assign(this.infoPlaycut, playcut);
 

@@ -16,7 +16,6 @@ export default {
     const authStore = useAuthStore();
     // this subscription will be kept even after the component is unmounted
     let userActive = authStore.$subscribe((mutation, state) => {
-      console.log("hi", mutation, state);
       return state.userActive;
     });
     return { authStore, userActive };
