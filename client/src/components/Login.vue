@@ -81,18 +81,17 @@ export default {
     // ...mapState(useLoggedInUserStore, ["email", "name"]),
   },
   methods: {
-    async loginClick() {
-      const authStore = useAuthStore();
-      return authStore.login(this.emailInput, this.passwordInput);
-    },
-
-    loginSubmit(values, { setErrors }) {
-      const authStore = useAuthStore();
+    async loginSubmit(values, { setErrors }) {
+      const authStore = await useAuthStore();
       const { email, password } = values;
       return authStore
         .login(email, password)
         .catch((error) => setErrors({ apiError: error }));
     },
+    // async loginClick() {
+    //   const authStore = useAuthStore();
+    //   return authStore.login(this.emailInput, this.passwordInput);
+    // },
   },
 };
 </script>

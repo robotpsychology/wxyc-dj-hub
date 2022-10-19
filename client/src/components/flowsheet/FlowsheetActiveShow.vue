@@ -8,14 +8,15 @@ import { getActiveShow } from "../../services/directus.service";
 export default {
   name: "FlowsheetActiveShow",
   components: {},
+  async setup() {
+    let activeShow = await getActiveShow();
+
+    return { activeShow };
+  },
   data() {
-    return {
-      activeShow: null,
-    };
+    return {};
   },
-  async created() {
-    this.activeShow = await getActiveShow();
-  },
+  async created() {},
   mounted() {},
   computed: {},
   methods: {},

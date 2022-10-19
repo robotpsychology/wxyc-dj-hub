@@ -9,6 +9,7 @@
 
     <template #end>
       <div id="menubar-end">
+        <LogoutButton />
         <NetworkStatus />
 
         <a
@@ -29,11 +30,14 @@
 import Menubar from "primevue/menubar";
 import WXYCLogoVue from "../components/WXYCLogo.vue";
 import NetworkStatus from "./NetworkStatus.vue";
+import LogoutButton from "./LogoutButton.vue";
+
 export default {
   name: "Header",
-  components: { Menubar, WXYCLogoVue, NetworkStatus },
+  components: { Menubar, WXYCLogoVue, NetworkStatus, LogoutButton },
   data() {
     return {
+      userActive: null,
       items: [
         {
           label: "Flowsheet",
@@ -99,6 +103,7 @@ export default {
       ],
     };
   },
+  methods: {},
 };
 </script>
 
