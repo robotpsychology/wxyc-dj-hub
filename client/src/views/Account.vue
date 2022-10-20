@@ -8,19 +8,9 @@
         <Button>Edit Profile</Button>
       </a>
 
-      <ProfileCard
-        id="profileCard"
-        :user="currentUser"
-        :key="currentUser.first_name + currentUser.last_name"
-      ></ProfileCard>
+      <ProfileCard id="profileCard" :user="currentUser"></ProfileCard>
 
       <!-- this is where shows will go, read only -->
-      <!-- <FlowsheetTable
-        v-if="playcuts.length > 0"
-        :playcuts="playcuts"
-        :tableName="flowsheet_entries"
-        @getAllPlaycuts="getUserPlaycuts"
-      ></FlowsheetTable> -->
     </div>
   </div>
 </template>

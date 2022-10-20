@@ -101,13 +101,13 @@ export default {
   methods: {
     async registerSubmit(values, { setErrors }) {
       const { email, password, first_name, last_name } = values;
-      let createUser = createUser(values);
+      let user = createUser(values);
 
-      if (createUser) {
+      if (user) {
         this.registerSuccess = true;
       }
 
-      return createUser
+      return user
         .then(() => new Promise((resolve) => setTimeout(resolve, 2000)))
         .then(() => this.$router.push(this.$route.query.redirect || "/"))
         .catch((error) => setErrors({ apiError: error }));
@@ -115,3 +115,6 @@ export default {
   },
 };
 </script>
+
+<style>
+</style>

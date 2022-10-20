@@ -6,6 +6,5 @@ export * from './user.service.js';
 
 export * from './songInfo.service.js';
 export * from './LibraryService.js';
-export * from './AuthenticationService.js';
 
 
