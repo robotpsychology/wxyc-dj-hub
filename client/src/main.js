@@ -23,11 +23,16 @@ import RadioButton from "primevue/radiobutton"
 import Checkbox from "primevue/checkbox";
 import Dialog from "primevue/dialog"
 import Button from "primevue/button"
-import Menubar from "primevue/menubar"
 import Dropdown from "primevue/dropdown"
 import Textarea from "primevue/textarea"
 import ToastService from "primevue/toastservice"
 import Calendar from "primevue/calendar"
+import Toast from "primevue/toast";
+
+
+import DataTable from "primevue/datatable";
+import Column from "primevue/column";
+
 
 // !!! Necessary imports for Primevue to work !!!
 import "primevue/resources/themes/saga-blue/theme.css" //theme
@@ -60,10 +65,12 @@ app.component("AutoComplete", AutoComplete)
     .component("Checkbox", Checkbox)
     .component("Dialog", Dialog)
     .component("Button", Button)
-    .component("Menubar", Menubar)
     .component("Dropdown", Dropdown)
     .component("Textarea", Textarea)
     .component("Calendar", Calendar)
+    .component("Toast", Toast)
+    .component("DataTable", DataTable)
+    .component("Column", Column)
 
 
 app.mount("#app")

@@ -274,25 +274,13 @@
  
 
 <script>
-import Dialog from "primevue/dialog";
-import Button from "primevue/button";
-import DataTable from "primevue/datatable";
-import Column from "primevue/column";
-import Toast from "primevue/toast";
-
 import songInfoService from "../../services/songInfo.service";
 
 import * as directusService from "../../services/directus.service";
 
 export default {
   name: "FlowsheetTable",
-  components: {
-    Dialog,
-    Button,
-    DataTable,
-    Column,
-    Toast,
-  },
+  components: {},
   props: {
     playcuts: { type: Array },
     playcut_db_table: { type: String },
@@ -357,9 +345,9 @@ export default {
       this.$emit("getPlaycuts");
 
       this.$toast.add({
-        severity: "success",
-        summary: "Successful",
-        detail: "Playcut Deleted",
+        severity: "info",
+        summary: "Deletion",
+        detail: "Playcut Removed from Flowsheet",
         life: 3000,
       });
 

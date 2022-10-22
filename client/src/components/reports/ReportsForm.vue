@@ -95,11 +95,9 @@
 <script>
 import * as directusService from "../../services/directus.service";
 
-import Textarea from "primevue/textarea";
-
 export default {
   name: "RequestsForm",
-  components: { Textarea },
+  components: {},
   props: {
     reportType: {
       type: String,

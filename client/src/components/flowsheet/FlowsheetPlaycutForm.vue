@@ -342,6 +342,13 @@ export default {
 
       this.$emit("createPlaycut", payload);
 
+      this.$toast.add({
+        severity: "success",
+        summary: "Submission",
+        detail: "Playcut Added to Flowsheet",
+        life: 3000,
+      });
+
       this.clearForm();
     },
     clearForm() {

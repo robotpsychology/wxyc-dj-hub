@@ -50,8 +50,6 @@
 </template>
 
 <script>
-import Dialog from "primevue/dialog";
-import Button from "primevue/button";
 import playcutInfoService from "../../service/playcutInfoService";
 
 export default {

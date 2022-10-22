@@ -81,23 +81,11 @@
  
 
 <script>
-import Dialog from "primevue/dialog";
-import Button from "primevue/button";
-import DataTable from "primevue/datatable";
-import Column from "primevue/column";
-import Toast from "primevue/toast";
-
 import * as directusService from "../../services/directus.service";
 
 export default {
   name: "RequestsTable",
-  components: {
-    Dialog,
-    Button,
-    DataTable,
-    Column,
-    Toast,
-  },
+  components: {},
   props: {
     requests: {
       type: Array,
