@@ -17,14 +17,34 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+#app,
+.p-component {
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
+
+.p-component {
+}
+
+.p-disabled {
+}
+.p-sr-only {
+}
+.p-reset {
+}
+.p-link {
+}
+.p-error {
+}
+.p-invalid {
+}
+.p-text-secondary {
+}
+
 #menubar-end {
   display: flex;
 }

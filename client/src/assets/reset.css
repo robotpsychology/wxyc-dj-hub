@@ -1,0 +1,66 @@
+/*reset.css*/
+/* RESETS */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*:focus {}
+
+/* html {
+} */
+
+/* h1,
+h2 {
+    margin-bottom: 0;
+} */
+
+/* ul {
+    list-style: none;
+    padding: 0;
+} */
+
+/* button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    appearance: none;
+} */
+
+button::-moz-focus-inner {
+    /* border: 0; */
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+}
+
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (min-width: 620px) {
+    body {
+        line-height: 2
+    }
+}
+
+/*END RESETS*/

@@ -37,6 +37,12 @@ import "primevue/resources/primevue.min.css" //core css
 import "primeicons/primeicons.css" //icons
 
 
+// Imports of Global SCSS Variables and Global Reset CSS Rules. This overrides some Primvue theme defeaults such as, importantly, --font-family.
+import "./assets/global.scss";
+import "./assets/reset.css";
+
+
+
 
 const app = createApp(App)
 app.use(PrimeVue)
