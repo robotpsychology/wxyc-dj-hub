@@ -6,23 +6,21 @@
  * @description Import the necessary modules from Vue, Primevue, etc. Create an app instance in Vue. Instantiate app components.
  */
 
+// Vue, Pinia, and Router imports
 import { createApp } from "vue"
-import Vue from "vue"
 import { createPinia } from 'pinia'
-import App from "./App.vue"
 import { router } from "@/router"
 
-
-// Vue.config.productionTip = false
-
+// Primvue Core Import
 import PrimeVue from "primevue/config"
+
+// Primevue Component Imports
 import AutoComplete from "primevue/autocomplete"
 import InputText from "primevue/inputtext"
 import Password from "primevue/password"
 import SelectButton from "primevue/selectbutton"
 import RadioButton from "primevue/radiobutton"
 import Checkbox from "primevue/checkbox";
-
 import Dialog from "primevue/dialog"
 import Button from "primevue/button"
 import Menubar from "primevue/menubar"
@@ -31,38 +29,41 @@ import Textarea from "primevue/textarea"
 import ToastService from "primevue/toastservice"
 import Calendar from "primevue/calendar"
 
-
+// !!! Necessary imports for Primevue to work !!!
 import "primevue/resources/themes/saga-blue/theme.css" //theme
 import "primevue/resources/primevue.min.css" //core css
 import "primeicons/primeicons.css" //icons
-
 
 // Imports of Global SCSS Variables and Global Reset CSS Rules. This overrides some Primvue theme defeaults such as, importantly, --font-family.
 import "./assets/global.scss";
 import "./assets/reset.css";
 
+// App.vue import to mount Vue App !!!
+import App from "./App.vue"
 
-
-
+// Decleration of Vue App
 const app = createApp(App)
+
+// Registering Primevue, Vue Router, Pinia, and Primevue ToastService
 app.use(PrimeVue)
-app.use(router)
-app.use(createPinia())
-app.use(ToastService)
+    .use(router)
+    .use(createPinia())
+    .use(ToastService)
 // .use(store)
 
+// Primevue Component Registration 
 app.component("AutoComplete", AutoComplete)
-app.component("InputText", InputText)
-app.component("Password", Password)
-app.component("SelectButton", SelectButton)
-app.component("RadioButton", RadioButton)
-app.component("Checkbox", Checkbox)
-app.component("Dialog", Dialog)
-app.component("Button", Button)
-app.component("Menubar", Menubar)
-app.component("Dropdown", Dropdown)
-app.component("Textarea", Textarea)
-app.component("Calendar", Calendar)
+    .component("InputText", InputText)
+    .component("Password", Password)
+    .component("SelectButton", SelectButton)
+    .component("RadioButton", RadioButton)
+    .component("Checkbox", Checkbox)
+    .component("Dialog", Dialog)
+    .component("Button", Button)
+    .component("Menubar", Menubar)
+    .component("Dropdown", Dropdown)
+    .component("Textarea", Textarea)
+    .component("Calendar", Calendar)
 
 
 app.mount("#app")
