@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Register Vjz</h1>
+  <div id="registerPage">
+    <h1>Register</h1>
 
     <Form
       @submit="registerSubmit"
@@ -38,7 +38,7 @@
         <div class="invalid-feedback">{{ errors.email }}</div>
       </div>
       <div class="form-group">
-        <label>Password</label>
+        <label>Password: </label>
         <Field
           name="password"
           type="password"
@@ -70,7 +70,8 @@
       </p>
     </div>
 
-    <router-link to="/login">Already registered? Login.</router-link>
+    <span>Already registered? </span>
+    <router-link to="/login">Login Here</router-link>
   </div>
 </template>
 
@@ -116,5 +117,23 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+#registerPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  color: blue;
+}
+
+.form-group {
+  margin: 1.5em;
+}
+
+form input {
+  display: flex;
+  flex-direction: column;
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="loginPage">
     <h1>Login</h1>
 
     <Form
@@ -18,7 +18,7 @@
         <div class="invalid-feedback">{{ errors.email }}</div>
       </div>
       <div class="form-group">
-        <label>Password</label>
+        <label>Password: </label>
         <Field
           name="password"
           type="password"
@@ -41,7 +41,8 @@
       </div>
     </Form>
 
-    <router-link to="/register">Need an account? Register.</router-link>
+    <span>Need an account? </span>
+    <router-link to="/register">Register Here</router-link>
   </div>
 </template>
 
@@ -77,3 +78,24 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+#loginPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  color: blue;
+}
+
+.form-group {
+  margin: 1.5em;
+}
+
+form input {
+  display: flex;
+  flex-direction: column;
+}
+</style>
