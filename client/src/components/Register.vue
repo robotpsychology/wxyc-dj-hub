@@ -8,7 +8,7 @@
       v-slot="{ errors, isSubmitting }"
     >
       <div class="form-group">
-        <label>First Name: </label>
+        <label>First Name</label>
         <Field
           name="first_name"
           type="text"
@@ -18,7 +18,7 @@
         <div class="invalid-feedback">{{ errors.first_name }}</div>
       </div>
       <div class="form-group">
-        <label>Last Name: </label>
+        <label>Last Name</label>
         <Field
           name="last_name"
           type="text"
@@ -28,7 +28,7 @@
         <div class="invalid-feedback">{{ errors.last_name }}</div>
       </div>
       <div class="form-group">
-        <label>Email: </label>
+        <label>Email</label>
         <Field
           name="email"
           type="text"
@@ -38,7 +38,7 @@
         <div class="invalid-feedback">{{ errors.email }}</div>
       </div>
       <div class="form-group">
-        <label>Password: </label>
+        <label>Password</label>
         <Field
           name="password"
           type="password"

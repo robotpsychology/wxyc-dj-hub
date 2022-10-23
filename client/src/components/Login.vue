@@ -8,7 +8,7 @@
       v-slot="{ errors, isSubmitting }"
     >
       <div class="form-group">
-        <label>Email: </label>
+        <label>Email</label>
         <Field
           name="email"
           type="text"
@@ -18,7 +18,7 @@
         <div class="invalid-feedback">{{ errors.email }}</div>
       </div>
       <div class="form-group">
-        <label>Password: </label>
+        <label>Password</label>
         <Field
           name="password"
           type="password"
