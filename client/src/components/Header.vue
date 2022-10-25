@@ -61,7 +61,7 @@ export default {
         },
         {
           label: "Profiles",
-          icon: "pi pi-user",
+          icon: "pi pi-users",
           to: "/profiles",
         },
         {
@@ -70,21 +70,9 @@ export default {
           to: "/About",
         },
         {
-          label: "User",
-          icon: "pi pi-fw pi-user p-submenu-icon",
-          // to: "/User",
-          items: [
-            {
-              label: "Account",
-              icon: "pi",
-              to: "/account",
-            },
-            {
-              label: "Help",
-              icon: "pi",
-              to: "/",
-            },
-          ],
+          label: "Account",
+          icon: "pi pi-user",
+          to: "/account",
         },
       ],
       outsideLinks: [

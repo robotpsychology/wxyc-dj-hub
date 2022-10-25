@@ -36,7 +36,7 @@
           Login
         </button>
       </div>
-      <div v-if="errors.apiError" class="alert alert-danger mt-3 mb-0">
+      <div v-if="errors.apiError" class="alert alert-danger">
         {{ errors.apiError }}
       </div>
     </Form>
@@ -94,8 +94,12 @@ a {
   margin: 1.5em;
 }
 
-form input {
+.form-group input {
   display: flex;
   flex-direction: column;
+}
+
+.alert {
+  align-self: center;
 }
 </style>

@@ -17,7 +17,7 @@
       <template #header>
         <div class="flex justify-content-center align-items-center">
           <div v-if="!readOnly">
-            <h5 class="m-0">Current Flowsheet</h5>
+            <h5 class="">Current Flowsheet</h5>
             <div v-if="currentShowInfo">
               <p>Start Time: {{ currentShowInfo.start_time }}</p>
               <p v-if="currentShowInfo.show_name">
@@ -27,7 +27,7 @@
             </div>
           </div>
           <div v-else>
-            <h5 class="m-0">Previous Flowsheet</h5>
+            <h5 class="">Previous Flowsheet</h5>
             <div v-if="previousShowInfo">
               <p>Start Time: {{ previousShowInfo.start_time }}</p>
               <p v-if="previousShowInfo.show_name">
@@ -428,7 +428,6 @@ export default {
 }
 
 #flowsheetTable :deep(.flowsheetRow) {
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
+  padding: 1.5em 1em 1em 1.5em;
 }
 </style>

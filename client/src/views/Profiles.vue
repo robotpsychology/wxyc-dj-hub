@@ -1,11 +1,15 @@
 <template>
-  <div id="profilesContainer">
-    <ProfileCard
-      :user="user"
-      v-for="user in profiles"
-      :key="user.first_name + user.last_name"
-      class="profileCard"
-    ></ProfileCard>
+  <div>
+    <h1>Profiles</h1>
+
+    <div id="profilesContainer">
+      <ProfileCard
+        :user="user"
+        v-for="user in profiles"
+        :key="user.first_name + user.last_name"
+        class="profileCard"
+      ></ProfileCard>
+    </div>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <Card style="width: 20rem; margin-bottom: 2em">
+  <Card class="profileCard">
     <template #header>
       <img
         v-if="user.avatar"
@@ -46,6 +46,14 @@ export default {
 </script>
 
 <style scoped>
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 20rem;
+  height: 35rem;
+  margin-bottom: 2em;
+}
 .userDescription {
   line-height: 1.5;
   margin: 0;

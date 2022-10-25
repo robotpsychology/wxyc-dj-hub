@@ -1,26 +1,35 @@
 <template>
   <div id="flowsheet">
     <FlowsheetShowForm
+      id="showForm"
       v-if="flowsheetStore && flowsheetStore.currentShowInfo === null"
       @createShow="createShow($event)"
     ></FlowsheetShowForm>
 
     <FlowsheetActiveShow
+      id="activeShow"
       v-if="flowsheetStore && flowsheetStore.currentShowInfo === null"
     ></FlowsheetActiveShow>
 
     <FlowsheetActionButtons
+      id="actionButtons"
       v-if="flowsheetStore && flowsheetStore.currentShowInfo"
       :playcut_db_table="playcut_db_table"
       @createPlaycut="createPlaycut($event)"
     ></FlowsheetActionButtons>
 
+    <br />
+
     <FlowsheetPlaycutForm
+      id="playcutForm"
       v-if="flowsheetStore && flowsheetStore.currentShowInfo"
       @createPlaycut="createPlaycut($event)"
     ></FlowsheetPlaycutForm>
 
+    <br />
+
     <FlowsheetTable
+      id="currentShow"
       v-if="flowsheetStore && flowsheetStore.currentShowInfo"
       :currentShowInfo="currentShowInfo"
       :readOnly="false"
@@ -31,7 +40,10 @@
       @swapItemSortID="swapItemSortID($event)"
     ></FlowsheetTable>
 
+    <br />
+
     <FlowsheetTable
+      id="previousShow"
       v-if="flowsheetStore && flowsheetStore.currentShowInfo"
       :readOnly="true"
       :previousShowInfo="previousShowInfo"
@@ -149,5 +161,6 @@ export default {
 
 <style lang="scss">
 #flowsheet {
+  margin: 2em 0 3em 0;
 }
 </style>

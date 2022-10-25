@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2>Use this page to request media for rotation or the WXYC library</h2>
+    <h1>Requests</h1>
+    <h3>Request media for rotation or the WXYC library</h3>
+
     <SelectButton
       id="entryType"
       v-model="requestType"

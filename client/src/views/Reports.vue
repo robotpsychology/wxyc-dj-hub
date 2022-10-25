@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h2>Use this page to report missing CD/Vinyl or broken equipment</h2>
+    <h1>Reports</h1>
+    <h3>Report missing CD/Vinyl and broken equipment</h3>
 
     <SelectButton
       id="reportType"
