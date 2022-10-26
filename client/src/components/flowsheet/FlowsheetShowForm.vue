@@ -1,27 +1,35 @@
 <template>
-  <form id="" action="" @submit.prevent="showCreate" method="post">
-    <label for="startTime">Starting Time: </label>
-    <Calendar
-      v-model="startTime"
-      :showTime="true"
-      hourFormat="12"
-      :timeOnly="true"
-      :stepMinute="30"
-      placeholder="Click here to select time"
-      :showIcon="true"
-      required
-    />
+  <form id="showForm" action="" @submit.prevent="showCreate" method="post">
+    <div id="formTop">
+      <div>
+        <label for="startTime">Starting Time: </label>
+        <Calendar
+          name="startTime"
+          v-model="startTime"
+          :showTime="true"
+          hourFormat="12"
+          :timeOnly="true"
+          :stepMinute="30"
+          placeholder="Select time slot"
+          :showIcon="true"
+          required
+        />
+      </div>
 
-    <label for="showName">Show Name: </label>
-    <InputText
-      name="showName"
-      type="text"
-      v-model="showName"
-      placeholder="Optional"
-    />
+      <div>
+        <label for="showName">Show Name: </label>
+        <InputText
+          name="showName"
+          type="text"
+          v-model="showName"
+          placeholder="Optional"
+        />
+      </div>
+    </div>
 
-    <br />
-    <Button type="submit" value="submit" label="Submit"></Button>
+    <div>
+      <Button type="submit" value="submit" label="Submit"></Button>
+    </div>
   </form>
 </template>
 
@@ -67,4 +75,20 @@ export default {
 </script>
 
 <style>
+#showForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#formTop {
+  display: flex;
+  justify-content: space-around;
+  width: ;
+  margin-bottom: 3em;
+}
+
+button {
+  width: 50%;
+}
 </style>
